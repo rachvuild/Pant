@@ -7,4 +7,5 @@ function ConnexionBdd()
         die('Erreur : ' . $e->getMessage());
     }
     echo ("Connection réussi</br>");
+    return $pdo;
 }
