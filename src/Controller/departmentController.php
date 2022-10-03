@@ -1,7 +1,7 @@
 <?php
 require('../ConnectionBdd.php');
 $pdo = ConnexionBdd();
-function GetDepartementController($pdo)
+function GetDepartmentController($pdo)
 {
     $connection_user = "SELECT * FROM `department` WHERE 1";
     $connection_user = $pdo->prepare($connection_user);
