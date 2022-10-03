@@ -37,16 +37,6 @@
 
         <label><b>departement d'utilisateur</b></label>
         <input type="text" placeholder="Entrer votre departement" name="id_dep" required>
-        <?php
-
-        // require('../src/Controller/departementController.php');
-
-
-        // $pol = GetDepartementController($pdo);
-        // var_dump($pol);
-
-
-        ?>
         <!-- <select name="id_job" id="id_job">
             <option value="">--Please choose an option--</option>
 
@@ -56,6 +46,24 @@
 
         <input type="submit" id='submit' value='REGISTER' name='REGISTER'>
     </form>
+    <?php
+
+    // require('../src/Controller/departementController.php');
+
+
+    // $pol = GetDepartementController($pdo);
+    // var_dump($pol);
+    $pwd_user = 13;
+    $pwd_user2 = md5($pwd_user);
+    $pwd_user3 = md5($pwd_user);
+    $pwd_user = password_hash($pwd_user, PASSWORD_DEFAULT);
+    $pwd_user1 = password_hash($pwd_user, PASSWORD_DEFAULT);
+    echo " $pwd_user<br>";
+    echo " $pwd_user1<br>";
+    echo " $pwd_user2<br>";
+    echo " $pwd_user3<br>";
+
+    ?>
 
 </body>
 

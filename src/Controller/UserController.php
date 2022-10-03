@@ -10,7 +10,8 @@ function ConnectionUser(
         //get id and password of user in form connexion.html
 
         // is for hash password
-        $pwd_user = password_hash($pwd_user, PASSWORD_DEFAULT);
+        $pwd_user = md5($pwd_user);
+        echo $pwd_user;
         // // echo $pwd_user;
 
         //get  user in data base
@@ -18,7 +19,7 @@ function ConnectionUser(
         $connection_user = $pdo->prepare($connection_user);
         $connection_user->execute();
         $recipes = $connection_user->fetchAll();
-        var_dump($recipes);
+
         // get element roles of user
         $roles_user = $recipes[0][0];
 
@@ -55,11 +56,11 @@ function RegisterUser(
     $id_dep
 ) {
     if (isset($_POST['REGISTER'])) {
-        $pwd_user = password_hash($pwd_user, PASSWORD_DEFAULT);
+        $pwd_user = md5($pwd_user);
         $register_user =
             "
     INSERT INTO `user`(`id_user`, `mail_user`, `name_user`, `fname_user`, `pwd_user`, `id_job`, `id_dep`) 
-    VALUES ('[$id_user]','[$email_user]','[$name_user]','[$fname_user]','[$pwd_user]','$id_job','$id_dep')
+    VALUES ('$id_user','$email_user','$name_user','$fname_user','$pwd_user','$id_job','$id_dep')
     ";
 
         $register_user = $pdo->prepare($register_user);
