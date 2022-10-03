@@ -15,6 +15,7 @@
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Prendre rendez-vous</th>
+                <th>Compte rendu</th>
             </tr>
         </thead>
         <tbody>
@@ -33,7 +34,14 @@
                             <input type='submit' value='RDV' />
                             
                         </p>
-                     </form></td>
+                        </form></td>
+                        <td><form method='post' action='affichage.php'>
+                        <p>
+                            <input type='text' name='id_user' id='id_user' value='".$ligne[3]."' hidden /><br/>               
+                            <input type='submit' value='compte rendu' />
+                            
+                        </p>
+                        </form></td>
                         </tr>";
                     }
                 }
