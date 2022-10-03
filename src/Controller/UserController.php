@@ -18,7 +18,7 @@ function ConnectionUser(
         $connection_user = $pdo->prepare($connection_user);
         $connection_user->execute();
         $recipes = $connection_user->fetchAll();
-
+        var_dump($recipes);
         // get element roles of user
         $roles_user = $recipes[0][0];
 
@@ -58,11 +58,8 @@ function RegisterUser(
         $pwd_user = password_hash($pwd_user, PASSWORD_DEFAULT);
         $register_user =
             "
-    INSERT INTO `user`(`id_job`,`id_user`, `mail_user`, `name_user`, `fname_user`, `pwd_user`, `id_dep`) 
-    VALUES ($id_job,$id_user,$email_user,$name_user,$fname_user, $pwd_user, $id_dep)
-    
     INSERT INTO `user`(`id_user`, `mail_user`, `name_user`, `fname_user`, `pwd_user`, `id_job`, `id_dep`) 
-    VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]')
+    VALUES ('[$id_user]','[$email_user]','[$name_user]','[$fname_user]','[$pwd_user]','$id_job','$id_dep')
     ";
 
         $register_user = $pdo->prepare($register_user);
