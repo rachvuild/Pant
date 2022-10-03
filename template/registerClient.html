@@ -10,11 +10,29 @@
     <form action="../src/Controller/clientsController.php" method="post">
         <fieldset>
             <legend>Création de nouveau client</legend>
-            Code postal :<input type="text" name="cp">
-            Ville :<input type="text" name="city">
-            Adresse :<input type="text" name="address">
-            Téléphone :<input type="text" name="phone">
-            Label :<input type="text" name="label">
+
+            <label for="pc"> Code postal :</label>
+            <input type="text" name="pc">
+
+            <label for="city">Ville :</label>
+            <input type="text" name="city">
+
+            <label for="address">Adresse :</label>
+            <input type="text" name="address">
+
+            <label for="phone">Téléphone :</label>
+            <input type="text" name="phone">
+
+            <label for="label">Label :</label>
+            <input type="text" name="label">
+
+            <label for="reset">Que voulez vous faire ?</label>
+            <select name="action" id="modif">
+                <option value="Créer">Créer</option>
+                <option value="Modifier">Modifier</option>
+                <option value="Supprimer">Supprimer</option>
+            </select>
+
             <input type="submit" value="Créer">
         </fieldset>
     </form>
