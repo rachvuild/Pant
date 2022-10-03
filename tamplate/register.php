@@ -26,18 +26,31 @@
         <input type="text" placeholder="Entrer votre ID" name="id_user" required>
 
         <label><b>email d'utilisateur</b></label>
-        <input type="text" placeholder="Entrer votre email" name="id_user" required>
+        <input type="text" placeholder="Entrer votre email" name="email_user" required>
 
         <label><b>Name d'utilisateur</b></label>
-        <input type="text" placeholder="Entrer votre name" name="id_user" required>
+        <input type="text" placeholder="Entrer votre name" name="name_user" required>
 
 
         <label><b>First name d'utilisateur</b></label>
-        <input type="text" placeholder="Entrer votre first name" name="id_user" required>
+        <input type="text" placeholder="Entrer votre first name" name="fname_user" required>
 
         <label><b>departement d'utilisateur</b></label>
         <input type="text" placeholder="Entrer votre departement" name="id_dep" required>
+        <?php
 
+        // require('../src/Controller/departementController.php');
+
+
+        // $pol = GetDepartementController($pdo);
+        // var_dump($pol);
+
+
+        ?>
+        <!-- <select name="id_job" id="id_job">
+            <option value="">--Please choose an option--</option>
+
+        </select> -->
         <label><b>Mot de passe</b></label>
         <input type="password" placeholder="Entrer le mot de passe" name="pwd_user" required>
 
