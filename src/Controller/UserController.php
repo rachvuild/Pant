@@ -11,8 +11,8 @@ function ConnectionUser(
     //get id and password of user in form connexion.html
 
     // is for hash password
-    //  $pwd_user = hash( $id_user, $pwd_user);
-    // echo $pwd_user;
+    $pwd_user = hash($id_user, $pwd_user);
+    // // echo $pwd_user;
 
     //get  user in data base
     $connection_user = "SELECT * FROM `user` WHERE id_user ='$id_user' AND pwd_user ='$pwd_user'";
@@ -49,16 +49,13 @@ function RegisterUser(
     $email_user,
     $name_user,
     $fname_user,
-    $arddress_user,
-    $pc_user,
-    $city_user,
     $pwd_user
 ) {
 
     $pwd_user = hash($id_user, $pwd_user);
     $register_user = "
-    INSERT INTO `user`(`id_job`,`id_user`, `mail_user`, `name_user`, `fname_user`, `address_user`, `pc_user`, `city_user`, `pwd_user`) 
-    VALUES ($id_job,$id_user,$email_user,$name_user,$fname_user,$arddress_user,$pc_user,$city_user, $pwd_user)
+    INSERT INTO `user`(`id_job`,`id_user`, `mail_user`, `name_user`, `fname_user`, `pwd_user`) 
+    VALUES ($id_job,$id_user,$email_user,$name_user,$fname_user, $pwd_user)
     ";
 
     $register_user = $pdo->prepare($register_user);
