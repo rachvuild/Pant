@@ -79,7 +79,7 @@ function Getuser($pdo)
 
 
 // ============================================================================== //
-
+// Insert client in database
 function RegisterClient(
     $pdo,
     $pc,
@@ -97,4 +97,45 @@ function RegisterClient(
     $register_clients->execute();
     $register_clients->fetchAll();
     }
+}
+
+
+// ============================================================================== //
+// Update client in database
+function UpdateClient(
+    $pdo,
+    $id_client,
+    $pc,
+    $city,
+    $address,
+    $phone,
+    $label
+){
+    if (isset($_POST['UPDATE_CLIENT'])){
+        $update_client = "UPDATE client SET ";
+        if (!empty ($pc))
+        {
+            $update_client = $update_client."pc_client= '".$pc."',";
+        }
+        if (!empty ($city))
+        {
+            $update_client = $update_client."city_client= '".$city."',";
+        }
+        if (!empty ($age))
+        {
+            $update_client = $update_client."address_client= ".$address.",";
+        }
+        if (!empty ($mail))
+        {
+            $update_client = $update_client."phone_client= '".$phone."',";
+        }
+        if (!empty ($tel))
+        {
+            $update_client = $update_client."label_client= '".$label."',";
+        }
+        $update_client = substr($update_client,0,-1)." WHERE id_client=".$id_client;
+        echo $update_client;
+        $update_client=$pdo->prepare($update_client);
+        $update_client->execute();
+}
 }
