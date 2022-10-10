@@ -6,5 +6,5 @@ while ($department = $reponse->fetch()){
     $d=$department['id_dep'];
 $reponse->closeCursor();}
 // display team of user
-$request="SELECT mail_user, name_user, fname_user, id_user FROM `user` WHERE id_dep=69;";
+$request="SELECT mail_user, name_user, fname_user, id_user FROM `user` WHERE id_dep=38;";
 $req = $pdo->prepare($request);

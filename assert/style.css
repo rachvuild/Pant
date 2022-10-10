@@ -19,7 +19,14 @@ html {
 }
 
 .input-none {
+    z-index: -;
+    transform: translateY(-20%);
+    background-color: rgba(199, 0, 0, 0);
+    position: relative;
     border: none;
+    border-radius: 3em;
+    height: 170%;
+    width: 100%;
 }
 
 .input-connexion {
