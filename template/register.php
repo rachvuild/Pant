@@ -10,6 +10,11 @@
 
 <body>
     <form action="../src/Entity/Register.php" method="post">
+        <?php
+        session_start();
+        echo $_SESSION['id_user'];
+
+        ?>
         <h1>Register</h1>
 
         <label for="id_job">Choose a job:</label>
@@ -44,26 +49,8 @@
         <label><b>Mot de passe</b></label>
         <input type="password" placeholder="Entrer le mot de passe" name="pwd_user" required>
 
-        <input type="submit" id='submit' value='REGISTER' name='REGISTER'>
+        <input type="submit" id='submit' value='REGISTER_USER' name='REGISTER_USER'>
     </form>
-    <?php
-
-    // require('../src/Controller/departementController.php');
-
-
-    // $pol = GetDepartementController($pdo);
-    // var_dump($pol);
-    $pwd_user = 13;
-    $pwd_user2 = md5($pwd_user);
-    $pwd_user3 = md5($pwd_user);
-    $pwd_user = password_hash($pwd_user, PASSWORD_DEFAULT);
-    $pwd_user1 = password_hash($pwd_user, PASSWORD_DEFAULT);
-    echo " $pwd_user<br>";
-    echo " $pwd_user1<br>";
-    echo " $pwd_user2<br>";
-    echo " $pwd_user3<br>";
-
-    ?>
 
 </body>
 
