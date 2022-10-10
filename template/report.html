@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="../src/Entity/Client.php" method="post">
+        <fieldset>
+            <legend>Compte rendu</legend>
+
+            <label for="id_user">ID Visiteur :</label>
+            <input type="text" name="id_user">
+
+            <label for="id_client">ID Client :</label>
+            <input type="text" name="id_client">
+
+            <label for="summary">Compte rendu :</label>
+            <input type="text" name="summary">
+            
+            <label for="interest">Choix :</label>
+            <select id="choice">
+                <option value="">Revoir le client ?</option>
+                <option value="choice">Oui</option>
+                <option value="choice">Non</option>
+            </select>
+
+            <input type="submit" value="REPORT" name="REPORT">
+        </fieldset>
+    </form>
+</body>
+</html>

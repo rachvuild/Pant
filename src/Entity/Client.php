@@ -20,7 +20,7 @@ if (isset($_POST['REGISTER_CLIENT'])){
     );
 }
 
-if (isset($_POST['UPDATE_CLIENT']))
+if (isset($_POST['UPDATE_CLIENT'])){
     $pdo = ConnexionBdd();
     // Get data from registerClient.html form
     $id_client = $_POST['id'];
@@ -38,3 +38,22 @@ if (isset($_POST['UPDATE_CLIENT']))
         $phone,
         $label
     );
+}
+   
+
+if (isset($_POST['REPORT'])){
+    $pdo = ConnexionBdd();
+    // Get data from registerClient.html form
+    $id_user = $_POST['id_user'];
+    $id_client = $_POST['id_client'];
+    $summary = $_POST['summary'];
+    $choice = $_POST['choice'];
+    Report(
+        $pdo,  
+        $id_user,
+        $id_client,
+        $summary,
+        $choice
+    );
+}
+    
