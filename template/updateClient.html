@@ -7,12 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="../src/Entity/registerClient.php" method="post">
+    <form action="../src/Entity/Client.php" method="post">
         <fieldset>
-            <legend>Modification de données client</legend>
+            <legend>Modification de client</legend>
 
-            <label for="id">Saisir identifiant client :</label>
-            <input type="text" name="id"></input>
+            <label for="">ID Client :</label>
+            <input type="text" name="id">
 
             <label for="pc"> Code postal :</label>
             <input type="text" name="pc">
@@ -29,10 +29,7 @@
             <label for="label">Label :</label>
             <input type="text" name="label">
 
-            <label for="comment">Commentaire :</label>
-            <input type="text" name="comment">
-
-            <input type="submit" value="Envoyer">
+            <input type="submit" value="UPDATE_CLIENT" name="UPDATE_CLIENT">
         </fieldset>
     </form>
 </body>

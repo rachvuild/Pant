@@ -8,14 +8,12 @@
 </head>
 <body>
 <table>
-        <caption>Mon équipe</caption>
+        <caption>Compte rendu</caption>
         <thead>
             <tr>
-                <th>Mail</th>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Prendre rendez-vous</th>
-                <th>Compte rendu</th>
+                <th>date</th>
+                <th>heure</th>
+                <th>détail</th>
             </tr>
         </thead>
         <tbody>
@@ -27,18 +25,10 @@
                         echo "<tr>
                         <td>".$ligne[0]."</td>
                         <td>".$ligne[1]."</td>
-                        <td>".$ligne[2]."</td>
                         <td><form method='post' action='affichage.php'>
                         <p>
-                            <input type='text' name='id_user' id='id_user' value='".$ligne[3]."' hidden /><br/>               
-                            <input type='submit' value='RDV' />
-                            
-                        </p>
-                        </form></td>
-                        <td><form method='post' action='report.php'>
-                        <p>
-                            <input type='text' name='id_user' id='id_user' value='".$ligne[3]."' hidden /><br/>               
-                            <input type='submit' value='compte rendu' />
+                            <input type='text' name='id_report' id='id_report' value='".$ligne[2]."' hidden /><br/>               
+                            <input type='submit' value='détail' />
                             
                         </p>
                         </form></td>
