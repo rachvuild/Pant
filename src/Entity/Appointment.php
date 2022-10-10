@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php
+require "../ConnectionBdd.php";
+$db = ConnexionBdd();
+
+$date = $_POST['date'];
+$plageHoraire = $_POST['horaire'];
+$idClient = $_POST['client'];
+
+echo "$date $plageHoraire $idClient";
+
+$rdv = "INSERT INTO `appointment`(`date_appoint`, `hour_appoint`, `id_user`, `id_client`) VALUES ('[$date]','[$plageHoraire]','[$idClient]','[p.boyer]')";
+$newAppoint = $db->prepare($rdv);
+$newAppoint -> execute();
