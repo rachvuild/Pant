@@ -139,23 +139,3 @@ function UpdateClient(
         $update_client->execute();
 }
 }
-
-
-// ============================================================================== //
-// Insertion of report
-function Report(
-    $pdo,
-    $id_user,
-    $id_client,
-    $summary,
-    $choice
-){
-    if(isset($_POST['REPORT'])){
-        $register_summary = "INSERT INTO `report`(`summary_report`, `interest_report`) 
-        VALUES ('$summary','$choice') WHERE ('id_client'=$id_client', 'id_user=$id_user')";
-        
-        $register_summary = $pdo->prepare($register_summary);
-        $register_summary->execute();
-        $register_summary->fetchAll();
-        }
-}
