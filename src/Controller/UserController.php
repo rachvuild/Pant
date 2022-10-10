@@ -76,3 +76,25 @@ function Getuser($pdo)
     // $recipes = $connection_user->fetchAll();
     // var_dump($recipes);
 }
+
+
+// ============================================================================== //
+
+function RegisterClient(
+    $pdo,
+    $pc,
+    $city,
+    $address,
+    $phone,
+    $label
+) {
+    if (isset($_POST['REGISTER_CLIENT'])){
+    // Insert data in client table
+    $register_clients = "INSERT INTO `client`(`pc_client`, `city_client`, `address_client`, `phone_client`, `label_client`)
+    VALUES ('$pc','$city','$address','$phone','$label')";
+
+    $register_clients = $pdo->prepare($register_clients);
+    $register_clients->execute();
+    $register_clients->fetchAll();
+    }
+}
