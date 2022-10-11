@@ -10,26 +10,48 @@ html {
     display: flex;
     width: 100vw;
     height: 100vh;
-
 }
+
+
 
 .form-connexion {
     width: 80%;
     height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .input-none {
-    z-index: -;
-    transform: translateY(-20%);
-    background-color: rgba(199, 0, 0, 0);
+    background-color: rgba(240, 248, 255, 0);
+    outline: none;
+    transform: translateY(-29%);
     position: relative;
     border: none;
     border-radius: 3em;
-    height: 170%;
+    height: 200%;
     width: 100%;
 }
 
+.submit-connexion {
+    width: 20%;
+    height: 10%;
+    background-color: #83a4cf;
+    border-radius: 3em;
+    border: none;
+    color: rgb(240, 248, 255);
+    transition: all 0.75s;
+}
+
+.submit-connexion:hover {
+    background-color: rgb(240, 248, 255);
+    border: solid 2px #83a4cf;
+    color: #83a4cf;
+}
+
 .input-connexion {
+    margin: 2%;
+
     width: 100%;
     height: 10%;
     /* border: none; */
@@ -38,6 +60,7 @@ html {
 
 .connexion {
     display: flex;
+
     align-items: center;
     justify-content: center;
     width: 50%;
