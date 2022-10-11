@@ -11,39 +11,36 @@
         <caption>Mon équipe</caption>
         <thead>
             <tr>
-                <th>Mail</th>
+                <th>Numéro département</th>
+                <th>nom département</th>
+                <th>mail</th>
                 <th>Nom</th>
                 <th>Prénom</th>
-                <th>Prendre rendez-vous</th>
                 <th>Compte rendu</th>
             </tr>
         </thead>
         <tbody>
             <?php
-                if ($req->execute())
+                if ($reqd->execute())
                 {
-                    foreach ($pdo->query($request) AS $ligne)
+                    foreach ($pdo->query($requestd) AS $ligne)
                     {
                         echo "<tr>
                         <td>".$ligne[0]."</td>
                         <td>".$ligne[1]."</td>
                         <td>".$ligne[2]."</td>
+                        <td>".$ligne[3]."</td>
+                        <td>".$ligne[4]."</td>
                         <td><form method='post' action='affichage.php'>
                         <p>
-                            <input type='text' name='id_user' id='id_user' value='".$ligne[3]."' hidden /><br/>               
-                            <input type='submit' value='RDV' />
-                            
-                        </p>
-                        </form></td>
-                        <td><form method='post' action='report.php'>
-                        <p>
-                            <input type='text' name='id_user' id='id_user' value='".$ligne[3]."' hidden /><br/>               
-                            <input type='submit' value='compte rendu' />
+                            <input type='text' name='id_user' id='id_user' value='".$ligne[5]."' hidden /><br/>               
+                            <input type='submit' value='Compte rendu' />
                             
                         </p>
                         </form></td>
                         </tr>";
                     }
+                    $reqd->closeCursor();
                 }
             ?>
         </tbody>
