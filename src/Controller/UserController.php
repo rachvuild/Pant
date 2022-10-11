@@ -137,5 +137,21 @@ function UpdateClient(
         echo $update_client;
         $update_client=$pdo->prepare($update_client);
         $update_client->execute();
+    }
 }
+
+
+// ============================================================================== //
+// Insert report in database
+function RegisterReport(
+    $pdo,
+    $id_user,
+    $id_client,
+    $summary,
+    $interest
+){
+    if(isset($_POST['REGISTER_REPORT'])){
+        $report_client = "INSERT INTO `report`(`id_report`, `summary_report`, `interest_report`, `id_client`, `id_user`, `date_appoint`, `hour_appoint`, `id_appoint`) 
+        VALUES ('[value-1]','$summary','$interest','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]')";
+    }
 }
