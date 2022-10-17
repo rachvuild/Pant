@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 function ConnectionUser(
 
@@ -11,7 +12,7 @@ function ConnectionUser(
 
         // is for hash password
         $pwd_user = md5($pwd_user);
-        echo $pwd_user;
+        // echo $pwd_user;
         // // echo $pwd_user;
 
         //get  user in data base
@@ -21,25 +22,27 @@ function ConnectionUser(
         $recipes = $connection_user->fetchAll();
 
         // get element roles of user
-        $roles_user = $recipes[0][0];
-
+        // var_dump($recipes);
+        // echo $roles_user;
 
         //check if there is a return from the database to know if there is a connection
         if ($recipes != null) {
-
+            $roles_user = $recipes[0]["id_job"];
             echo "connexion bon";
-
+            $_SESSION["id_user"] = $id_user;
+            $_SESSION["roles_user"] = $roles_user;
             //returns a view according to the roles
             if ($roles_user == 1) {
-                return fopen('../../tamplate/session/visitor.html', 'r');
+                header('refresh:0; url=../../template/connect.php');
                 // echo "polop";
             } elseif ($roles_user == 2) {
-                return fopen('../../tamplate/session/visitor.html', 'r');
+                header('refresh:0; url=../../template/connect.php');
             } elseif ($roles_user == 3) {
-                // return fopen('manager.html');
+                header('refresh:0; url=../../template/connect.php');
             }
         } else {
-            echo "mot de passe ou id n'est pas bon";
+            echo "mot de passe ou id n'est pas bon <br>
+            <a href='../../template/connexion.php'> Reconnectez vous</a>";
         }
     }
 }
@@ -88,14 +91,14 @@ function RegisterClient(
     $phone,
     $label
 ) {
-    if (isset($_POST['REGISTER_CLIENT'])){
-    // Insert data in client table
-    $register_clients = "INSERT INTO `client`(`pc_client`, `city_client`, `address_client`, `phone_client`, `label_client`)
+    if (isset($_POST['REGISTER_CLIENT'])) {
+        // Insert data in client table
+        $register_clients = "INSERT INTO `client`(`pc_client`, `city_client`, `address_client`, `phone_client`, `label_client`)
     VALUES ('$pc','$city','$address','$phone','$label')";
 
-    $register_clients = $pdo->prepare($register_clients);
-    $register_clients->execute();
-    $register_clients->fetchAll();
+        $register_clients = $pdo->prepare($register_clients);
+        $register_clients->execute();
+        $register_clients->fetchAll();
     }
 }
 
@@ -110,32 +113,27 @@ function UpdateClient(
     $address,
     $phone,
     $label
-){
-    if (isset($_POST['UPDATE_CLIENT'])){
+) {
+    if (isset($_POST['UPDATE_CLIENT'])) {
         $update_client = "UPDATE client SET ";
-        if (!empty ($pc))
-        {
-            $update_client = $update_client."pc_client= '".$pc."',";
+        if (!empty($pc)) {
+            $update_client = $update_client . "pc_client= '" . $pc . "',";
         }
-        if (!empty ($city))
-        {
-            $update_client = $update_client."city_client= '".$city."',";
+        if (!empty($city)) {
+            $update_client = $update_client . "city_client= '" . $city . "',";
         }
-        if (!empty ($age))
-        {
-            $update_client = $update_client."address_client= ".$address.",";
+        if (!empty($age)) {
+            $update_client = $update_client . "address_client= " . $address . ",";
         }
-        if (!empty ($mail))
-        {
-            $update_client = $update_client."phone_client= '".$phone."',";
+        if (!empty($mail)) {
+            $update_client = $update_client . "phone_client= '" . $phone . "',";
         }
-        if (!empty ($tel))
-        {
-            $update_client = $update_client."label_client= '".$label."',";
+        if (!empty($tel)) {
+            $update_client = $update_client . "label_client= '" . $label . "',";
         }
-        $update_client = substr($update_client,0,-1)." WHERE id_client=".$id_client;
+        $update_client = substr($update_client, 0, -1) . " WHERE id_client=" . $id_client;
         echo $update_client;
-        $update_client=$pdo->prepare($update_client);
+        $update_client = $pdo->prepare($update_client);
         $update_client->execute();
     }
 }
@@ -149,8 +147,8 @@ function RegisterReport(
     $id_client,
     $summary,
     $interest
-){
-    if(isset($_POST['REGISTER_REPORT'])){
+) {
+    if (isset($_POST['REGISTER_REPORT'])) {
         $report_client = "INSERT INTO `report`(`id_report`, `summary_report`, `interest_report`, `id_client`, `id_user`, `date_appoint`, `hour_appoint`, `id_appoint`) 
         VALUES ('[value-1]','$summary','$interest','[value-4]','[value-5]','[value-6]','[value-7]','[value-8]')";
     }
