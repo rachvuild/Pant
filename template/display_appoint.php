@@ -22,7 +22,7 @@
                     <tbody>
                         <td>".$ligne[1]."</td>
                         <td>
-                            <form method='post' action='report.php'>
+                            <form method='post' action='sampleController.php'>
                             <p>
                                 <input type='date' name='date_appoint' id='date_appoint' value='".$ligne[0]."' hidden /><br/>
                                 <input type='time' name='hour_appoint' id='hour_appoint' value='".$ligne[1]."' hidden /><br/>
