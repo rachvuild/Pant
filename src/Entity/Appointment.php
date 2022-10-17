@@ -1,6 +1,5 @@
 <?php
 if (isset($_POST['envoyer'])) {
-    $id_user = $_POST['id_user'];
 
     $date = $_POST['date'];
     $timestamp = $_POST['horaire'];

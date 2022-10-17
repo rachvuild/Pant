@@ -11,7 +11,7 @@
         <fieldset>
             <legend>Prise de Rendez-Vous</legend>
             <label for="">Entrez l' ID du client: </label><input type="text" name="client" ><br/>
-            <label for="">Choissisez une Date : </label><input type="date" name="date" ><br/>
+            <label for="">Choissisez une Date : </label><input type="date" name="date"><br/>
             <label for="">Choissisez une Plage Horaire : </label> <select name="horaire" id="PlageHoraire">
                 <option value="" selected> Plage Horaire</option>
                 <option value="matin">Matinée</option>
