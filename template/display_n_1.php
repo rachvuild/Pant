@@ -28,7 +28,7 @@
                         <td>".$ligne[0]."</td>
                         <td>".$ligne[1]."</td>
                         <td>".$ligne[2]."</td>
-                        <td><form method='post' action='affichage.php'>
+                        <td><form method='post' action='takeAppoint.php'>
                         <p>
                             <input type='text' name='id_user' id='id_user' value='".$ligne[3]."' hidden /><br/>               
                             <input type='submit' value='RDV' />

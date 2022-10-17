@@ -1,29 +1,27 @@
 <?php
-require "../ConnectionBdd.php";
-$db = ConnexionBdd();
+if (isset($_POST['envoyer'])) {
+    $id_user = $_POST['id_user'];
 
-$date = $_POST['date'];
-$timestamp = $_POST['horaire'];
-$idClient = $_POST['client'];
+    $date = $_POST['date'];
+    $timestamp = $_POST['horaire'];
+    $idClient = $_POST['client'];
 
-echo "$date $timestamp $idClient";
+    if ($date != NULL && $timestamp != NULL && $idClient != NULL) {
+        $db = ConnexionBdd();
 
-$test = $db -> prepare("SELECT `date_appoint`, `hour_appoint` FROM `appointment` WHERE `id_user` = 't.letoublon' ");
-$test -> execute();
-$testAppoint = $test -> fetchAll();
+        $test = $db->prepare("SELECT `date_appoint`, `hour_appoint` FROM `appointment` WHERE `id_user` = '$id_user' ");
+        $test->execute();
+        $testAppoint = $test->fetchAll();
 
-print_r($testAppoint);
 
-$testRech = array_search($date, $testAppoint);
-echo '<br/>'.$testRech;
 
-if (array_search($date, $testAppoint)!=NULL && array_search($timestamp, $testAppoint)!=NULL) {
-    $rdv = "INSERT INTO `appointment` (`id_appoint`, `date_appoint`, `hour_appoint`, `id_user`, `id_client`) VALUES (NULL, '$date', '$timestamp', 't.letoublon', '$idClient'); ";
-    $newAppoint = $db->prepare($rdv);
-    $newAppoint -> execute();
+        if (array_search($date, $testAppoint) == NULL && array_search($timestamp, $testAppoint) == NULL) {
+            $rdv = "INSERT INTO `appointment` (`id_appoint`, `date_appoint`, `hour_appoint`, `id_user`, `id_client`) VALUES (NULL, '$date', '$timestamp', '$id_user', '$idClient'); ";
+            $newAppoint = $db->prepare($rdv);
+            $newAppoint->execute();
+            echo "Rendez vous enregistré";
+        } else {
+            echo "Plage déjà utilisé";
+        }
+    } else echo "Veuillez remplir tous les champs";
 }
-else {
-    echo "Plage déjà utilisé";
-}
-
-

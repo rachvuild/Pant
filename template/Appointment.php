@@ -7,7 +7,7 @@
     <title>Appointment</title>
 </head>
 <body>
-    <form method="post" action="../src/Entity/Appointment.php">
+    <form method="post" action="takeAppoint.php">
         <fieldset>
             <legend>Prise de Rendez-Vous</legend>
             <label for="">Entrez l' ID du client: </label><input type="text" name="client" ><br/>
@@ -17,6 +17,7 @@
                 <option value="matin">Matinée</option>
                 <option value="aprem">Après-Midi</option>
             </select> <br/>
+            <input type='text' name='id_user' id='id_user' value= <?php echo $id_user; ?>  hidden />
             <input type="submit" name="envoyer" value="OK"/>
 
         </fieldset>
