@@ -10,5 +10,5 @@ $pastdate="SELECT date_appoint, hour_appoint, id_appoint, id_user, id_client FRO
 $past = $pdo->prepare($pastdate);
 
 //print all futur appointment of the user
-$futurdate="SELECT date_appoint, hour_appoint FROM `appointment` WHERE id_user='a.dochez' AND date_appoint>'$date'";
+$futurdate="SELECT date_appoint, hour_appoint, id_client FROM `appointment` WHERE id_user='a.dochez' AND date_appoint>'$date'";
 $futur = $pdo->prepare($futurdate);

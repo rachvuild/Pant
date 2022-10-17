@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Rendez-vous passez</h1>
 <?php
     if ($past->execute())
     {
@@ -36,6 +37,31 @@
                     </tbody>
                 </table>";}};
 ?>      
-
+<h1>Rendez-vous à venir</h1>
+<?php
+    if ($futur->execute())
+    {
+        foreach ($pdo->query($futurdate) AS $ligne)
+        {
+            echo "
+                <table>
+                    <thead>
+                        <tr>
+                            <th>".$ligne[0]."</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <td>".$ligne[1]."</td>
+                        <td>
+                            <form method='post' action='sampleController.php'>
+                            <p>
+                                <input type='number' name='id_client' id='id_client' value='".$ligne[2]."' hidden /><br/>                
+                                <input type='submit' value='Info client' />
+                                
+                            </p>
+                            </form>
+                    </tbody>
+                </table>";}};
+?>      
 </body>
 </html>
