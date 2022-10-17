@@ -3,6 +3,11 @@ html {
     padding: 0;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 
 .body-connexion {
     padding: 0;
@@ -65,4 +70,30 @@ html {
     justify-content: center;
     width: 50%;
     height: 100%;
+}
+
+.parent {
+    padding: 0;
+    margin: 0;
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: repeat(2, 50vw);
+    grid-template-rows: repeat(2, 50vh);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 2 / 2;
+    background-color: #83a4cf;
+}
+
+.div2 {
+    grid-area: 2 / 1 / 3 / 2;
+    background-color: aquamarine;
+}
+
+.div3 {
+    grid-area: 1 / 2 / 3 / 3;
+    background-color: burlywood;
 }
