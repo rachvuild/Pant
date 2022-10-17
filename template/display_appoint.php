@@ -8,9 +8,9 @@
 </head>
 <body>
 <?php
-    if ($req->execute())
+    if ($past->execute())
     {
-        foreach ($pdo->query($request) AS $ligne)
+        foreach ($pdo->query($pastdate) AS $ligne)
         {
             echo "
                 <table>
@@ -21,8 +21,21 @@
                     </thead>
                     <tbody>
                         <td>".$ligne[1]."</td>
+                        <td>
+                            <form method='post' action='report.php'>
+                            <p>
+                                <input type='date' name='date_appoint' id='date_appoint' value='".$ligne[0]."' hidden /><br/>
+                                <input type='time' name='hour_appoint' id='hour_appoint' value='".$ligne[1]."' hidden /><br/>
+                                <input type='number' name='id_appoint' id='id_appoint' value='".$ligne[2]."' hidden /><br/>
+                                <input type='text' name='id_user' id='id_user' value='".$ligne[3]."' hidden /><br/>
+                                <input type='number' name='id_client' id='id_client' value='".$ligne[4]."' hidden /><br/>                
+                                <input type='submit' value='compte rendu' />
+                                
+                            </p>
+                            </form>
                     </tbody>
-                </table>";}}
+                </table>";}};
 ?>      
+
 </body>
 </html>
