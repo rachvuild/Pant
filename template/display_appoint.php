@@ -53,7 +53,7 @@
                     <tbody>
                         <td>".$ligne[1]."</td>
                         <td>
-                            <form method='post' action='sampleController.php'>
+                            <form method='post' action='controler_info_client.php'>
                             <p>
                                 <input type='number' name='id_client' id='id_client' value='".$ligne[2]."' hidden /><br/>                
                                 <input type='submit' value='Info client' />
