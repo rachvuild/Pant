@@ -10,4 +10,6 @@ if (isset($_POST['LOGIN'])) {
         $id_user,
         $pwd_user
     );
+} else {
+    echo " <a href='../../template/connexion.php'> vous devait revire sur le page principale</a>";
 }
