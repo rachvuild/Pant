@@ -7,5 +7,5 @@ $day=date('d');
 $date=$years."-".$month."-".$day;
 
 //print all futur appointment of the user
-$futurdate="SELECT date_appoint, hour_appoint, id_client FROM `appointment` WHERE id_user='a.dochez' AND date_appoint>'$date'";
+$futurdate="SELECT date_appoint, hour_appoint, id_client FROM `appointment` WHERE id_user='$id_user' AND date_appoint>'$date'";
 $futur = $pdo->prepare($futurdate);
