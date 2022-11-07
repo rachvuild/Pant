@@ -19,8 +19,12 @@
                         <tr>
                             <th>".$ligne[0]."</th>
                         </tr>
-                    </thead>
+                    </thead>";
+            $pastd=Dayspast($ligne[0], $id_user, $pdo);
+            foreach($pastd AS $ligne){
+                echo "
                     <tbody>
+                        <td>".$ligne[5]."</td>
                         <td>".$ligne[1]."</td>
                         <td>
                             <form method='post' action='sampleController.php'>
@@ -35,7 +39,7 @@
                             </p>
                             </form>
                     </tbody>
-                </table>";}};
+                </table>";};}}
 ?>      
 </body>
 </html>

@@ -19,19 +19,26 @@
                         <tr>
                             <th>".$ligne[0]."</th>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <td>".$ligne[1]."</td>
+                    </thead>";
+            $futurd=Days($ligne[0], $id_user, $pdo);
+            foreach($futurd AS $ligne){
+                echo "
+                <tbody>
+                        <td>".$ligne[2]."</td>
+                        <td>".$ligne[0]."</td>
                         <td>
                             <form method='post' action='controler_info_client.php'>
                             <p>
-                                <input type='number' name='id_client' id='id_client' value='".$ligne[2]."' hidden /><br/>                
+                                <input type='number' name='id_client' id='id_client' value='".$ligne[1]."' hidden /><br/>                
                                 <input type='submit' value='Info client' />
                                 
                             </p>
                             </form>
                     </tbody>
-                </table>";}};
+                </table>";};
+                
+            }}
+                    
 ?>      
 </body>
 </html>
