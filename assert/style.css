@@ -88,12 +88,12 @@ body {
     background-color: #83a4cf;
 }
 
-.div2 {
+.conterondu {
     grid-area: 2 / 1 / 3 / 2;
     background-color: aquamarine;
 }
 
-.div3 {
+.RdvEnCour {
     grid-area: 1 / 2 / 3 / 3;
     background-color: burlywood;
 }
