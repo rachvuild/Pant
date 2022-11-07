@@ -2,7 +2,6 @@
 session_start();
 
 function ConnectionUser(
-
     $pdo,
     $id_user,
     $pwd_user

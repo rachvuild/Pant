@@ -83,7 +83,7 @@ body {
     grid-row-gap: 0px;
 }
 
-.div1 {
+.PriseRDV {
     grid-area: 1 / 1 / 2 / 2;
     background-color: #83a4cf;
 }
