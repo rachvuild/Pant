@@ -11,6 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 
@@ -103,4 +104,5 @@ body {
 .RdvEnCour {
     grid-area: 1 / 2 / 3 / 3;
     background-color: burlywood;
+    /* height: 100vh; */
 }

@@ -1,3 +1,11 @@
+<?php
+session_start();
+// $id_user = $_SESSION["id_user"];
+$id_user = "a.dochez";
+require('../ConnectionBdd.php');
+$pdo = ConnexionBdd();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,23 +18,32 @@
 </head>
 
 <body>
-    <div class="PriseRDV">
+    <div class="parent">
 
-        <?php
-        require('take');
-        ?>
+        <div class="PriseRDV">
+            <?php
+
+            require "../../template/Appointment.php";
+            require "../Entity/Appointment.php";
+
+            ?>
+        </div>
+        <div class="conterondu">
+            <?php
+            require('../Entity/list_appoint_past.php');
+            require('../../template/display_appoint_past.php');
+            ?>
+        </div>
+        <div class="RdvEnCour">
+            <?php
+            require('../Entity/list_appoint_futur.php');
+            require('../../template/display_appoint_futur.php');
+            ?>
+        </div>
+
+
+
     </div>
-    <?php
-    require('');
-    ?>
-    </div>
-    <?php
-    require('');
-    ?>
-    </div>
-
-
-
 
 </body>
 

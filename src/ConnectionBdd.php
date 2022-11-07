@@ -6,6 +6,6 @@ function ConnexionBdd()
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
-    echo ("Connection réussi</br>");
+    // echo ("Connection réussi</br>");
     return $pdo;
 }
