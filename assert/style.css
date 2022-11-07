@@ -6,6 +6,11 @@ html {
 body {
     margin: 0;
     padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -75,17 +80,19 @@ body {
 .parent {
     padding: 0;
     margin: 0;
+    width: 98.5%;
+    height: 98%;
     background-color: aqua;
     display: grid;
-    grid-template-columns: repeat(2, 50vw);
-    grid-template-rows: repeat(2, 50vh);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(3, 50%);
+    grid-column-gap: 0;
+    grid-row-gap: 0;
 }
 
 .PriseRDV {
     grid-area: 1 / 1 / 2 / 2;
-    background-color: #83a4cf;
+    background-color: #0e50a6;
 }
 
 .conterondu {
