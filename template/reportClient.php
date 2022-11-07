@@ -7,40 +7,46 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="../Entity/registerReport.php" method="post">
         <fieldset>
+            <fieldset>
             <legend>Echantillons donnés</legend>
             <p> Indiquez la référence et le nombre d'échantillon donnés : <br/>
             <?php
                 if ($sample_req->execute()){
                     foreach ($pdo->query($sample) AS $ligne){
                         echo 
-                            "<input type='checkbox' name='".$ligne[0]."' id='".$ligne[1]."'> 
+                            "<input type='checkbox' name='".$ligne[0]."' id='".$ligne[0]."'> 
                             <label for='".$ligne[0]."'>".$ligne[1]."</label><br/>
 
                             <label for='".$ligne[1]."'>nombre donné :</label>
-                            <input type='number' name'".$ligne[1]."' id='".$ligne[1]."'><br/>";
+                            <input type='number' name='".$ligne[1]."' id='".$ligne[1]."'><br/>";
                     }
                 }
             ?>
+            </fieldset>
+            
             </p>
-
+            <fieldset>
             <legend>Création de compte rendu client</legend>
 
-            <label for="id_client">ID Client :</label>
-            <input type="text" name="id_client">
+                <input type='date' name='date_appoint' id='date_appoint' value='<?= $_POST['date_appoint']?>' hidden /><br/>
+                <input type='time' name='hour_appoint' id='hour_appoint' value='<?= $_POST['hour_appoint']?>' hidden /><br/>
+                <input type='number' name='id_appoint' id='id_appoint' value='<?= $_POST['id_appoint']?>' hidden /><br/>
+                <input type='text' name='id_user' id='id_user' value='<?= $_POST['id_user']?>' hidden /><br/>
+                <input type='number' name='id_client' id='id_client' value='<?= $_POST['id_client']?>' hidden /><br/>                
 
-            <label for="id_user">ID User</label>
-            <input type="text" name="id_user">
+                <label for="summary">Compte rendu :</label>
+                <textarea name="summary" cols="30" rows="10"></textarea>
 
-            <label for="summary">Compte rendu :</label>
-            <input type="text" name="summary">
+                <label for="interest">Clients toujours intéressé ?</label>
+                <input type="text" name="interest">
 
-            <label for="interest">Clients toujours intéressé ?</label>
-            <input type="text" name="interest">
-
-            <input type="submit" value="REPORT_CLIENT" name="REPORT_CLIENT">
+                <input type="submit" value="REPORT_CLIENT" name="REPORT_CLIENT">
+            </fieldset>
+            
         </fieldset>
     </form>
+    <?= $_POST['id_user']; ?>
 </body>
 </html>
