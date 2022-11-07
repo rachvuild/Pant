@@ -1,6 +1,6 @@
 <?php
 require('../ConnectionBdd.php');
-require('../Controller/UserController.php');
+require('../Entity/User_entity.php');
 $pdo = ConnexionBdd();
 if (isset($_POST['LOGIN'])) {
     $id_user = $_POST['id_user'];
