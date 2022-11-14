@@ -18,7 +18,7 @@ if (isset($_POST['envoyer'])) {
             $rdv = "INSERT INTO `appointment` (`id_appoint`, `date_appoint`, `hour_appoint`, `id_user`, `id_client`) VALUES (NULL, '$date', '$timestamp', '$id_user', '$idClient'); ";
             $newAppoint = $db->prepare($rdv);
             $newAppoint->execute();
-            echo "<script> alert('article ajouté'); </script>";
+            echo "<script> alert('rdv ajouté'); </script>";
         } else {
             echo "Plage déjà utilisé";
         }
