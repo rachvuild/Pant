@@ -29,15 +29,13 @@
                         <td>
                             <form method='post' action='sampleController.php'>
                             <p>
-                                <input type='date' name='date_appoint' id='date_appoint' value='" . $ligne[0] . "' hidden /><br/>
-                                <input type='time' name='hour_appoint' id='hour_appoint' value='" . $ligne[1] . "' hidden /><br/>
                                 <input type='number' name='id_appoint' id='id_appoint' value='" . $ligne[2] . "' hidden /><br/>
                                 <input type='text' name='id_user' id='id_user' value='" . $ligne[3] . "' hidden /><br/>
                                 <input type='number' name='id_client' id='id_client' value='" . $ligne[4] . "' hidden /><br/>                
                                 <input type='submit' value='compte rendu' />
                                 
                             </p>
-                            </form>
+                            </form></td>
                     </tbody>
                 </table>";
             };
