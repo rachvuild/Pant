@@ -35,6 +35,6 @@
                         <td>".$ligne[5]."</td>
                         <td>".$ligne[6]."</td>
                     </tbody>
-                </table>";}};
+                </table>";}}
 ?> 
-</body>;    
+</body>   
