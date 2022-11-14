@@ -38,11 +38,14 @@
                 <textarea name="summary" cols="30" rows="10"></textarea>
 
                 <label for="interest">Clients toujours intéressé ?</label>
-                <input type="text" name="interest">
-
-                <input type="submit" value="REPORT_CLIENT" name="REPORT_CLIENT">
+                <select name="interest" id="">
+                    <option value="Pas intéréssé">Pas intéressé</option>
+                    <option value="Intéressé à revoir">Intéressé à revoir</option>
+                    <option value="Très intéréssé">Très intéressé</option>
+                </select>
             </fieldset>
             
+            <input type="submit" value="REPORT_CLIENT" name="REPORT_CLIENT">
         </fieldset>
     </form>
     <?= $_POST['id_user']; ?>
