@@ -30,8 +30,6 @@
             <fieldset>
             <legend>Création de compte rendu client</legend>
 
-                <input type='date' name='date_appoint' id='date_appoint' value='<?= $_POST['date_appoint']?>' hidden /><br/>
-                <input type='time' name='hour_appoint' id='hour_appoint' value='<?= $_POST['hour_appoint']?>' hidden /><br/>
                 <input type='number' name='id_appoint' id='id_appoint' value='<?= $_POST['id_appoint']?>' hidden /><br/>
                 <input type='text' name='id_user' id='id_user' value='<?= $_POST['id_user']?>' hidden /><br/>
                 <input type='number' name='id_client' id='id_client' value='<?= $_POST['id_client']?>' hidden /><br/>                
