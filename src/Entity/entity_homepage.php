@@ -8,7 +8,7 @@ $day=date('d');
 $dater=$years."-".$month."-".$day;
 
 //print all futur appointment of the user
-$futurdate="SELECT DISTINCT date_appoint FROM `appointment` WHERE id_user='$id_user' AND date_appoint>'$dater'";
+$futurdate="SELECT DISTINCT date_appoint FROM `appointment` WHERE id_user='$id_user' AND date_appoint>'$dater' ORDER BY date_appoint";
 $futur = $pdo->prepare($futurdate);
 
 function Days($dates, $id_user, $pdo){
@@ -18,7 +18,7 @@ function Days($dates, $id_user, $pdo){
 }
 
 // print all past appointment of the user
-$pastdate="SELECT DISTINCT date_appoint FROM `appointment` WHERE id_user='$id_user' AND date_appoint<'$dater'";
+$pastdate="SELECT DISTINCT date_appoint FROM `appointment` WHERE id_user='$id_user' AND date_appoint<'$dater' ORDER BY date_appoint DESC";
 $past = $pdo->prepare($pastdate);
 
 function Dayspast($dates, $id_user, $pdo){
@@ -27,3 +27,17 @@ function Dayspast($dates, $id_user, $pdo){
     return $pastd;
 }
 
+// verifie if a report was effected
+
+function Verif($id, $pdo){
+    $verif=$pdo->prepare("SELECT * FROM `report` WHERE id_appoint=$id");
+    if($verif->execute()){
+        if($verif->rowCount()==1){
+            $v="exist";
+        }
+        else{
+            $v="no exist";
+        }
+    }
+    return $v;
+}
