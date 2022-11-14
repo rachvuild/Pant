@@ -18,8 +18,17 @@ $pdo = ConnexionBdd();
 </head>
 
 <body>
-    <div class="parent">
+    <div class="header">
 
+        <?php
+
+        require "../../template/header.php";
+        ?>
+    </div>
+    <div class="parent">
+        <!-- <div class="header">
+
+        </div> -->
         <div class="PriseRDV">
             <?php
 
