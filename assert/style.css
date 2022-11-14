@@ -9,6 +9,7 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -21,6 +22,8 @@ body {
     display: flex;
     width: 100vw;
     height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -86,7 +89,7 @@ body {
     background-color: aqua;
     display: grid;
     grid-template-columns: repeat(2, 50%);
-    grid-template-rows: repeat(3, 50%);
+    grid-template-rows: repeat(3, 45%);
     grid-column-gap: 0;
     grid-row-gap: 0;
 }

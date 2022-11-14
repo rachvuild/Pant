@@ -1,7 +1,9 @@
 <?php
 require('../ConnectionBdd.php');
-require('../Controller/UserController.php');
-if (isset($_POST['REGISTER'])) {
+// require('../../template/register.php');
+require('../Entity/User_entity.php');
+echo "pol";
+if (isset($_POST['REGISTER_USER'])) {
 
     $pdo = ConnexionBdd();
     $id_job = $_POST['id_job'];

@@ -58,18 +58,19 @@ function RegisterUser(
     $pwd_user,
     $id_dep
 ) {
-    if (isset($_POST['REGISTER'])) {
-        $pwd_user = md5($pwd_user);
-        $register_user =
-            "
+
+    $pwd_user = md5($pwd_user);
+    $register_user =
+        "
     INSERT INTO `user`(`id_user`, `mail_user`, `name_user`, `fname_user`, `pwd_user`, `id_job`, `id_dep`) 
     VALUES ('$id_user','$email_user','$name_user','$fname_user','$pwd_user','$id_job','$id_dep')
     ";
 
-        $register_user = $pdo->prepare($register_user);
-        $register_user->execute();
-        $register_user->fetchAll();
-    }
+
+    $register_user = $pdo->prepare($register_user);
+    $register_user->execute();
+    // $register_user->fetchAll();
+    // echo $register_user;
 }
 function Getuser($pdo)
 {
