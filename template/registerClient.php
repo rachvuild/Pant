@@ -9,7 +9,7 @@
 <body>
     <form action="../src/Entity/Client.php" method="post">
         <fieldset>
-            <legend>Création de nouveau client</legend>
+            <legend>Création d'un nouveau client</legend>
 
             <label for="pc"> Code postal :</label>
             <input type="text" name="pc">
@@ -26,7 +26,7 @@
             <label for="label">Label :</label>
             <input type="text" name="label">
 
-            <input type="submit" value="REGISTER_CLIENT" name="REGISTER_CLIENT">
+            <input type="submit" value="Ajouter votre client" name="REGISTER_CLIENT">
         </fieldset>
     </form>
 </body>

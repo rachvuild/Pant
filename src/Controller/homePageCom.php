@@ -34,7 +34,7 @@ require('../Entity/entity_homepage.php')
 
             require "../../template/Appointment.php";
             require "../Entity/Appointment.php";
-
+            require "../../template/registerClient.php";
 
             ?>
         </div>
