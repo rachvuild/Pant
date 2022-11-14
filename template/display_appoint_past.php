@@ -22,40 +22,20 @@
                     </thead>";
             $pastd = Dayspast($ligne[0], $id_user, $pdo);
             foreach ($pastd as $ligne) {
-                echo "
-                    <tbody>
-                        <td>" . $ligne[5] . "</td>
-                        <td>" . $ligne[1] . "</td>
-                        <td>";
-                $v=Verif($ligne[2],$pdo);
-                if($v=="no exist"){
-                    echo "
-                     <form method='post' action='sampleController.php'>
-                        <p>
-                            <input type='number' name='id_appoint' id='id_appoint' value='" . $ligne[2] . "' hidden /><br/>
-                            <input type='text' name='id_user' id='id_user' value='" . $ligne[3] . "' hidden /><br/>
-                            <input type='number' name='id_client' id='id_client' value='" . $ligne[4] . "' hidden /><br/>                
-                            <input type='submit' value='rédiger compte rendu' />
-                        
-                        </p>
-                        </form></td>
+                    echo "<tbody>
+                    <td>" . $ligne[5] . "</td>
+                    <td>" . $ligne[1] . "</td>
+                    <td><form method='post' action='sampleController.php'>
+                    <p>
+                        <input type='number' name='id_appoint' id='id_appoint' value='" . $ligne[2] . "' hidden /><br/>
+                        <input type='text' name='id_user' id='id_user' value='" . $ligne[3] . "' hidden /><br/>
+                        <input type='number' name='id_client' id='id_client' value='" . $ligne[4] . "' hidden /><br/>                
+                        <input type='submit' value='rédiger compte rendu' />
+                    
+                    </p>
+                    </form></td>   
                     </tbody>
-                </table>";
-                }
-                else{
-                    echo "
-                     <form method='post' action=''>
-                        <p>
-                            <input type='number' name='id_appoint' id='id_appoint' value='" . $ligne[2] . "' hidden /><br/>
-                            <input type='text' name='id_user' id='id_user' value='" . $ligne[3] . "' hidden /><br/>
-                            <input type='number' name='id_client' id='id_client' value='" . $ligne[4] . "' hidden /><br/>                
-                            <input type='submit' value='coucou' />
-                        
-                        </p>
-                        </form></td>
-                    </tbody>
-                </table>";
-                }
+                    </table>";       
             };
         }
     }
