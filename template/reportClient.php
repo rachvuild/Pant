@@ -32,8 +32,6 @@
             <fieldset>
                 <legend>Création de compte rendu client</legend>
 
-                <input type='date' name='date_appoint' id='date_appoint' value='<?= $_POST['date_appoint'] ?>' hidden /><br />
-                <input type='time' name='hour_appoint' id='hour_appoint' value='<?= $_POST['hour_appoint'] ?>' hidden /><br />
                 <input type='number' name='id_appoint' id='id_appoint' value='<?= $_POST['id_appoint'] ?>' hidden /><br />
                 <input type='text' name='id_user' id='id_user' value='<?= $_POST['id_user'] ?>' hidden /><br />
                 <input type='number' name='id_client' id='id_client' value='<?= $_POST['id_client'] ?>' hidden /><br />
@@ -42,11 +40,14 @@
                 <textarea name="summary" cols="30" rows="10"></textarea>
 
                 <label for="interest">Clients toujours intéressé ?</label>
-                <input type="text" name="interest">
-
-                <input type="submit" value="REPORT_CLIENT" name="REPORT_CLIENT">
+                <select name="interest" id="">
+                    <option value="Pas intéréssé">Pas intéressé</option>
+                    <option value="Intéressé à revoir">Intéressé à revoir</option>
+                    <option value="Très intéréssé">Très intéressé</option>
+                </select>
             </fieldset>
 
+            <input type="submit" value="REPORT_CLIENT" name="REPORT_CLIENT">
         </fieldset>
     </form>
 

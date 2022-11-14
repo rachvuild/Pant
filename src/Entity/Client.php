@@ -1,62 +1,54 @@
 <?php
 // Connection to database
 require('../ConnectionBdd.php');
-require('../Controller/UserController.php');
+$pdo = ConnexionBdd();
+session_start();
 
-// Register client in database
-if (isset($_POST['REGISTER_CLIENT'])){
-    $pdo = ConnexionBdd();
-    // Get data from registerClient.html form
+// ==================================================================================================================================================
+// Register Client
+if (isset($_POST['REGISTER_CLIENT'])) {
     $pc = $_POST['pc'];
     $city = $_POST['city'];
     $address = $_POST['address'];
     $phone = $_POST['phone'];
     $label = $_POST['label'];
-    RegisterClient(
-        $pdo,
-        $pc,
-        $city,
-        $address,
-        $phone,
-        $label
-    );
+    // Insert data in client table
+    $register_clients = "INSERT INTO `client`(`pc_client`, `city_client`, `address_client`, `phone_client`, `label_client`)
+VALUES ('$pc','$city','$address','$phone','$label')";
+
+    $register_clients = $pdo->prepare($register_clients);
+    $register_clients->execute();
+    $register_clients->fetchAll();
 }
 
+// ==================================================================================================================================================
+// Update Client
 
-// Update client in database
-if (isset($_POST['UPDATE_CLIENT'])){
-    $pdo = ConnexionBdd();
-    // Get data from registerClient.html form
+if (isset($_POST['UPDATE_CLIENT'])) {
     $id_client = $_POST['id'];
     $pc = $_POST['pc'];
     $city = $_POST['city'];
     $address = $_POST['address'];
     $phone = $_POST['phone'];
     $label = $_POST['label'];
-    UpdateClient(
-        $pdo,
-        $id_client,
-        $pc,
-        $city,
-        $address,
-        $phone,
-        $label
-    );
-}
-
-// Register Report in database
-if (isset($_POST['REGISTER_REPORT'])){
-    $pdo = ConnexionBdd();
-    // Get data from registerClient.html form
-    $id_client = $_POST['id'];
-    $id_user = $_POST['id_user'];
-    $summary = $_POST['summary'];
-    $interest = $_POST['interest'];
-    RegisterReport(
-        $pdo,
-        $id_user,
-        $id_client,
-        $summary,
-        $interest
-    );
+    $update_client = "UPDATE client SET ";
+    if (!empty($pc)) {
+        $update_client = $update_client . "pc_client= '" . $pc . "',";
+    }
+    if (!empty($city)) {
+        $update_client = $update_client . "city_client= '" . $city . "',";
+    }
+    if (!empty($age)) {
+        $update_client = $update_client . "address_client= " . $address . ",";
+    }
+    if (!empty($mail)) {
+        $update_client = $update_client . "phone_client= '" . $phone . "',";
+    }
+    if (!empty($tel)) {
+        $update_client = $update_client . "label_client= '" . $label . "',";
+    }
+    $update_client = substr($update_client, 0, -1) . " WHERE id_client=" . $id_client;
+    echo $update_client;
+    $update_client = $pdo->prepare($update_client);
+    $update_client->execute();
 }
