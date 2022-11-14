@@ -9,10 +9,10 @@
 </head>
 
 <body>
-    <form action="../src/Entity/Register.php" method="post">
+    <form action="../src/Controller/Register.php" method="post">
         <?php
-        session_start();
-        echo $_SESSION['id_user'];
+        // session_start();
+        // echo $_SESSION['id_user'];
 
         ?>
         <h1>Register</h1>

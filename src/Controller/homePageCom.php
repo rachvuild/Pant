@@ -22,7 +22,6 @@ require('../Entity/entity_homepage.php')
     <div class="header">
 
         <?php
-
         require "../../template/header.php";
         ?>
     </div>
@@ -35,6 +34,7 @@ require('../Entity/entity_homepage.php')
 
             require "../../template/Appointment.php";
             require "../Entity/Appointment.php";
+
 
             ?>
         </div>
