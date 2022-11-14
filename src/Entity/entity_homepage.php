@@ -27,3 +27,17 @@ function Dayspast($dates, $id_user, $pdo){
     return $pastd;
 }
 
+// verifie if a report was effected
+
+function Verif($id, $pdo){
+    $verif=$pdo->prepare("SELECT * FROM `report` WHERE id_appoint=$id");
+    if($verif->execute()){
+        if($verif->rowCount()==1){
+            $v="exist";
+        }
+        else{
+            $v="no exist";
+        }
+    }
+    return $v;
+}
