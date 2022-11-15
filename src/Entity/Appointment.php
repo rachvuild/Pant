@@ -11,8 +11,8 @@ if (isset($_POST['envoyer'])) {
         $test = $db->prepare("SELECT `date_appoint`, `hour_appoint` FROM `appointment` WHERE `id_user` = '$id_user' ");
         $test->execute();
         $testAppoint = $test->fetchAll();
-        if ($timestamp = 'matin') $timestamp = date('H:i:s',mktime(8,0,0));
-        else $timestamp = date('H:i:s',mktime(14,0,0));
+        if ($timestamp = 'matin') $timestamp = date('H:i:s', mktime(8, 0, 0));
+        else $timestamp = date('H:i:s', mktime(14, 0, 0));
 
 
         if (array_search($date, $testAppoint) == NULL && array_search($timestamp, $testAppoint) == NULL) {
