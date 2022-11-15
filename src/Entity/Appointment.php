@@ -7,15 +7,20 @@ if (isset($_POST['envoyer'])) {
 
     if ($date != NULL && $timestamp != NULL && $idClient != NULL) {
         $db = ConnexionBdd();
-
-        $test = $db->prepare("SELECT `date_appoint`, `hour_appoint` FROM `appointment` WHERE `id_user` = '$id_user' ");
+        if ($timestamp == "aprem") {
+            $timestamp = date('H:i:s',mktime(14,0,0));
+            
+        }
+        else {
+            $timestamp = date('H:i:s',mktime(8,0,0));
+        }
+        
+        $test = $db->prepare("SELECT `hour_appoint`, `date_appoint` FROM `appointment` WHERE `id_user` = '$id_user' AND `hour_appoint` = '$timestamp' AND `date_appoint`='$date'");
         $test->execute();
-        $testAppoint = $test->fetchAll();
-        if ($timestamp = 'matin') $timestamp = date('H:i:s',mktime(8,0,0));
-        else $timestamp = date('H:i:s',mktime(14,0,0));
+        $testAppoint = $test->fetch();
 
 
-        if (array_search($date, $testAppoint) == NULL && array_search($timestamp, $testAppoint) == NULL) {
+        if (empty($testAppoint)) {
             $rdv = "INSERT INTO `appointment` (`id_appoint`, `date_appoint`, `hour_appoint`, `id_user`, `id_client`) VALUES (NULL, '$date', '$timestamp', '$id_user', '$idClient'); ";
             $newAppoint = $db->prepare($rdv);
             $newAppoint->execute();
