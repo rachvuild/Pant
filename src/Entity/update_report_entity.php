@@ -17,5 +17,9 @@ if (isset($_POST['UPDATE_REPORT'])) {
     $update_report = substr($update_report, 0, -1) . " WHERE id_report=" . $id_report;
     echo $update_report;
     $update_report = $pdo->prepare($update_report);
-    $update_report->execute();
+    if($update_report->execute()){
+        echo "<script>alert('Compte rendu modifier!');
+        document.location.href='../Controller/report_controller.php';
+        </script>";
+    }
 }
