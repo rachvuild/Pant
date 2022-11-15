@@ -40,12 +40,14 @@ require('../Entity/entity_homepage.php')
         </div>
         <div class="conterondu">
             <?php
-            require('../../template/display_appoint_past.php');
+            // require "../Entity/list_appoint_past.php";
+            require '../../template/display_appoint_past.php';
             ?>
         </div>
         <div class="RdvEnCour">
             <?php
-            require('../../template/display_appoint_futur.php');
+            // require "../Entity/list_appoint_futur.php";
+            require '../../template/display_appoint_futur.php';
             ?>
         </div>
 
