@@ -33,8 +33,9 @@
                             
                         </p>
                         </form></td>
-                        <td><form method='post' action='controler_info_client.php'>
-                        <p>                
+                        <td><form method='post' action='update_report_controller.php'>
+                        <p> 
+                            <input type='number' name='id_report' id='id_report' value='$ligne[4]' hidden /><br/>              
                             <input type='submit' value='Modifier' />                           
                         </p>
                         </form>
