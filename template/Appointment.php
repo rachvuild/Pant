@@ -14,7 +14,7 @@
             <legend>Prise de Rendez-Vous</legend>
             <label for="">Entrez l' ID du client: </label><select name="client" id="client">
                 <?php 
-                $req = $pdo -> prepare("SELECT * FROM `appointment` AS a INNER JOIN client AS c ON c.id_client = a.id_client WHERE a.id_user='t.letoublon' GROUP BY a.id_client ");
+                $req = $pdo -> prepare("SELECT * FROM `appointment` AS a INNER JOIN client AS c ON c.id_client = a.id_client WHERE a.id_user='a.dochez' GROUP BY a.id_client ");
                 $req -> execute();
                 while ($donnees = $req->fetch())
                 {
@@ -24,7 +24,7 @@
                 ?> 
             </select>
             <label for="">Choissisez une Date : </label><input type="date" name="date"><br />
-            <label for="">Choissisez une Plage Horaire : </label> <select name="horaire" id="PlageHoraire">
+            <label for="">Choissisez une Plage Horaire : </label> <select name="horaire" id="horaire">
                 <option value="" selected> Plage Horaire</option>
                 <option value="matin">Matinée</option>
                 <option value="aprem">Après-Midi</option>

@@ -11,6 +11,7 @@
 <body>
     <form action="../Entity/registerReport.php" method="post">
         <fieldset>
+            <legend><strong>Compte rendu de : <?= $_POST['label_client']?></strong></legend>
             <fieldset>
                 <legend>Echantillons donnés</legend>
                 <p> Indiquez la référence et le nombre d'échantillon donnés : <br />
