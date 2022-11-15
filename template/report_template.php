@@ -32,8 +32,9 @@
                             <input type='submit' value='Info client' />
                             
                         </p>
-                        </form></td>
-                        <td><form method='post' action='update_report_controller.php'>
+                        </form></td>";
+                if($id_job==1){
+                    echo "<td><form method='post' action='update_report_controller.php'>
                         <p> 
                             <input type='number' name='id_report' id='id_report' value='$ligne[4]' hidden /><br/>              
                             <input type='submit' value='Modifier' />                           
@@ -42,7 +43,20 @@
 
                         </td>
                     </tbody>
-                </table>";}
+                    </table>";
+                }
+                else{
+                    echo "<td><form method='post' action='update_report_controller.php'>
+                        <p> 
+                            <input type='number' name='id_report' id='id_report' value='$ligne[4]' hidden /><br/>              
+                            <input type='submit' value='Commenter' />                           
+                        </p>
+                        </form>
+
+                        </td>
+                    </tbody>
+                    </table>";
+            }}
 ?> 
 <h1>Compte rendu final</h1>
 <?php
