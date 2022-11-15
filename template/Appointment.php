@@ -16,7 +16,7 @@
                 <?php
                 session_start();
                 $id_user  = $_SESSION["id_user"];
-                $req = $pdo->prepare("SELECT * FROM `appointment` AS a INNER JOIN client AS c ON c.id_client = a.id_client WHERE a.id_user=$id_user GROUP BY a.id_client ");
+                $req = $pdo->prepare("SELECT * FROM `appointment` AS a INNER JOIN client AS c ON c.id_client = a.id_client WHERE a.id_user='$id_user' GROUP BY a.id_client ");
                 $req->execute();
                 while ($donnees = $req->fetch()) {
                     var_dump($donnees);
