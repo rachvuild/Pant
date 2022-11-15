@@ -2,7 +2,7 @@
 session_start();
 // $id_user = $_SESSION["id_user"];
 $id_user = "a.dochez";
-require('../ConnectionBdd.php');
+include_once('../ConnectionBdd.php');
 $pdo = ConnexionBdd();
 require('../Entity/entity_homepage.php')
 ?>
