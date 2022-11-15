@@ -14,29 +14,37 @@
     if ($past->execute()) {
         foreach ($pdo->query($pastdate) as $ligne) {
             echo "
-                <table class='appoint_past'>
-                    <thead>
-                        <tr>
-                            <th>" . $ligne[0] . "</th>
-                        </tr>
-                    </thead>";
+            <table class='appoint_past'>
+            <thead>
+            <tr>
+            <th>" . $ligne[0] . "</th>
+            </tr>
+            </thead>";
             $pastd = Dayspast($ligne[0], $id_user, $pdo);
+            echo "<tbody>";
             foreach ($pastd as $ligne) {
-                    echo "<tbody>
-                    <td>" . $ligne[5] . "</td>
-                    <td>" . $ligne[1] . "</td>
+                // var_dump($ligne);
+                echo "<tr>
+                   <tr> <td>heure : " . $ligne[1] . "</td></tr>
+                   <tr> <td>label : " . $ligne[5] . "</td></tr>
+                   <tr> <td>Nom : " . $ligne["nom_client"] . "</td></tr>
+                   <tr> <td>Prenom : " . $ligne["prenom_client"] . "</td></tr>
                     <td><form method='post' action='sampleController.php'>
                     <p>
                         <input type='number' name='id_appoint' id='id_appoint' value='" . $ligne[2] . "' hidden /><br/>
                         <input type='text' name='id_user' id='id_user' value='" . $ligne[3] . "' hidden /><br/>
-                        <input type='number' name='id_client' id='id_client' value='" . $ligne[4] . "' hidden /><br/>                
+                        <input type='number' name='id_client' id='id_client' value='" . $ligne[4] . "' hidden /><br/>
+                        <input type='text' name='label_client' id='label_client' value='" . $ligne[5] . "' hidden /><br/>                
+
                         <input type='submit' value='rédiger compte rendu' />
                     
                     </p>
-                    </form></td>   
-                    </tbody>
-                    </table>";       
+                    </form></td> 
+                    </tr>  
+                    ";
             };
+            echo "</tbody>
+            </table>";
         }
     }
     ?>
