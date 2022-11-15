@@ -45,7 +45,7 @@ VALUES ('$pc','$city','$address','$phone','$label','$nom','$prenom','$email')";
             $newAppoint->execute();
             echo "<script > 
             
-            alert('rdv ajouté'; 
+            alert('rdv ajouté'); 
             document.location.href='../Controller/HomePageCom.php';
             </script>";
         } else {
@@ -53,7 +53,7 @@ VALUES ('$pc','$city','$address','$phone','$label','$nom','$prenom','$email')";
             echo "
             <script > 
            
-            alert('Plage déjà utilisé'; 
+            alert('Plage déjà utilisé'); 
             document.location.href='../Controller/HomePageCom.php';
             </script>
             ";
