@@ -26,7 +26,7 @@
                 ?>
             </select>
             <label for="">Choissisez une Date : </label><input type="date" name="date"><br />
-            <label for="">Choissisez une Plage Horaire : </label> <select name="horaire" id="PlageHoraire">
+            <label for="">Choissisez une Plage Horaire : </label> <select name="horaire" id="horaire">
                 <option value="" selected> Plage Horaire</option>
                 <option value="matin">Matinée</option>
                 <option value="aprem">Après-Midi</option>
