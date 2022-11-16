@@ -35,10 +35,10 @@
                             
                         </p>
                         </form></td>
-                        <td><form method='post' action='report.php'>
+                        <td><form method='post' action='report_controller.php'>
                         <p>
                             <input type='text' name='id_user' id='id_user' value='".$ligne[3]."' hidden /><br/>               
-                            <input type='submit' value='compte rendu' />
+                            <input type='submit' value='compte rendu' name='compte_rendu' />
                             
                         </p>
                         </form></td>
