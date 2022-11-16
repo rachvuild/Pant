@@ -8,13 +8,21 @@ body {
     padding: 0;
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
     overflow: hidden;
 }
 
+.header {
+    padding: 0;
+    margin: 0;
+    top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 10vh;
+    width: 100%;
+
+}
 
 .body-connexion {
     padding: 0;
@@ -82,17 +90,22 @@ body {
     height: 100%;
 }
 
+.bodyCom {}
+
 .parent {
+    background-color: #7499c8;
+    box-shadow: 0px 0px 15px 2px #7499c8;
+    border-radius: 2em;
     padding: 0;
     margin: 0;
-    width: 98.5%;
-    height: 98%;
-    background-color: aqua;
+    width: 100%;
+    height: 100%;
+    /* background-color: aqua; */
     display: grid;
     grid-template-columns: repeat(2, 50%);
-    grid-template-rows: repeat(3, 45%);
-    grid-column-gap: 0;
-    grid-row-gap: 0;
+    grid-template-rows: repeat(2, 45%);
+    grid-column-gap: 0.5%;
+    grid-row-gap: 1%;
 }
 
 /* .header {
@@ -102,30 +115,80 @@ body {
 
 .PriseRDV {
     grid-area: 1 / 1 / 2 / 2;
-    background-color: #0e50a6;
+    background-color: white;
+    display: flex;
+    border-radius: 2em;
+}
+
+.register_client {
+    width: 50%;
+    padding: 0;
+    margin: 0;
+}
+
+.client {
+    width: 90%;
+    height: 80%;
 }
 
 .conterondu {
     grid-area: 2 / 1 / 3 / 2;
-    background-color: aquamarine;
+    background-color: white;
     overflow-y: scroll;
-    height: 500px;
+    border-radius: 2em;
+
+    /* height: 500px; */
+}
+
+.body_futur {
+    width: 100%;
+
 }
 
 .RdvEnCour {
     grid-area: 1 / 2 / 3 / 3;
-    background-color: burlywood;
+    background-color: white;
     overflow-y: scroll;
-    height: 1200px;
+    border-radius: 2em;
+
+    /* height: 1200px; */
     /* height: 100vh; */
 }
 
+fieldset {
+    border-radius: 2em;
+}
+
 .appoint_futur {
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     height: auto;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card_futur {
+    box-shadow: -2px -2px 5px -1px rgb(20, 20, 20);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 2em;
+    width: 50%;
+    height: 100%;
+    margin: 2%;
+
 }
 
 .appoint_past {
-    overflow-y: scroll;
+    /* overflow-y: scroll;
+    height: auto; */
     height: auto;
+    width: 90%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

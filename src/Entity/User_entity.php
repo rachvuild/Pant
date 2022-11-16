@@ -12,8 +12,7 @@ function ConnectionUser(
 
         // is for hash password
         $pwd_user = md5($pwd_user);
-        // echo $pwd_user;
-        // // echo $pwd_user;
+
 
         //get  user in data base
         $connection_user = "SELECT * FROM `user` WHERE id_user ='$id_user' AND pwd_user ='$pwd_user'";
@@ -21,9 +20,6 @@ function ConnectionUser(
         $connection_user->execute();
         $recipes = $connection_user->fetchAll();
 
-        // get element roles of user
-        // var_dump($recipes);
-        // echo $roles_user;
 
         //check if there is a return from the database to know if there is a connection
         if ($recipes != null) {
