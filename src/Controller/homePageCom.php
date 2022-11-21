@@ -12,7 +12,7 @@
 
 <body class="bodyCom">
 
-    <div class="header">
+    <div class="header ">
         <?php
         // session_start();
         // $id_user = $_SESSION["id_user"];
@@ -23,7 +23,7 @@
         ?>
     </div>
     <div class="parent">
-        <div class="PriseRDV">
+        <div class="PriseRDV srollbar">
 
             <?php
             require "../../template/Appointment.php";
@@ -33,13 +33,13 @@
 
             ?>
         </div>
-        <div class="conterondu">
+        <div class="conterondu srollbar">
             <?php
             // require "../Entity/list_appoint_past.php";
             require '../../template/display_appoint_past.php';
             ?>
         </div>
-        <div class="RdvEnCour">
+        <div class="RdvEnCour srollbar">
             <?php
             // require "../Entity/list_appoint_futur.php";
             require '../../template/display_appoint_futur.php';
