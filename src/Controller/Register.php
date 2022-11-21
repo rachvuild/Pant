@@ -5,7 +5,7 @@ require('../Entity/User_entity.php');
 // echo "pol";
 if (isset($_POST['REGISTER_USER'])) {
 
-    $pdo = ConnexionBdd();
+
     $id_job = $_POST['id_job'];
     $id_user = $_POST['id_user'];
     $email_user = $_POST['email_user'];

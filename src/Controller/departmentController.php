@@ -1,6 +1,6 @@
 <?php
 include('../ConnectionBdd.php');
-$pdo = ConnexionBdd();
+
 
 function GetDepartmentController($pdo)
 {

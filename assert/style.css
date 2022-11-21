@@ -12,7 +12,7 @@ body {
     height: 100vh;
     font-family: 'Asap', sans-serif;
 
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 ::-webkit-scrollbar {
