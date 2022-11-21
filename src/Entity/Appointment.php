@@ -6,13 +6,10 @@ if (isset($_POST['envoyer'])) {
     $idClient = $_POST['client'];
 
     if ($date != NULL && $timestamp != NULL && $idClient != NULL) {
-        $db = ConnexionBdd();
-        if ($timestamp == "aprem") {
-            $timestamp = date('H:i:s', mktime(14, 0, 0));
-        } else {
-            $timestamp = date('H:i:s', mktime(8, 0, 0));
-        }
 
+
+        $db = ConnexionBdd();
+        $timestamp = date('H:i:s', mktime($timestamp, 0, 0));
         $test = $db->prepare("SELECT `hour_appoint`, `date_appoint` FROM `appointment` WHERE `id_user` = '$id_user' AND `hour_appoint` = '$timestamp' AND `date_appoint`='$date'");
         $test->execute();
         $testAppoint = $test->fetch();
@@ -24,7 +21,9 @@ if (isset($_POST['envoyer'])) {
             $newAppoint->execute();
             echo "<script> alert('rdv ajouté'); </script>";
         } else {
-            echo "Plage déjà utilisé";
+            echo "<script> alert('heur ou la date et deja prix'); </script>";
         }
-    } else echo "Veuillez remplir tous les champs";
+    } else {
+    }
+} else {
 }

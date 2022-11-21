@@ -1,4 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
     <table>
         <caption> Responsable de département </caption>
             <thead>
@@ -20,10 +30,10 @@
                         <td>" . $ligne["mail_user"] . "</td>
                         <td>" . $ligne["name_user"] . "</td>
                         <td>" . $ligne["fname_user"] . "</td>
-                        <td><form method='post' action='affichage.php'>
+                        <td><form method='post' action='report_controller.php'>
                         <p>
-                        <input type='text' name='id_user' id='id_user' value='" . $ligne[5] . "' hidden /><br/>               
-                        <input type='submit' value='Compte rendu' />
+                        <input type='text' name='id_user' id='id_user' value='" . $ligne[1] . "' hidden /><br/>               
+                        <input type='submit' value='compte rendu' name='compte_rendu' />
                         
                         </p>
                         </form></td>
@@ -49,7 +59,8 @@
                     <th>Prénom</th>
                     <th>Compte rendu</th>
                     </tr>
-                    </thead>";
+                    </thead>
+                    <tbody>";
             foreach ($ligne as $ligne) {
                 
                 echo "<tr>
@@ -58,10 +69,10 @@
                         <td>" . $ligne["mail_user"] . "</td>
                         <td>" . $ligne["name_user"] . "</td>
                         <td>" . $ligne["fname_user"] . "</td>
-                        <td><form method='post' action='affichage.php'>
+                        <td><form method='post' action='report_controller.php'>
                         <p>
-                        <input type='text' name='id_user' id='id_user' value='" . $ligne[5] . "' hidden /><br/>               
-                        <input type='submit' value='Compte rendu' />
+                        <input type='text' name='id_user' id='id_user' value='" . $ligne[1] . "' hidden /><br/>               
+                        <input type='submit' value='Compte rendu' name='compte_rendu' />
                         
                         </p>
                         </form></td>
@@ -72,3 +83,6 @@
     ?>
     </tbody>
     </table>
+</body>
+
+</html>
