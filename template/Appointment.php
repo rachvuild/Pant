@@ -20,9 +20,14 @@
             </select><br>
             <label for="">Choissisez une Date : </label><input type="date" name="date"><br />
             <label for="">Choissisez une Plage Horaire : </label> <select name="horaire" id="horaire">
-                <option value="" selected> Plage Horaire</option>
-                <option value="matin">Matinée</option>
-                <option value="aprem">Après-Midi</option>
+                <option value="8">8h</option>
+                <option value="9">9h</option>
+                <option value="10"> 10h</option>
+                <option value="11"> 11h</option>
+                <option value="14">14h</option>
+                <option value="15">15h</option>
+                <option value="16"> 16h</option>
+                <option value="17"> 17h</option>
             </select> <br />
             <input type='text' name='id_user' id='id_user' value=<?php echo $id_user; ?> hidden />
             <input type="submit" name="envoyer" value="OK" />
