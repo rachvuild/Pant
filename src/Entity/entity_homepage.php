@@ -1,6 +1,4 @@
 <?php
-session_start();
-$id_user  = $_SESSION["id_user"];
 $tab = [];
 //date of the day
 $years = date('Y');

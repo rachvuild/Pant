@@ -29,7 +29,7 @@ function ConnectionUser(
             if ($roles_user == 1) {
                 header('refresh:0; url=../Controller/homePageCom.php');
             } elseif ($roles_user == 2) {
-                header('refresh:0; url=../../template/connect.php');
+                header('refresh:0; url=../Controller/homePageCom.php');
             } elseif ($roles_user == 3) {
                 header('refresh:0; url=../../template/connect.php');
             }
