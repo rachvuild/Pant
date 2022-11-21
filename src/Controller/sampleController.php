@@ -6,9 +6,14 @@ if ($_SESSION == null) {
 else{
     $id_job = $_SESSION["roles_user"];
     $id_user=$_SESSION["id_user"];
-    require('../ConnectionBdd.php');
-    $pdo = ConnexionBdd();
-    require('../Entity/sample.php');
-    require('../../template/reportClient.php');
+    if(isset($_POST['cr'])){
+        require('../ConnectionBdd.php');
+        $pdo = ConnexionBdd();
+        require('../Entity/sample.php');
+        require('../../template/reportClient.php');
+    }
+   else{
+    header("location: homePageCom.php");
+   }
 }
 
