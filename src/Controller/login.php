@@ -3,8 +3,8 @@ require('../ConnectionBdd.php');
 require('../Entity/User_entity.php');
 $pdo = ConnexionBdd();
 if (isset($_POST['LOGIN'])) {
-    $id_user = $_POST['id_user'];
-    $pwd_user = $_POST['pwd_user'];
+    $id_user = htmlspecialchars($_POST['id_user']);
+    $pwd_user = htmlspecialchars($_POST['pwd_user']);
     ConnectionUser(
         $pdo,
         $id_user,

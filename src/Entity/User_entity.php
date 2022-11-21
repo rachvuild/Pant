@@ -11,26 +11,23 @@ function ConnectionUser(
         //get id and password of user in form connexion.html
 
         // is for hash password
-        $pwd_user = md5($pwd_user);
 
 
         //get  user in data base
-        $connection_user = "SELECT * FROM `user` WHERE id_user ='$id_user' AND pwd_user ='$pwd_user'";
+        $connection_user = "SELECT * FROM `user` WHERE id_user ='$id_user' ";
         $connection_user = $pdo->prepare($connection_user);
         $connection_user->execute();
-        $recipes = $connection_user->fetchAll();
-
+        $recipes = $connection_user->fetchAll();;
 
         //check if there is a return from the database to know if there is a connection
-        if ($recipes != null) {
+        if (password_verify($pwd_user, $recipes[0]['pwd_user'])) {
             $roles_user = $recipes[0]["id_job"];
             echo "connexion bon";
             $_SESSION["id_user"] = $id_user;
             $_SESSION["roles_user"] = $roles_user;
             //returns a view according to the roles
             if ($roles_user == 1) {
-                header('refresh:0; url=../../template/connect.php');
-                // echo "polop";
+                header('refresh:0; url=../Controller/homePageCom.php');
             } elseif ($roles_user == 2) {
                 header('refresh:0; url=../../template/connect.php');
             } elseif ($roles_user == 3) {
@@ -55,7 +52,8 @@ function RegisterUser(
     $id_dep
 ) {
 
-    $pwd_user = md5($pwd_user);
+    $pwd_user = password_hash($pwd_user, PASSWORD_DEFAULT);
+
     $register_user =
         "
     INSERT INTO `user`(`id_user`, `mail_user`, `name_user`, `fname_user`, `pwd_user`, `id_job`, `id_dep`) 
