@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+
+
 <body>
-    <form action="../src/Entity/Client.php" method="post">
-        <fieldset>
+    <form class=" register_client" action="../Entity/Client.php" method="post">
+        <fieldset class=" client">
             <legend>Création d'un nouveau client</legend>
 
-            <label for="pc"> Code postal :</label>
-            <input type="text" name="pc">
+            <label for="nom">Nom :</label>
+            <input type="text" maxlength="255" name="nom"><br>
 
-            <label for="city">Ville :</label>
-            <input type="text" name="city">
+            <label for="prenom">Prenom :</label>
+            <input type="text" maxlength="255" name="prenom"><br>
 
-            <label for="address">Adresse :</label>
-            <input type="text" name="address">
+            <label for="email">E-mail :</label>
+            <input type="text" maxlength="255" name="email"><br>
 
             <label for="phone">Téléphone :</label>
-            <input type="text" name="phone">
+            <input type="text" maxlength="10" name="phone"><br>
+
+            <label for="city">Ville :</label>
+            <input type="text" maxlength="255" name="city"><br>
+
+            <label for="address">Adresse :</label>
+            <input type="text" maxlength="255" name="address"><br>
+
+            <label for="pc"> Code postal :</label>
+            <input type="text" minlength="5" maxlength="5" name="pc"><br>
 
             <label for="label">Label :</label>
-            <input type="text" name="label">
+            <input type="text" maxlength="255" name="label"><br>
 
+            <label for="">Choissisez une Date : </label>
+            <input type="date" name="date"><br />
+
+            <label for="">Choissisez une Plage Horaire : </label>
+            <select name="horaire" id="PlageHoraire">
+                <option value="" selected> Plage Horaire</option>
+                <option value="matin">Matinée</option>
+                <option value="aprem">Après-Midi</option>
+            </select> <br />
             <input type="submit" value="Ajouter votre client" name="REGISTER_CLIENT">
         </fieldset>
     </form>
 </body>
+
 </html>

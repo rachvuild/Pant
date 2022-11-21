@@ -1,7 +1,7 @@
 <?php
 //print n+1
-//$request="SELECT mail_user, name_user, fname_user, id_user FROM `user` WHERE id_job=2;";
-//$req = $pdo->prepare($request);
+$n1="SELECT DISTINCT user.id_dep, id_user,`mail_user`,`name_user`,`fname_user`, label_dep FROM `user`, department WHERE id_job=2 AND user.id_dep=department.id_dep";
+$req = $pdo->prepare($n1);
 
 //print id_region of user
 
@@ -24,7 +24,7 @@ $AllDepartement->execute();
 $AllDepartement = $AllDepartement->fetchAll();
 foreach ($AllDepartement as $ligne) {
     $id = $ligne['id_dep'];
-    $user = "SELECT user.id_dep, id_user,`mail_user`,`name_user`,`fname_user`, label_dep FROM `user`, department WHERE user.id_dep=department.id_dep AND user.id_dep=$id";
+    $user = "SELECT user.id_dep, id_user,`mail_user`,`name_user`,`fname_user`, label_dep FROM `user`, department WHERE user.id_dep=department.id_dep AND user.id_dep=$id AND user.id_job=1";
     $user = $pdo->prepare($user);
     $user->execute();
     $alluser[$id] = $user->fetchAll();

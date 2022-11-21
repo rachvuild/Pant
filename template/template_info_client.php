@@ -18,6 +18,9 @@
                     <thead>
                         <tr>
                             <th>identifiant</th>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Mail</th>
                             <th>code postal</th>
                             <th>ville</th>
                             <th>adresse</th>
@@ -28,6 +31,9 @@
                     </thead>
                     <tbody>
                         <td>".$ligne[0]."</td>
+                        <td>".$ligne[7]."</td>
+                        <td>".$ligne[8]."</td>
+                        <td>".$ligne[9]."</td>
                         <td>".$ligne[1]."</td>
                         <td>".$ligne[2]."</td>
                         <td>".$ligne[3]."</td>
@@ -37,4 +43,25 @@
                     </tbody>
                 </table>";}}
 ?> 
+<h1>Compte rendu existant sur votre client</h1>
+<?php
+foreach($reportclient AS $ligne){
+    echo "
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rapport</th>
+                            <th>Interet</th>
+                            <th>L'emetteur</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <td>".$ligne[0]."</td>
+                        <td>".$ligne[1]."</td>
+                        <td>".$ligne[2]."</td>
+                        <td>".$ligne[3]."</td>
+                    </tbody>
+                </table>";}
+?>
 </body>   

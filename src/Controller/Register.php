@@ -1,8 +1,8 @@
 <?php
 require('../ConnectionBdd.php');
-// require('../../template/register.php');
+require('../../template/register.php');
 require('../Entity/User_entity.php');
-echo "pol";
+// echo "pol";
 if (isset($_POST['REGISTER_USER'])) {
 
     $pdo = ConnexionBdd();
