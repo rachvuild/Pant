@@ -9,20 +9,22 @@
 <body>
     <form action="../Controller/modif_sample.php" method="post">
     <th>Delete</th>
+    <select name="id_sample">
         <?php
             if($sample_req->execute()){
                 foreach($pdo->query($sample) AS $ligne){
                     echo 
-                    "<p>
-                        <input type='checkbox' name='id_sample' value='" . $ligne[0] . "' id='" . $ligne[0] . "'> 
-                        <label for='" . $ligne[0] . "'>" . $ligne[1] . "</label><br/>
-                    </p>";
+                    "
+                        <option value='". $ligne[0]. "'>
+                            ".$ligne[1]."
+                        </option>
+                    ";
                     }
             }
 
         ?>
-
-        <input type='submit' value='Delete échantillon' name='DELETE_SAMPLE'>
+    </select>
+    <input type='submit' value='Delete échantillon' name='DELETE_SAMPLE'>
     </form>
 </body>
 </html>
