@@ -8,9 +8,10 @@
 </head>
 <body>
     <h1>Rédiger votre commentaire</h1>
-    <form method='post' action='create_com_controller.php'>
+    <form method='post' action='../Entity/insert_com_entity.php'>
         <p> 
-            <label for="com">Votre commentaire</label>: <input type='text' name='com' id='com' /><br/>              
+            <label for="com">Votre commentaire</label>: <input type='text' name='com' id='com' /><br/>
+            <input type="number" value="<?= $id_report ?>" name="id_report" hidden>              
             <input type='submit' value='valider' name='valider' />                           
         </p>
     </form>

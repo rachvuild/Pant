@@ -8,6 +8,8 @@
 </head>
 <body>
     <h1>Compte rendu Modifiable</h1>
+    <?= $id_job ?>
+    <?= $id_user ?>
 <?php
         foreach ($inforeportno AS $ligne)
         {
