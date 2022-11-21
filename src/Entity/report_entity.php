@@ -12,10 +12,11 @@ if(isset($_POST['compte_rendu'])){
     AND report.id_user='$id_user'");
 }
 else{
-    $id_user='a.dochez';
+    $id_user='r.poujo';
+    $id_job=2;
 
     //print necessary information about report that validate
-    $inforeport=$pdo->query("SELECT summary_report, interest_report, comments, comments.id_user, date_appoint, report.id_client  FROM `report`, comments, appointment WHERE report.id_report=comments.id_report AND report.id_user='$id_user' AND report.id_appoint=appointment.id_appoint");
+    $inforeport=$pdo->query("SELECT summary_report, interest_report, comments, comments.id_user, appointment.date_appoint, report.id_client  FROM `report`, comments, appointment WHERE report.id_report=comments.id_report AND report.id_user='$id_user' AND report.id_appoint=appointment.id_appoint");
 
     //print necessary information about report no validate
     $inforeportno=$pdo->query("SELECT DISTINCT summary_report, interest_report, appointment.date_appoint, report.id_client, report.id_report FROM `report`

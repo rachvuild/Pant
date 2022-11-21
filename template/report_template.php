@@ -46,10 +46,10 @@
                     </table>";
                 }
                 else{
-                    echo "<td><form method='post' action='update_report_controller.php'>
+                    echo "<td><form method='post' action='create_com_controller.php'>
                         <p> 
                             <input type='number' name='id_report' id='id_report' value='$ligne[4]' hidden /><br/>              
-                            <input type='submit' value='Commenter' />                           
+                            <input type='submit' value='Commenter' name='Commenter' />                           
                         </p>
                         </form>
 
