@@ -11,26 +11,32 @@
 
 <?php
 session_start();
-$id_user = $_SESSION["id_user"];
-$id_job = $_SESSION["roles_user"];
-if($id_job==3){
-    include_once('../ConnectionBdd.php');
-    $pdo = ConnexionBdd();
-    require('../Entity/list_n_2.php');
-    echo '
-    <body class="bodyCom">
-        <div class="header ">';
-    require "../../template/header.php";
-    echo '</div>
-    <div>';
-    require('../../template/display_n_2.php');
-    echo '</div>
-
-    </body>
-
-    </html>';}
+if ($_SESSION == null) {
+    header("location: login.php");
+}
 else{
-    echo "<script>alert('Vous n'avez pas les droits');
-        document.location.href='homePageCom.php';
-        </script>";
+    $id_user = $_SESSION["id_user"];
+    $id_job = $_SESSION["roles_user"];
+    if($id_job==3){
+        include_once('../ConnectionBdd.php');
+        $pdo = ConnexionBdd();
+        require('../Entity/list_n_2.php');
+        echo '
+        <body class="bodyCom">
+            <div class="header ">';
+        require "../../template/header.php";
+        echo '</div>
+        <div>';
+        require('../../template/display_n_2.php');
+        echo '</div>
+
+        </body>
+
+        </html>';}
+    else{
+        echo "<script>alert('Vous n'avez pas les droits');
+            document.location.href='homePageCom.php';
+            </script>";
+    }
+
 }
