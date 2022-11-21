@@ -1,7 +1,8 @@
 <?php
 //print n+1
 $n1="SELECT DISTINCT user.id_dep, id_user,`mail_user`,`name_user`,`fname_user`, label_dep FROM `user`, department WHERE id_job=2 AND user.id_dep=department.id_dep";
-$req = $pdo->prepare($n1);
+$n1 = $pdo->prepare($n1);
+$n1->execute();
 
 //print id_region of user
 
