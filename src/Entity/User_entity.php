@@ -31,7 +31,7 @@ function ConnectionUser(
             } elseif ($roles_user == 2) {
                 header('refresh:0; url=../Controller/homePageCom.php');
             } elseif ($roles_user == 3) {
-                header('refresh:0; url=../../template/connect.php');
+                header('refresh:0; url=../Controller/homepage_n2.php');
             }
         } else {
             echo "mot de passe ou id n'est pas bon <br>
