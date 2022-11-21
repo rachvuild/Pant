@@ -21,7 +21,7 @@
                 <th>Compte rendu</th>
             </tr>
             </thead>
-            <tbody>";
+            <tbody>
     <?php
     foreach($n1 as $ligne){
         echo "<tr>
@@ -30,10 +30,10 @@
                         <td>" . $ligne["mail_user"] . "</td>
                         <td>" . $ligne["name_user"] . "</td>
                         <td>" . $ligne["fname_user"] . "</td>
-                        <td><form method='post' action='affichage.php'>
+                        <td><form method='post' action='report_controller.php'>
                         <p>
-                        <input type='text' name='id_user' id='id_user' value='" . $ligne[5] . "' hidden /><br/>               
-                        <input type='submit' value='Compte rendu' />
+                        <input type='text' name='id_user' id='id_user' value='" . $ligne[1] . "' hidden /><br/>               
+                        <input type='submit' value='compte rendu' name='compte_rendu' />
                         
                         </p>
                         </form></td>
@@ -69,10 +69,10 @@
                         <td>" . $ligne["mail_user"] . "</td>
                         <td>" . $ligne["name_user"] . "</td>
                         <td>" . $ligne["fname_user"] . "</td>
-                        <td><form method='post' action='affichage.php'>
+                        <td><form method='post' action='report_controller.php'>
                         <p>
-                        <input type='text' name='id_user' id='id_user' value='" . $ligne[5] . "' hidden /><br/>               
-                        <input type='submit' value='Compte rendu' />
+                        <input type='text' name='id_user' id='id_user' value='" . $ligne[1] . "' hidden /><br/>               
+                        <input type='submit' value='Compte rendu' name='compte_rendu' />
                         
                         </p>
                         </form></td>
