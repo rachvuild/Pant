@@ -56,7 +56,7 @@
                         <option value="17"> 17h</option>
                     </select> <br />
                     <input type='text' name='id_user' id='id_user' value=<?php echo $id_user; ?> hidden />
-                    <input type="submit" name="envoyer" value="OK" />
+                    <input type="submit" name="appoint" value="OK" />
 
                 </fieldset>
             </form>

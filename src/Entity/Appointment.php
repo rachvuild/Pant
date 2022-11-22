@@ -1,20 +1,16 @@
 <?php
-if (isset($_POST['envoyer'])) {
+function appointement($date, $timestamp, $idClient, $id_user, $pdo)
+{
 
-    $date = $_POST['date'];
-    $timestamp = $_POST['horaire'];
-    $idClient = $_POST['client'];
+
+
+
 
     if ($date != NULL && $timestamp != NULL && $idClient != NULL) {
 
 
 
-
-        if ($timestamp == "aprem") {
-            $timestamp = date('H:i:s', mktime(14, 0, 0));
-        } else {
-            $timestamp = date('H:i:s', mktime(8, 0, 0));
-        }
+        $timestamp = date('H:i:s', mktime($timestamp, 0, 0));
 
         $test = $pdo->prepare("SELECT `hour_appoint`, `date_appoint` FROM `appointment` WHERE `id_user` = '$id_user' AND `hour_appoint` = '$timestamp' AND `date_appoint`='$date'");
         $test->execute();
