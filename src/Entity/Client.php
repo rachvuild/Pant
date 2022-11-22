@@ -8,10 +8,6 @@ include_once('../ConnectionBdd.php');
 function registerClient($pc, $city, $address, $phone, $label, $nom, $prenom, $email, $timestamp, $date, $id_user, $pdo)
 {
 
-
-
-
-
     $requete = $pdo->prepare("SELECT label_client, email_client FROM client WHERE label_client='$label' AND email_client = '$email'");
     $requete->execute();
     $requete->fetch();
