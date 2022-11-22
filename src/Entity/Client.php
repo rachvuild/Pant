@@ -75,14 +75,9 @@ function registerClient($pc, $city, $address, $phone, $label, $nom, $prenom, $em
 
 // ==================================================================================================================================================
 // Update Client
+function updateclient($id_client, $pc, $city, $address, $phone, $label, $pdo)
+{
 
-if (isset($_POST['UPDATE_CLIENT'])) {
-    $id_client = $_POST['id'];
-    $pc = $_POST['pc'];
-    $city = $_POST['city'];
-    $address = $_POST['address'];
-    $phone = $_POST['phone'];
-    $label = $_POST['label'];
     $update_client = "UPDATE client SET ";
     if (!empty($pc)) {
         $update_client = $update_client . "pc_client= '" . $pc . "',";
