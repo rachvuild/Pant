@@ -8,7 +8,6 @@ if ($_SESSION == null) {
     $id_job = $_SESSION["roles_user"];
     if ($id_job == 3) {
         require('../ConnectionBdd.php');
-
         require('../Entity/modif_sample.php');
         require('../../template/header.php');
         require('../../template/insert_sample.php');
