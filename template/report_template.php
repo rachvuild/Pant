@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assert/style.css">
     <title>Document</title>
 </head>
 <body>
+    <div class="container_cr">
     <h1>Compte rendu Modifiable</h1>
 <?php
         foreach ($inforeportno AS $ligne)
         {
             echo "
-                <table>
+                <table class='table_cr'>
                     <thead>
                     <tr>
                     <th>Rapport</th>
@@ -62,7 +64,7 @@
 <?php
 foreach($inforeport AS $ligne){
     echo "
-                <table>
+                <table class='table_cr'>
                     <thead>
                         <tr>
                             <th>Rapport</th>
@@ -89,4 +91,5 @@ foreach($inforeport AS $ligne){
                     </tbody>
                 </table>";}
 ?>
+    </div>
 </body>   
