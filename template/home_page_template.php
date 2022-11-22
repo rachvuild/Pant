@@ -31,15 +31,15 @@
             <form class="register_client" method="post" action="homePageCom.php">
                 <fieldset class="client">
                     <legend>Prise de Rendez-Vous</legend>
-                    <label for="">Entrez l' ID du client: </label><select name="client" id="client">
+                    <label for="">Entrez le nom du client: </label><select name="client" id="client">
                         <?php
                         session_start();
                         $id_user  = $_SESSION["id_user"];
                         $req = $pdo->prepare("SELECT * FROM `appointment` AS a INNER JOIN client AS c ON c.id_client = a.id_client WHERE a.id_user='$id_user' GROUP BY a.id_client ");
                         $req->execute();
                         while ($donnees = $req->fetch()) {
-                            var_dump($donnees);
-                            echo "<option value=" . $donnees['id_client'] . ">" . $donnees['label_client'] . "</option>";
+
+                            echo "<option value=" . $donnees['id_client'] . ">" . $donnees['nom_client'] . "</option>";
                         }
                         $req->closecursor();
                         ?>

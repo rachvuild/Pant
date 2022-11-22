@@ -6,7 +6,7 @@ if ($_SESSION == null) {
 
 require('../ConnectionBdd.php');
 require('../Entity/Client.php');
-$id_client = $_POST['id_client'];
+$id_client = htmlspecialchars($_POST['id_client']);
 $array = infoclient($pdo, $id_client);
 
 $infoc = $array[0];

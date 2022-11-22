@@ -21,9 +21,9 @@
 
         <select name="id_job" id="id_job">
             <option value="">--Please choose an option--</option>
-            <option value="1">Dog</option>
-            <option value="2">Cat</option>
-            <option value="3">Hamster</option>
+            <option value="1">visiteur medical</option>
+            <option value="2">responsable departement</option>
+            <option value="3">responsable regional</option>
 
         </select>
 
