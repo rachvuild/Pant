@@ -5,5 +5,11 @@ if ($_SESSION == null) {
 }
 
 require('../ConnectionBdd.php');
-require('../Entity/info_client.php');
+require('../Entity/Client.php');
+$id_client = $_POST['id_client'];
+$array = infoclient($pdo, $id_client);
+
+$infoc = $array[0];
+$reportclient = $array[1];
+$infoclient = $array[2];
 require('../../template/template_info_client.php');
