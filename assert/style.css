@@ -12,7 +12,7 @@ body {
     height: 100vh;
     font-family: 'Asap', sans-serif;
 
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -196,13 +196,17 @@ body {
     /* height: 100vh; */
 }
 
-
+input {
+    border-radius: 2em;
+    border: solid #83a4cf 2px;
+    margin: 1px;
+}
 
 .appoint_futur {
     /* overflow-y: scroll; */
     height: auto;
     width: 90%;
-    height: 100%;
+    /* height: 100%; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -216,7 +220,7 @@ body {
     background-color: white;
     border-radius: 2em;
     width: 50%;
-    height: 100%;
+    /* height: 100%; */
     margin: 2%;
 
 }
