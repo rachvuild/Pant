@@ -236,3 +236,21 @@ input {
     flex-direction: column;
     align-items: center;
 }
+
+.container_cr{
+    display: flex;
+    flex-direction: column;
+    border: solid #2c809e 2px;
+    border-radius: 2em;
+    padding: 1%;
+    margin: 2%;
+}
+
+.table_cr th{
+    border: solid #2c809e 2px;
+}
+
+.table_cr td{
+    border: solid #2c809e 2px;
+    text-align: center;
+}

@@ -9,5 +9,6 @@ if ($_SESSION == null) {
     require('../ConnectionBdd.php');
 
     require('../Entity/report_entity.php');
+    require('../../template/header.php');
     require('../../template/report_template.php');
 }
