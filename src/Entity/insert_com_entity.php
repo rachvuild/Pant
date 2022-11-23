@@ -1,6 +1,5 @@
 <?php
 require('../ConnectionBdd.php');
-$pdo=ConnexionBdd();
 session_start();
 $id_job = $_SESSION["roles_user"];
 $id_user=$_SESSION["id_user"];
@@ -12,7 +11,7 @@ if(isset($_POST['valider'])){
     if($commen->execute(array($com, $id_report, $id_user))){
         
         echo "<script>alert('Commentaire ajouter');
-        document.location.href='../Controller/homePageCom.php';
+        document.location.href='../Controller/list.php';
         </script>";
     }
 }
