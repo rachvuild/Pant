@@ -16,8 +16,9 @@ if (!empty($_POST['appoint'])) {
     $date = htmlspecialchars($_POST['date']);
     $timestamp = htmlspecialchars($_POST['horaire']);
     $idClient = htmlspecialchars($_POST['client']);
-    appointement($date, $timestamp, $idClient, $id_user, $pdo);
     require "../Entity/Appointment.php";
+    appointement($date, $timestamp, $idClient, $id_user, $pdo);
+    
 }
 if (!empty($_POST['REGISTER_CLIENT'])) {
     $pc = htmlspecialchars($_POST['pc']);

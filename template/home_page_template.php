@@ -137,7 +137,7 @@
                         <input type='number' name='id_client' id='id_client' value='" . $ligne[4] . "' hidden />
                         <input type='text' name='label_client' id='label_client' value='" . $ligne[5] . "' hidden />                
 
-                        <input type='submit'name='cr' value='rédiger compte rendu' />
+                        <input type='submit' value='rédiger compte rendu' name='cr'/>
                     
                     </p>
                     </form></td> 
