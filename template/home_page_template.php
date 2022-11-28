@@ -60,7 +60,7 @@
 
                 </fieldset>
             </form>
-            <form class=" register_client" action="../Entity/Client.php" method="post">
+            <form class=" register_client" action="homePageCom.php" method="post">
                 <fieldset class=" client">
                     <legend>Création d'un nouveau client</legend>
 

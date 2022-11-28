@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form action="Register.php" method="post">
+    <form action="registerUserController.php" method="post">
         <?php
         // session_start();
         // echo $_SESSION['id_user'];

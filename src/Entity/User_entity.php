@@ -57,7 +57,7 @@ function RegisterUser(
     $register_user =
         "
     INSERT INTO `user`(`id_user`, `mail_user`, `name_user`, `fname_user`, `pwd_user`, `id_job`, `id_dep`) 
-    VALUES ('$id_user','$email_user','$name_user','$fname_user','$pwd_user','$id_job','$id_dep')
+    VALUES ('$id_user','$email_user','$name_user','$fname_user','$pwd_user',$id_job,$id_dep)
     ";
 
 
