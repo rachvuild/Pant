@@ -12,6 +12,16 @@
 <body>
     <div class="container_cr">
         <h1>Compte rendu Modifiable</h1>
+        <table class='table_cr'>
+            <thead>
+                <tr>
+                    <th>Rapport</th>
+                    <th>Interet</th>
+                    <th>Date</th>
+                    <th>Info client</th>
+                    <th>Commenter</th>
+                </tr>
+            </thead>
         <?php
         foreach ($inforeportno as $ligne) {
             echo "
@@ -35,8 +45,7 @@
                         </form>
 
                         </td>
-                    </tbody>
-                    </table>";
+                    </tbody>";
             } else {
                 echo "<td><form method='post' action='create_com_controller.php'>
                         <p> 
@@ -46,26 +55,26 @@
                         </form>
 
                         </td>
-                    </tbody>
-                    </table>";
+                    </tbody>";
             }
         }
         ?>
+        </table>
         <h1>Compte rendu final</h1>
+        <table class='table_cr'>
+            <thead>
+                <tr>
+                    <th>Rapport</th>
+                    <th>Interet</th>
+                    <th>Commentaire</th>
+                    <th>L'emetteur</th>
+                    <th>Date</th>
+                    <th>Info client</th>
+                </tr>
+            </thead>
         <?php
         foreach ($inforeport as $ligne) {
             echo "
-                <table class='table_cr'>
-                    <thead>
-                        <tr>
-                            <th>Rapport</th>
-                            <th>Interet</th>
-                            <th>Commentaire</th>
-                            <th>L'emetteur</th>
-                            <th>Date</th>
-                            <th>Info client</th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <td>" . $ligne[0] . "</td>
                         <td>" . $ligne[1] . "</td>
@@ -79,9 +88,9 @@
                             
                         </p>
                         </form></td>
-                    </tbody>
-                </table>";
+                    </tbody>";
         }
         ?>
+    </table>
     </div>
 </body>
