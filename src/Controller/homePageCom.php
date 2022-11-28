@@ -9,13 +9,21 @@ if ($_SESSION == null) {
 $id_user = $_SESSION["id_user"];
 $id_job = $_SESSION["roles_user"];
 include_once('../ConnectionBdd.php');
-require "../../template/header.php";
 require('../Entity/entity_homepage.php');
 
 if (!empty($_POST['appoint'])) {
     $date = htmlspecialchars($_POST['date']);
     $timestamp = htmlspecialchars($_POST['horaire']);
     $idClient = htmlspecialchars($_POST['client']);
+    require "../Entity/Appointment.php";
+    appointement($date, $timestamp, $idClient, $id_user, $pdo);
+    
+}
+if (!empty($_POST['appointbis'])) {
+    $date = htmlspecialchars($_POST['date']);
+    $timestamp = htmlspecialchars($_POST['horaire']);
+    $idClient = htmlspecialchars($_POST['client']);
+    $id_user=htmlspecialchars($_POST['id_user']);
     require "../Entity/Appointment.php";
     appointement($date, $timestamp, $idClient, $id_user, $pdo);
     
