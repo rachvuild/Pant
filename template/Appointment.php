@@ -8,12 +8,12 @@
     <title>GSB</title>
     <link rel="stylesheet" href="../../assert/style.css">
 <body>
-    <div>
-        <div>
+    <div class="rdvn1">
+        <div class="clientn1">
             <form class="register_client" method="post" action="homePageCom.php">
             <fieldset class="client">
-                <legend>Prise de Rendez-Vous</legend>
-                <label for="">Entrez le nom du client: </label><select name="client" id="client">
+                <legend class="n1rdv">Prise de Rendez-Vous</legend>
+                <label for="">Entrez le nom du client: </label><select name="client" id="client" class="n1rdv">
                     <?php
                     if(isset($_POST['rdv'])){
                         $id_user=$_POST['id_user'];
@@ -36,8 +36,8 @@
                     }
                     ?>
                 </select><br>
-                <label for="">Choissisez une Date : </label><input type="date" name="date"><br />
-                <label for="">Choissisez une Plage Horaire : </label> <select name="horaire" id="horaire">
+                <label for="">Choissisez une Date : </label><input type="date" name="date" class="n1rdv"><br />
+                <label for="">Choissisez une Plage Horaire : </label> <select name="horaire" id="horaire" class="n1rdv">
                     <option value="8">8h</option>
                     <option value="9">9h</option>
                     <option value="10"> 10h</option>
