@@ -323,6 +323,20 @@ input {
     display: none !important;
 }
 
+.rdvn1{
+    display: flex;
+    justify-content: space-around;
+}
+
+.clientn1{
+    width: 100%;
+    height: 100%;
+}
+
+.n1rdv{
+    margin-bottom: 5ex;
+}
+
 @media screen and (max-width: 1228px) {
 
 
