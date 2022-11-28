@@ -11,8 +11,8 @@ if ($_SESSION == null) {
         require('../Entity/modif_sample.php');
         require('../../template/header.php');
         require('../../template/insert_sample.php');
-        require('../../template/delete_sample.php');
         require('../../template/update_sample.php');
+        require('../../template/delete_sample.php');
     } else {
         header("location: homePageCom.php");
     }

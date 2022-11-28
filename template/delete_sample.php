@@ -7,8 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="container_sample">
     <form action="../Controller/modif_sample.php" method="post">
-    <th>Delete</th>
+    <h2>Supprimer un échantillon</h2>
+    <label for="label">Label échantillon :</label>
     <select name="id_sample">
         <?php
             if($sample_req->execute()){
@@ -24,7 +26,9 @@
 
         ?>
     </select>
-    <input type='submit' value='Delete échantillon' name='DELETE_SAMPLE'>
+    
+    <input type='submit' value='Supprimer' name='DELETE_SAMPLE'>
     </form>
+    </div>
 </body>
 </html>

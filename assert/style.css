@@ -254,3 +254,21 @@ input {
     border: solid #2c809e 2px;
     text-align: center;
 }
+
+.container_n{
+    border: solid #2c809e 2px;
+    border-radius: 2em;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container_sample{
+    border: solid #2c809e 2px;
+    border-radius: 2em;
+    margin: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

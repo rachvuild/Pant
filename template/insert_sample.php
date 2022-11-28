@@ -9,20 +9,17 @@
     <link rel="stylesheet" href="../../assert/style.css">
 </head>
 <body>
-    
+    <div class="container_sample">
+
     <form action="../Controller/modif_sample.php" method="post">
-        <fieldset>Echantillons
-            <fieldset>
-                <legend>Echantillons à ajouter</legend>
+        <h2>Echantillon(s) à ajouter</h2>
 
-                <label for="label">Label échantillon</label>
-                <input type="text" name="label" required>
+        <label for="label">Label échantillon :</label>
+        <input type="text" name="label">
 
-                <input type="submit" value="Ajouter l'échantillon" name="REGISTER_SAMPLE">
-            </fieldset>
-
-        </fieldset>
+        <input type="submit" value="Ajouter" name="REGISTER_SAMPLE">
     </form>
 
+    </div>
 </body>
 </html>

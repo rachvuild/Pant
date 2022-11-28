@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assert/style.css">
     <title>Document</title>
 </head>
 <body>
-<table>
+<div class="container_n">
+<table class="table_cr">
         <caption>Mon équipe</caption>
         <thead>
             <tr>
@@ -48,5 +50,6 @@
             ?>
         </tbody>
     </table>
+    </div>
 </body>
 </html>
