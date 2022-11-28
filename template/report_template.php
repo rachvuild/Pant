@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,12 @@
     <link rel="stylesheet" href="../../assert/style.css">
     <title>Document</title>
 </head>
+
 <body>
     <div class="container_cr">
-    <h1>Compte rendu Modifiable</h1>
-<?php
-        foreach ($inforeportno AS $ligne)
-        {
+        <h1>Compte rendu Modifiable</h1>
+        <?php
+        foreach ($inforeportno as $ligne) {
             echo "
                 <table class='table_cr'>
                     <thead>
@@ -25,9 +26,9 @@
                 </tr>
                     </thead>
                     <tbody>
-                        <td>".$ligne[0]."</td>
-                        <td>".$ligne[1]."</td>
-                        <td>".$ligne[2]."</td>
+                        <td>" . $ligne[0] . "</td>
+                        <td>" . $ligne[1] . "</td>
+                        <td>" . $ligne[2] . "</td>
                         <td><form method='post' action='controler_info_client.php'>
                         <p>
                             <input type='number' name='id_client' id='id_client' value='" . $ligne[3] . "' hidden /><br/>                
@@ -35,8 +36,8 @@
                             
                         </p>
                         </form></td>";
-                if($id_job==1){
-                    echo "<td><form method='post' action='update_report_controller.php'>
+            if ($id_job == 1) {
+                echo "<td><form method='post' action='update_report_controller.php'>
                         <p> 
                             <input type='number' name='id_report' id='id_report' value='$ligne[4]' hidden /><br/>              
                             <input type='submit' value='Modifier' />                           
@@ -46,9 +47,8 @@
                         </td>
                     </tbody>
                     </table>";
-                }
-                else{
-                    echo "<td><form method='post' action='create_com_controller.php'>
+            } else {
+                echo "<td><form method='post' action='create_com_controller.php'>
                         <p> 
                             <input type='number' name='id_report' id='id_report' value='$ligne[4]' hidden /><br/>              
                             <input type='submit' value='Commenter' name='Commenter' />                           
@@ -58,12 +58,13 @@
                         </td>
                     </tbody>
                     </table>";
-            }}
-?> 
-<h1>Compte rendu final</h1>
-<?php
-foreach($inforeport AS $ligne){
-    echo "
+            }
+        }
+        ?>
+        <h1>Compte rendu final</h1>
+        <?php
+        foreach ($inforeport as $ligne) {
+            echo "
                 <table class='table_cr'>
                     <thead>
                         <tr>
@@ -76,11 +77,11 @@ foreach($inforeport AS $ligne){
                         </tr>
                     </thead>
                     <tbody>
-                        <td>".$ligne[0]."</td>
-                        <td>".$ligne[1]."</td>
-                        <td>".$ligne[2]."</td>
-                        <td>".$ligne[3]."</td>
-                        <td>".$ligne[4]."</td>
+                        <td>" . $ligne[0] . "</td>
+                        <td>" . $ligne[1] . "</td>
+                        <td>" . $ligne[2] . "</td>
+                        <td>" . $ligne[3] . "</td>
+                        <td>" . $ligne[4] . "</td>
                         <td><form method='post' action='controler_info_client.php'>
                         <p>
                             <input type='number' name='id_client' id='id_client' value='" . $ligne[5] . "' hidden /><br/>                
@@ -89,7 +90,8 @@ foreach($inforeport AS $ligne){
                         </p>
                         </form></td>
                     </tbody>
-                </table>";}
-?>
+                </table>";
+        }
+        ?>
     </div>
-</body>   
+</body>

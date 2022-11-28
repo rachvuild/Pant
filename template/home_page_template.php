@@ -11,20 +11,16 @@
 
 
 <body class="bodyCom">
+    <?php
+    require('header.php');
+    ?>
 
-    <div class="header ">
-        <div class="header">
-            <p><?= $id_user ?></p>
-            <?php
-            if ($id_job == 2) {
-                echo "<a href='list.php'>Mon équipe</a>";
-            }
-            if ($id_job == 1 or $id_job == 2) {
-                echo "<a href='report_controller.php'>Mes comptes rendu</a>";
-            }
-            ?>
-            <a href="../../template/destroy.php">se deconnecter</a>
-        </div>
+    <div class="homePageMenu">
+
+        <h1 id="PRDV" class="h1menu">Prise de Rendez vous</h1>
+        <h1 id="RDVV" class="h1menu">rendez-vous a venir</h1>
+        <h1 id="RDVP" class="h1menu">rendez-vous passer</h1>
+
     </div>
     <div class="parent">
         <div class="PriseRDV srollbar">
@@ -200,7 +196,7 @@
 
 
     </div>
-
+    <script src="../../assert/script.js"></script>
 </body>
 
 </html>

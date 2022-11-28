@@ -6,6 +6,7 @@ html {
 }
 
 body {
+
     margin: 0;
     padding: 0;
     width: 100vw;
@@ -237,7 +238,7 @@ input {
     align-items: center;
 }
 
-.container_cr{
+.container_cr {
     display: flex;
     flex-direction: column;
     border: solid #2c809e 2px;
@@ -246,11 +247,115 @@ input {
     margin: 2%;
 }
 
-.table_cr th{
+.table_cr th {
     border: solid #2c809e 2px;
 }
 
-.table_cr td{
+.table_cr td {
     border: solid #2c809e 2px;
     text-align: center;
+}
+
+.homePageMenu {
+    width: 100%;
+    display: none;
+}
+
+.onBlock {
+    display: block !important;
+}
+
+.onFlex {
+    display: flex !important;
+}
+
+.off {
+    display: none !important;
+}
+
+@media screen and (max-width: 1228px) {
+
+
+    .parent {
+        display: flex;
+        justify-content: center;
+    }
+
+    .PriseRDV {
+        display: none;
+        width: 80%;
+        height: 75%;
+    }
+
+    .conterondu {
+        display: none;
+        width: 80%;
+        height: 75%;
+    }
+
+    .RdvEnCour {
+        display: none;
+        width: 80%;
+        height: 75%;
+    }
+
+    .homePageMenu {
+        margin-left: 2.5%;
+        border: solid 2px #83a4cf;
+        border-radius: 1em;
+        width: 95%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .h1menu {
+        color: #83a4cf;
+        /* background-color: #2c809e; */
+        width: 20%;
+        font-size: 20px;
+
+
+    }
+
+    .h1menu::after {
+        display: block;
+        content: '';
+        position: relative;
+        height: 10%;
+        width: 100%;
+        background-color: #83a4cf;
+        border-radius: 1em;
+        transition: all 1s;
+
+    }
+}
+
+@media screen and (max-width: 825px) {
+    .h1menu {
+        font-size: 17px;
+    }
+
+    .PriseRDV {
+        gap: 5%;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .register_client {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 474px) {
+    .bodyCom {
+        overflow: scroll;
+    }
+
+    .h1menu {
+        font-size: 13px;
+    }
+
+    .parent {
+        height: auto;
+    }
 }
