@@ -12,7 +12,7 @@
 <body>
     <div class="container_n">
     <table class="table_cr">
-        <caption> Responsable de département </caption>
+        <h2 class="title_home_n2"> Responsable de département </h2>
             <thead>
             <tr>
                 <th>Numéro département</th>
@@ -20,7 +20,7 @@
                 <th>mail</th>
                 <th>Nom</th>
                 <th>Prénom</th>
-                <th>Compte rendu</th>
+                <th>Comptes rendus</th>
             </tr>
             </thead>
             <tbody>
@@ -35,13 +35,14 @@
                         <td><form method='post' action='report_controller.php'>
                         <p>
                         <input type='text' name='id_user' id='id_user' value='" . $ligne[1] . "' hidden /><br/>               
-                        <input type='submit' value='compte rendu' name='compte_rendu' />
+                        <input type='submit' value='Comptes rendus' name='compte_rendu' />
                         
                         </p>
                         </form></td>
                         </tr>";
     }
     ?>
+    </div>
     <?php
 
     sort($alluser);
@@ -51,7 +52,7 @@
             $label = $ligne[0]["label_dep"];
 
             echo " <table class='table_cr'>
-                    <caption> $label </caption>
+                    <h2 class='title_home_n2'> $label </h2>
                     <thead>
                     <tr>
                     <th>Numéro département</th>
@@ -74,7 +75,7 @@
                         <td><form method='post' action='report_controller.php'>
                         <p>
                         <input type='text' name='id_user' id='id_user' value='" . $ligne[1] . "' hidden /><br/>               
-                        <input type='submit' value='Compte rendu' name='compte_rendu' />
+                        <input type='submit' value='Comptes rendus' name='compte_rendu' />
                         
                         </p>
                         </form></td>

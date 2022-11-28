@@ -1,6 +1,4 @@
 <?php
-require('../ConnectionBdd.php');
-// Update Client
 
 if (isset($_POST['UPDATE_REPORT'])) {
     $summary = $_POST['summary'];
@@ -21,4 +19,10 @@ if (isset($_POST['UPDATE_REPORT'])) {
         document.location.href='../Controller/report_controller.php';
         </script>";
     }
+}
+if(isset($_POST['modif'])){
+    //take label_report
+    $id_report = $_POST['id_report'];
+    $label=$pdo->prepare("SELECT summary_report FROM report WHERE id_report=?");
+    $label->execute(array($id_report));
 }
