@@ -256,7 +256,7 @@ input {
     text-align: center;
 }
 
-.container_n{
+.container_n {
     border: solid #2c809e 2px;
     border-radius: 2em;
     padding: 1%;
@@ -265,7 +265,7 @@ input {
     flex-direction: column;
 }
 
-.container_sample{
+.container_sample {
     border: solid #2c809e 2px;
     border-radius: 2em;
     padding: 1%;
