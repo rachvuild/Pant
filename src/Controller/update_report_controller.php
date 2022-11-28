@@ -5,8 +5,14 @@ if ($_SESSION == null) {
 } else {
     $id_job = $_SESSION["roles_user"];
     $id_user = $_SESSION["id_user"];
-    require('../ConnectionBdd.php');
-    require "../../template/header.php";
-    $id_report = $_POST['id_report'];
-    require('../../template/update_report_template.php');
+    if(isset($_POST['modif'])){
+        require('../ConnectionBdd.php');
+        require('../Entity/update_report_entity.php');
+        require "../../template/header.php";
+        require('../../template/update_report_template.php');
+    }
+    if(isset($_POST['UPDATE_REPORT'])){
+        require('../ConnectionBdd.php');
+        require('../Entity/update_report_entity.php');
+    }
 }
