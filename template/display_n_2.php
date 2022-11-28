@@ -12,7 +12,7 @@
 <body>
     <div class="container_n">
     <table class="table_cr">
-        <caption> Responsable de département </caption>
+        <h2 class="title_home_n2"> Responsable de département </h2>
             <thead>
             <tr>
                 <th>Numéro département</th>
@@ -42,6 +42,7 @@
                         </tr>";
     }
     ?>
+    </div>
     <?php
 
     sort($alluser);
@@ -51,7 +52,7 @@
             $label = $ligne[0]["label_dep"];
 
             echo " <table class='table_cr'>
-                    <caption> $label </caption>
+                    <h2 class='title_home_n2'> $label </h2>
                     <thead>
                     <tr>
                     <th>Numéro département</th>
