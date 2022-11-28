@@ -12,5 +12,5 @@ if (isset($_POST['LOGIN'])) {
         $pwd_user
     );
 } else {
-    echo " <a href='../../template/connexion.php'> vous devait revire sur le page principale</a>";
+    echo " <a href='../../template/connexion.php'> vous devez vous connecter</a>";
 }
