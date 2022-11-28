@@ -1,6 +1,6 @@
 <?php
 //print n+1
-$n1="SELECT DISTINCT user.id_dep, id_user,`mail_user`,`name_user`,`fname_user`, label_dep FROM `user`, department WHERE id_job=2 AND user.id_dep=department.id_dep";
+$n1 = "SELECT DISTINCT user.id_dep, id_user,`mail_user`,`name_user`,`fname_user`, label_dep FROM `user`, department WHERE id_job=2 AND user.id_dep=department.id_dep";
 $n1 = $pdo->prepare($n1);
 $n1->execute();
 
@@ -29,4 +29,7 @@ foreach ($AllDepartement as $ligne) {
     $user = $pdo->prepare($user);
     $user->execute();
     $alluser[$id] = $user->fetchAll();
+}
+if ($_SESSION == null) {
+    header("location: index.php");
 }

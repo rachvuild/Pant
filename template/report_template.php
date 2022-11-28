@@ -22,9 +22,9 @@
                     <th>Commenter</th>
                 </tr>
             </thead>
-        <?php
-        foreach ($inforeportno as $ligne) {
-            echo "
+            <?php
+            foreach ($inforeportno as $ligne) {
+                echo "
                     <tbody>
                         <td>" . $ligne[0] . "</td>
                         <td>" . $ligne[1] . "</td>
@@ -36,8 +36,8 @@
                             
                         </p>
                         </form></td>";
-            if ($id_job == 1) {
-                echo "<td><form method='post' action='update_report_controller.php'>
+                if ($id_job == 1) {
+                    echo "<td><form method='post' action='update_report_controller.php'>
                         <p> 
                             <input type='number' name='id_report' id='id_report' value='$ligne[4]' hidden /><br/>              
                             <input type='submit' value='Modifier' name='modif'/>                           
@@ -46,8 +46,8 @@
 
                         </td>
                     </tbody>";
-            } else {
-                echo "<td><form method='post' action='create_com_controller.php'>
+                } else {
+                    echo "<td><form method='post' action='create_com_controller.php'>
                         <p> 
                             <input type='number' name='id_report' id='id_report' value='$ligne[4]' hidden /><br/>              
                             <input type='submit' name='Commenter' value='Commenter' />                           
@@ -56,9 +56,9 @@
 
                         </td>
                     </tbody>";
+                }
             }
-        }
-        ?>
+            ?>
         </table>
         <h1>Compte rendu final</h1>
         <table class='table_cr'>
@@ -72,9 +72,9 @@
                     <th>Info client</th>
                 </tr>
             </thead>
-        <?php
-        foreach ($inforeport as $ligne) {
-            echo "
+            <?php
+            foreach ($inforeport as $ligne) {
+                echo "
                     <tbody>
                         <td>" . $ligne[0] . "</td>
                         <td>" . $ligne[1] . "</td>
@@ -89,8 +89,11 @@
                         </p>
                         </form></td>
                     </tbody>";
-        }
-        ?>
-    </table>
+            }
+            if ($_SESSION == null) {
+                header("location: index.php");
+            }
+            ?>
+        </table>
     </div>
 </body>

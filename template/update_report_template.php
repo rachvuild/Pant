@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,30 +11,33 @@
 
 <body>
     <div class="container_form3">
-    <form action="update_report_controller.php" method="post">
-        <h2>Modification du compte rendu client</h2>
+        <form action="update_report_controller.php" method="post">
+            <h2>Modification du compte rendu client</h2>
 
-        <?php
-            while($donne=$label->fetch()){
-                $comment=$donne['summary_report'];
+            <?php
+            while ($donne = $label->fetch()) {
+                $comment = $donne['summary_report'];
             }
-        ?>
-        <div class="cr_form">
-            <label for="summary">Compte rendu :</label>
-            <textarea name="summary" cols="100" rows="5"><?= $comment ?></textarea>
-        </div>
-        <br/>
-        <input type='number' name='id_report' id='id_report' value='<?= $id_report?>' hidden /><br/>
+            if ($_SESSION == null) {
+                header("location: index.php");
+            }
+            ?>
+            <div class="cr_form">
+                <label for="summary">Compte rendu :</label>
+                <textarea name="summary" cols="100" rows="5"><?= $comment ?></textarea>
+            </div>
+            <br />
+            <input type='number' name='id_report' id='id_report' value='<?= $id_report ?>' hidden /><br />
 
-        <label for="interest">Clients toujours intéressé ?</label>
-        <select name="interest" id="">
-            <option value="Pas intéréssé">Pas intéressé</option>
-            <option value="Intéressé à revoir">Intéressé à revoir</option>
-            <option value="Très intéréssé">Très intéressé</option>
-        </select>
+            <label for="interest">Clients toujours intéressé ?</label>
+            <select name="interest" id="">
+                <option value="Pas intéréssé">Pas intéressé</option>
+                <option value="Intéressé à revoir">Intéressé à revoir</option>
+                <option value="Très intéréssé">Très intéressé</option>
+            </select>
 
-        <input type="submit" value="Mettre à jour" name="UPDATE_REPORT">
-    </form>
+            <input type="submit" value="Mettre à jour" name="UPDATE_REPORT">
+        </form>
     </div>
 </body>
 

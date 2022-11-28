@@ -81,3 +81,6 @@ function updatepwd($pdo, $id_user, $newpwd)
     $modif = $pdo->prepare($modif);
     $modif->execute();
 }
+if ($_SESSION == null) {
+    header("location: index.php");
+}

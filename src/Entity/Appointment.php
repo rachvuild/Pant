@@ -27,3 +27,7 @@ function appointement($date, $timestamp, $idClient, $id_user, $pdo)
         }
     } else echo "Veuillez remplir tous les champs";
 }
+
+if ($_SESSION == null) {
+    header("location: index.php");
+}

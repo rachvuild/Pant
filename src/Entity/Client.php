@@ -109,3 +109,6 @@ function infoclient($pdo, $id_client)
     $array = array($infoc, $reportclient, $infoclient);
     return $array;
 }
+if ($_SESSION == null) {
+    header("location: index.php");
+}

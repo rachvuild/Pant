@@ -14,6 +14,9 @@
         <?php
         session_start();
         echo $_SESSION['id_user'];
+        if ($_SESSION == null) {
+            header("location: index.php");
+        }
         ?></h1>
     <form action="destroy.php" method="post">
         <input type="submit" name="envoi" id="" value="Deconnexion">

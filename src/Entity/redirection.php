@@ -13,3 +13,6 @@ if ($roles_user != null) {
 } else {
     header('refresh:0; url=../../template/connexion.php');
 }
+if ($_SESSION == null) {
+    header("location: index.php");
+}

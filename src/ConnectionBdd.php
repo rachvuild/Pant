@@ -7,3 +7,6 @@ try {
 }
 // echo ("Connection réussi</br>");
 // return $pdo;
+if ($_SESSION == null) {
+    header("location: index.php");
+}

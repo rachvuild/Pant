@@ -6,8 +6,8 @@ $month = date('m');
 $day = date('d');
 $dater = $years . "-" . $month . "-" . $day;
 
-if(isset($_POST['rdv'])){
-    $id_user=$_POST['id_user'];
+if (isset($_POST['rdv'])) {
+    $id_user = $_POST['id_user'];
 }
 //print all futur appointment of the user
 $futurdate = "SELECT DISTINCT date_appoint FROM `appointment` WHERE id_user='$id_user' AND date_appoint>'$dater' ORDER BY date_appoint";
@@ -47,4 +47,7 @@ function Verif($id, $pdo)
         $v = "no";
     }
     return $v;
+}
+if ($_SESSION == null) {
+    header("location: index.php");
 }

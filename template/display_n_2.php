@@ -11,22 +11,22 @@
 
 <body>
     <div class="container_n">
-    <table class="table_cr">
-        <h2 class="title_home_n2"> Responsable de département </h2>
+        <table class="table_cr">
+            <h2 class="title_home_n2"> Responsable de département </h2>
             <thead>
-            <tr>
-                <th>Numéro département</th>
-                <th>nom département</th>
-                <th>mail</th>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Comptes rendus</th>
-            </tr>
+                <tr>
+                    <th>Numéro département</th>
+                    <th>nom département</th>
+                    <th>mail</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Comptes rendus</th>
+                </tr>
             </thead>
             <tbody>
-    <?php
-    foreach($n1 as $ligne){
-        echo "<tr>
+                <?php
+                foreach ($n1 as $ligne) {
+                    echo "<tr>
                         <td>" . $ligne["id_dep"] . "</td>
                         <td>" . $ligne["label_dep"] . "</td>
                         <td>" . $ligne["mail_user"] . "</td>
@@ -40,8 +40,8 @@
                         </p>
                         </form></td>
                         </tr>";
-    }
-    ?>
+                }
+                ?>
     </div>
     <?php
 
@@ -65,7 +65,7 @@
                     </thead>
                     <tbody>";
             foreach ($ligne as $ligne) {
-                
+
                 echo "<tr>
                         <td>" . $ligne["id_dep"] . "</td>
                         <td>" . $ligne["label_dep"] . "</td>
@@ -82,6 +82,9 @@
                         </tr>";
             }
         }
+    }
+    if ($_SESSION == null) {
+        header("location: index.php");
     }
     ?>
     </tbody>

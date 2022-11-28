@@ -3,6 +3,9 @@
 <body>
     <div class="header">
         <?php
+        if ($_SESSION == null) {
+            header("location: index.php");
+        }
         if ($id_job == 1 or $id_job == 2) {
             echo "<a href='homePageCom.php'>Accueil</a>";
             echo "<a href='report_controller.php'>Mes comptes rendu</a>";

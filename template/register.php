@@ -13,7 +13,9 @@
         <?php
         // session_start();
         // echo $_SESSION['id_user'];
-
+        if ($_SESSION == null) {
+            header("location: index.php");
+        }
         ?>
         <h1>Register</h1>
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +12,7 @@
 
 <body>
     <div class="container_form">
-    <form action="../Entity/registerReport.php" method="post">
+        <form action="../Entity/registerReport.php" method="post">
             <legend><strong>Compte rendu de : <?= $_POST['label_client'] ?></strong></legend>
             <div class="container_form2">
                 <h2>Echantillons donnés</h2>
@@ -26,6 +27,9 @@
                             <label for='" . $ligne[1] . "'>nombre donné :</label>
                             <input type='number' name='" . $ligne[1] . "' id='" . $ligne[1] . "'><br/>";
                         }
+                    }
+                    if ($_SESSION == null) {
+                        header("location: index.php");
                     }
                     ?>
             </div>
@@ -49,8 +53,8 @@
             </div>
 
             <input type="submit" value="REPORT_CLIENT" name="REPORT_CLIENT">
-    </form>
-    </div>              
+        </form>
+    </div>
 </body>
 
 </html>
