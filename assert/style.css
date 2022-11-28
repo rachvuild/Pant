@@ -18,6 +18,9 @@ body {
     width: 0;
 }
 
+.bodyCom {
+    overflow: hidden;
+}
 
 
 .srollbar::-webkit-scrollbar-track {
@@ -288,7 +291,7 @@ input {
     text-align: center;
 }
 
-.container_form3{
+.container_form3 {
     border: solid #2c809e 2px;
     border-radius: 2em;
     width: 93%;
@@ -301,9 +304,9 @@ input {
     text-align: center;
 }
 
-.cr_form{
+.cr_form {
     display: flex;
-    align-items:flex-end;
+    align-items: flex-end;
 }
 
 .homePageMenu {
@@ -323,17 +326,17 @@ input {
     display: none !important;
 }
 
-.rdvn1{
+.rdvn1 {
     display: flex;
     justify-content: space-around;
 }
 
-.clientn1{
+.clientn1 {
     width: 100%;
     height: 100%;
 }
 
-.n1rdv{
+.n1rdv {
     margin-bottom: 5ex;
 }
 

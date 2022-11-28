@@ -74,3 +74,10 @@ function Getuser($pdo)
     // $recipes = $connection_user->fetchAll();
     // var_dump($recipes);
 }
+function updatepwd($pdo, $id_user, $newpwd)
+{
+    $newpwd = password_hash($newpwd, PASSWORD_DEFAULT);
+    $modif = "UPDATE `user` SET `pwd_user`=$newpwd WHERE `id_user`=$id_user";
+    $modif = $pdo->prepare($modif);
+    $modif->execute();
+}
