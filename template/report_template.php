@@ -10,20 +10,20 @@
 <body>
     <div class="container_cr">
     <h1>Compte rendu Modifiable</h1>
+    <table class='table_cr'>
+        <thead>
+            <tr>
+                <th>Rapport</th>
+                <th>Interet</th>
+                <th>Date</th>
+                <th>Info client</th>
+                <th>Modifier</th>
+            </tr>
+        </thead>
 <?php
         foreach ($inforeportno AS $ligne)
         {
             echo "
-                <table class='table_cr'>
-                    <thead>
-                    <tr>
-                    <th>Rapport</th>
-                    <th>Interet</th>
-                    <th>Date</th>
-                    <th>Info client</th>
-                    <th>Modifier</th>
-                </tr>
-                    </thead>
                     <tbody>
                         <td>".$ligne[0]."</td>
                         <td>".$ligne[1]."</td>
@@ -45,7 +45,7 @@
 
                         </td>
                     </tbody>
-                    </table>";
+                    ";
                 }
                 else{
                     echo "<td><form method='post' action='create_com_controller.php'>
@@ -56,25 +56,25 @@
                         </form>
 
                         </td>
-                    </tbody>
-                    </table>";
+                    </tbody>";
             }}
-?> 
+?>
+</table>
 <h1>Compte rendu final</h1>
+<table class='table_cr'>
+    <thead>
+        <tr>
+            <th>Rapport</th>
+            <th>Interet</th>
+            <th>Commentaire</th>
+            <th>L'emetteur</th>
+            <th>Date</th>
+            <th>Info client</th>
+        </tr>
+    </thead>
 <?php
 foreach($inforeport AS $ligne){
     echo "
-                <table class='table_cr'>
-                    <thead>
-                        <tr>
-                            <th>Rapport</th>
-                            <th>Interet</th>
-                            <th>Commentaire</th>
-                            <th>L'emetteur</th>
-                            <th>Date</th>
-                            <th>Info client</th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <td>".$ligne[0]."</td>
                         <td>".$ligne[1]."</td>
@@ -88,8 +88,8 @@ foreach($inforeport AS $ligne){
                             
                         </p>
                         </form></td>
-                    </tbody>
-                </table>";}
+                    </tbody>";}
 ?>
+    </table>
     </div>
 </body>   
