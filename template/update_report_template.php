@@ -12,12 +12,17 @@
 
 <body>
     <div class="container_form3">
-    <form action="../Entity/update_report_entity.php" method="post">
+    <form action="update_report_controller.php" method="post">
         <h2>Modification du compte rendu client</h2>
 
+        <?php
+            while($donne=$label->fetch()){
+                $comment=$donne['summary_report'];
+            }
+        ?>
         <div class="cr_form">
             <label for="summary">Compte rendu :</label>
-            <textarea name="summary" cols="100" rows="5"></textarea>
+            <textarea name="summary" cols="100" rows="5"><?= $comment ?></textarea>
         </div>
         <br/>
         <input type='number' name='id_report' id='id_report' value='<?= $id_report?>' hidden /><br/>
