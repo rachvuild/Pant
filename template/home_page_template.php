@@ -11,6 +11,17 @@
 
 
 <body class="bodyCom">
+    <?php
+    require('header.php');
+    ?>
+
+    <div class="homePageMenu">
+
+        <h1 id="PRDV" class="h1menu">Prise de Rendez vous</h1>
+        <h1 id="RDVV" class="h1menu">rendez-vous a venir</h1>
+        <h1 id="RDVP" class="h1menu">rendez-vous passer</h1>
+
+    </div>
     <div class="parent">
         <div class="PriseRDV srollbar">
             <form class="register_client" method="post" action="homePageCom.php">
@@ -185,7 +196,7 @@
 
 
     </div>
-
+    <script src="../../assert/script.js"></script>
 </body>
 
 </html>

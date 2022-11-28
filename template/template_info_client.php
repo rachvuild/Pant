@@ -10,27 +10,27 @@
 <body>
     <div class="container_cr">
     <h1>Votre Client</h1>
+    <table class='table_cr'>
+        <thead>
+            <tr>
+                <th>identifiant</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Mail</th>
+                <th>code postal</th>
+                <th>ville</th>
+                <th>adresse</th>
+                <th>téléphone</th>
+                <th>label</th>
+                <th>commentaire</th>
+            </tr>
+        </thead>
 <?php
     if ($infoc->execute())
     {
         foreach ($pdo->query($infoclient) AS $ligne)
         {
             echo "
-                <table class='table_cr'>
-                    <thead>
-                        <tr>
-                            <th>identifiant</th>
-                            <th>Nom</th>
-                            <th>Prénom</th>
-                            <th>Mail</th>
-                            <th>code postal</th>
-                            <th>ville</th>
-                            <th>adresse</th>
-                            <th>téléphone</th>
-                            <th>label</th>
-                            <th>commentaire</th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <td>".$ligne[0]."</td>
                         <td>".$ligne[7]."</td>
@@ -42,29 +42,29 @@
                         <td>".$ligne[4]."</td>
                         <td>".$ligne[5]."</td>
                         <td>".$ligne[6]."</td>
-                    </tbody>
-                </table>";}}
-?> 
+                    </tbody>";}}
+?>
+</table>
 <h1>Compte rendu existant sur votre client</h1>
+<table class='table_cr'>
+    <thead>
+        <tr>
+            <th>Rapport</th>
+            <th>Interet</th>
+            <th>L'emetteur</th>
+            <th>Date</th>
+        </tr>
+    </thead>
 <?php
 foreach($reportclient AS $ligne){
     echo "
-                <table class='table_cr'>
-                    <thead>
-                        <tr>
-                            <th>Rapport</th>
-                            <th>Interet</th>
-                            <th>L'emetteur</th>
-                            <th>Date</th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <td>".$ligne[0]."</td>
                         <td>".$ligne[1]."</td>
                         <td>".$ligne[2]."</td>
                         <td>".$ligne[3]."</td>
-                    </tbody>
-                </table>";}
+                    </tbody>";}
 ?>
+    </table>
     </div>
 </body>   
