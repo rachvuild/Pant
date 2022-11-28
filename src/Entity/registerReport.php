@@ -1,6 +1,5 @@
 <?php 
 require('../ConnectionBdd.php');
-$pdo = ConnexionBdd();
 
 $summary = $_POST['summary'];
 $interest = $_POST['interest'];
