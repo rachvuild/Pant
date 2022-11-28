@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="container_form">
+    <div class="container_form3">
     <form action="../Entity/update_report_entity.php" method="post">
         <h2>Modification du compte rendu client</h2>
 
