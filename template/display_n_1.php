@@ -31,7 +31,7 @@
                         <td><form method='post' action='takeAppoint.php'>
                         <p>
                             <input type='text' name='id_user' id='id_user' value='".$ligne[3]."' hidden /><br/>               
-                            <input type='submit' value='RDV' />
+                            <input type='submit' value='RDV' name='rdv' />
                             
                         </p>
                         </form></td>
