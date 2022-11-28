@@ -14,7 +14,7 @@
     <form action="../Controller/modif_sample.php" method="post">
         <h2>Echantillon(s) à ajouter</h2>
 
-        <label for="label">Label échantillon :</label>
+        <label for="label">Nom échantillon :</label>
         <input type="text" name="label">
 
         <input type="submit" value="Ajouter" name="REGISTER_SAMPLE">

@@ -10,7 +10,7 @@
     <div class="container_sample">
     <form action="../Controller/modif_sample.php" method="post">
     <h2>Supprimer un échantillon</h2>
-    <label for="label">Label échantillon :</label>
+    <label for="label">Nom échantillon :</label>
     <select name="id_sample">
         <?php
             if($sample_req->execute()){
