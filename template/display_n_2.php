@@ -20,7 +20,7 @@
                 <th>mail</th>
                 <th>Nom</th>
                 <th>Prénom</th>
-                <th>Compte rendu</th>
+                <th>Comptes rendus</th>
             </tr>
             </thead>
             <tbody>
@@ -35,7 +35,7 @@
                         <td><form method='post' action='report_controller.php'>
                         <p>
                         <input type='text' name='id_user' id='id_user' value='" . $ligne[1] . "' hidden /><br/>               
-                        <input type='submit' value='compte rendu' name='compte_rendu' />
+                        <input type='submit' value='Comptes rendus' name='compte_rendu' />
                         
                         </p>
                         </form></td>
@@ -75,7 +75,7 @@
                         <td><form method='post' action='report_controller.php'>
                         <p>
                         <input type='text' name='id_user' id='id_user' value='" . $ligne[1] . "' hidden /><br/>               
-                        <input type='submit' value='Compte rendu' name='compte_rendu' />
+                        <input type='submit' value='Comptes rendus' name='compte_rendu' />
                         
                         </p>
                         </form></td>
