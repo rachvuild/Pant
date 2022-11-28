@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assert/style.css">
+    <title>GSB</title>
+</head>
 
 
 <body>
+    <div class="container_form">
     <form action="../Entity/registerReport.php" method="post">
-        <fieldset>
             <legend><strong>Compte rendu de : <?= $_POST['label_client'] ?></strong></legend>
-            <fieldset>
-                <legend>Echantillons donnés</legend>
+            <div class="container_form2">
+                <h2>Echantillons donnés</h2>
                 <p> Indiquez la référence et le nombre d'échantillon donnés : <br />
                     <?php
                     if ($sample_req->execute()) {
                         foreach ($pdo->query($sample) as $ligne) {
                             echo
                             "<input type='checkbox' name='" . $ligne[0] . "' id='" . $ligne[0] . "'> 
-                            <label for='" . $ligne[0] . "'>" . $ligne[1] . "</label><br/>
+                            <label for='" . $ligne[0] . "'>" . $ligne[1] . "</label>
 
                             <label for='" . $ligne[1] . "'>nombre donné :</label>
                             <input type='number' name='" . $ligne[1] . "' id='" . $ligne[1] . "'><br/>";
                         }
                     }
                     ?>
-            </fieldset>
-
+            </div>
             </p>
-            <fieldset>
-                <legend>Création de compte rendu client</legend>
+            <div class="container_form2">
+                <h2>Création de compte rendu client</h2>
 
                 <input type='number' name='id_appoint' id='id_appoint' value='<?= $_POST['id_appoint'] ?>' hidden /><br />
                 <input type='text' name='id_user' id='id_user' value='<?= $_POST['id_user'] ?>' hidden /><br />
@@ -41,12 +46,11 @@
                     <option value="Intéressé à revoir">Intéressé à revoir</option>
                     <option value="Très intéréssé">Très intéressé</option>
                 </select>
-            </fieldset>
+            </div>
 
             <input type="submit" value="REPORT_CLIENT" name="REPORT_CLIENT">
-        </fieldset>
     </form>
-
+    </div>              
 </body>
 
 </html>

@@ -1,6 +1,5 @@
 <?php
 require('../ConnectionBdd.php');
-$pdo=ConnexionBdd();
 // Update Client
 
 if (isset($_POST['UPDATE_REPORT'])) {

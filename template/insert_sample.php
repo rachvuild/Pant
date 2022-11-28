@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../assert/style.css">
 </head>
 <body>
-    <div class="container_sample">
+    <div class="container_form">
 
     <form action="../Controller/modif_sample.php" method="post">
         <h2>Echantillon(s) à ajouter</h2>

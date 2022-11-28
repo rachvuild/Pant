@@ -7,7 +7,7 @@
     <title>GSB</title>
 </head>
 <body>
-    <div class="container_sample">
+    <div class="container_form">
     <form action="../Controller/modif_sample.php" method="post">
     <h2>Modification d'échantillon</h2>
     <label for="label">Nom échantillon :</label>
