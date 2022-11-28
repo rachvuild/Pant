@@ -2,8 +2,13 @@
 session_start();
 $id_user = $_SESSION["id_user"];
 $id_job = $_SESSION["roles_user"];
-require('../ConnectionBdd.php');
+if ($_SESSION == null) {
+    header("location: index.php");
+} else {
 
-require('../../template/header.php');
-require "../../template/Appointment.php";
-require "../Entity/Appointment.php";
+    require('../ConnectionBdd.php');
+
+    require('../../template/header.php');
+    require "../../template/Appointment.php";
+    require "../Entity/Appointment.php";
+}
