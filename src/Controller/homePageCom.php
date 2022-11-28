@@ -4,7 +4,7 @@
 
 session_start();
 if ($_SESSION == null) {
-    header("location: login.php");
+    header("location: index.php");
 }
 $id_user = $_SESSION["id_user"];
 $id_job = $_SESSION["roles_user"];
@@ -18,16 +18,14 @@ if (!empty($_POST['appoint'])) {
     $idClient = htmlspecialchars($_POST['client']);
     require "../Entity/Appointment.php";
     appointement($date, $timestamp, $idClient, $id_user, $pdo);
-    
 }
 if (!empty($_POST['appointbis'])) {
     $date = htmlspecialchars($_POST['date']);
     $timestamp = htmlspecialchars($_POST['horaire']);
     $idClient = htmlspecialchars($_POST['client']);
-    $id_user=htmlspecialchars($_POST['id_user']);
+    $id_user = htmlspecialchars($_POST['id_user']);
     require "../Entity/Appointment.php";
     appointement($date, $timestamp, $idClient, $id_user, $pdo);
-    
 }
 if (!empty($_POST['REGISTER_CLIENT'])) {
     $pc = htmlspecialchars($_POST['pc']);
