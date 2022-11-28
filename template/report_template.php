@@ -15,16 +15,6 @@
         <?php
         foreach ($inforeportno as $ligne) {
             echo "
-                <table class='table_cr'>
-                    <thead>
-                    <tr>
-                    <th>Rapport</th>
-                    <th>Interet</th>
-                    <th>Date</th>
-                    <th>Info client</th>
-                    <th>Modifier</th>
-                </tr>
-                    </thead>
                     <tbody>
                         <td>" . $ligne[0] . "</td>
                         <td>" . $ligne[1] . "</td>

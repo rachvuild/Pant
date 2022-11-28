@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <body>
     <form class="register_client" method="post" action="homePageCom.php">
         <fieldset class="client">
@@ -8,14 +7,26 @@
             <label for="">Entrez l' ID du client: </label><select name="client" id="client">
                 <?php
                 session_start();
-                $id_user  = $_SESSION["id_user"];
-                $req = $pdo->prepare("SELECT * FROM `appointment` AS a INNER JOIN client AS c ON c.id_client = a.id_client WHERE a.id_user='$id_user' GROUP BY a.id_client ");
-                $req->execute();
-                while ($donnees = $req->fetch()) {
-                    var_dump($donnees);
-                    echo "<option value=" . $donnees['id_client'] . ">" . $donnees['label_client'] . "</option>";
+                if(isset($_POST['rdv'])){
+                    $id_user=$_POST['id_user'];
+                    $req = $pdo->prepare("SELECT id_client, nom_client FROM client");
+                    $req->execute();
+                    while ($donnees =$req->fetch()){
+                        var_dump($donnees);
+                        echo "<option value=" . $donnees['id_client'] . ">" . $donnees['nom_client'] . "</option>";
+                    }
+                    $req->closecursor();
                 }
-                $req->closecursor();
+                else{
+                    $id_user  = $_SESSION["id_user"];
+                    $req = $pdo->prepare("SELECT * FROM `appointment` AS a INNER JOIN client AS c ON c.id_client = a.id_client WHERE a.id_user='$id_user' GROUP BY a.id_client ");
+                    $req->execute();
+                    while ($donnees = $req->fetch()) {
+                        var_dump($donnees);
+                        echo "<option value=" . $donnees['id_client'] . ">" . $donnees['label_client'] . "</option>";
+                    }
+                    $req->closecursor();
+                }
                 ?>
             </select><br>
             <label for="">Choissisez une Date : </label><input type="date" name="date"><br />
@@ -29,8 +40,8 @@
                 <option value="16"> 16h</option>
                 <option value="17"> 17h</option>
             </select> <br />
-            <input type='text' name='id_user' id='id_user' value=<?php echo $id_user; ?> hidden />
-            <input type="submit" name="envoyer" value="OK" />
+            <input type='text' name='id_user' id='id_user' value='<?= $id_user ?>' hidden/>
+            <input type="submit" name="<?php if(isset($_POST['rdv'])){echo "appointbis";}else {echo "appoint";} ?>" value="OK" />
 
         </fieldset>
     </form>

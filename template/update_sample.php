@@ -7,8 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="container_sample">
     <form action="../Controller/modif_sample.php" method="post">
-    <th>Update</th>
+    <h2>Modification d'échantillon</h2>
+    <label for="label">Nom échantillon :</label>
     <select name='id_sample'>
         <?php
             if($sample_req->execute()){
@@ -24,8 +26,9 @@
                 
                 ?>
         </select>
-         <input type='text' name='label_sample'>
-        <input type='submit' value='Update échantillon' name='UPDATE_SAMPLE'>
+        <input type='text' name='label_sample'>
+        <input type='submit' value='Modifier' name='UPDATE_SAMPLE'>
     </form>
+    </div>
 </body>
 </html>

@@ -10,7 +10,8 @@
 </head>
 
 <body>
-    <table>
+    <div class="container_n">
+    <table class="table_cr">
         <caption> Responsable de département </caption>
             <thead>
             <tr>
@@ -49,7 +50,7 @@
 
             $label = $ligne[0]["label_dep"];
 
-            echo " <table>
+            echo " <table class='table_cr'>
                     <caption> $label </caption>
                     <thead>
                     <tr>
@@ -84,6 +85,7 @@
     ?>
     </tbody>
     </table>
+    </div>
 </body>
 
 </html>
