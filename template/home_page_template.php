@@ -11,9 +11,6 @@
 
 
 <body class="bodyCom">
-    <?php
-    require('header.php');
-    ?>
 
     <div class="homePageMenu">
 
