@@ -9,7 +9,7 @@ if ($_SESSION == null) {
 $id_user = $_SESSION["id_user"];
 $id_job = $_SESSION["roles_user"];
 include_once('../ConnectionBdd.php');
-
+require "../../template/header.php";
 require('../Entity/entity_homepage.php');
 
 if (!empty($_POST['appoint'])) {

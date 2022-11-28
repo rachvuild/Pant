@@ -5,27 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hmm</title>
+    <title>GSB</title>
     <link rel="stylesheet" href="../../assert/style.css">
 </head>
 
 
 <body class="bodyCom">
-
-    <div class="header ">
-        <div class="header">
-            <p><?= $id_user ?></p>
-            <?php
-            if ($id_job == 2) {
-                echo "<a href='list.php'>Mon équipe</a>";
-            }
-            if ($id_job == 1 or $id_job == 2) {
-                echo "<a href='report_controller.php'>Mes comptes rendu</a>";
-            }
-            ?>
-            <a href="../../template/destroy.php">se deconnecter</a>
-        </div>
-    </div>
     <div class="parent">
         <div class="PriseRDV srollbar">
             <form class="register_client" method="post" action="homePageCom.php">
