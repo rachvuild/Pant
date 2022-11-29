@@ -27,11 +27,11 @@ function ConnectionUser(
             $_SESSION["roles_user"] = $roles_user;
             //returns a view according to the roles
             if ($roles_user == 1) {
-                header('refresh:0; url=../Controller/homePageCom.php');
+                header('Location: ../Controller/homePageCom.php');
             } elseif ($roles_user == 2) {
-                header('refresh:0; url=../Controller/homePageCom.php');
+                header('Location: ../Controller/homePageCom.php');
             } elseif ($roles_user == 3) {
-                header('refresh:0; url=../Controller/homepage_n2.php');
+                header('Location: ../Controller/homepage_n2.php');
             }
         } else {
             echo "mot de passe ou id n'est pas bon <br>

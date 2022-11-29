@@ -4,15 +4,12 @@ $roles_user = $_SESSION['roles_user'];
 if ($roles_user != null) {
 
     if ($roles_user == 1) {
-        header('refresh:0; url=../Controller/homePageCom.php');
+        header('Location: ../Controller/homePageCom.php');
     } elseif ($roles_user == 2) {
-        header('refresh:0; url=../Controller/homePageCom.php');
+        header('Location: ../Controller/homePageCom.php');
     } elseif ($roles_user == 3) {
-        header('refresh:0; url=../Controller/homepage_n2.php');
+        header('Location: ../Controller/homepage_n2.php');
     }
 } else {
-    header('refresh:0; url=../../template/connexion.php');
-}
-if ($_SESSION == null) {
-    header("location: index.php");
+    header('Location: ../../template/connexion.php');
 }
