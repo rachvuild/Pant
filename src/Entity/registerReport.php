@@ -1,10 +1,10 @@
 <?php
 
-$summary = $_POST['summary'];
-$interest = $_POST['interest'];
-$id_client = $_POST['id_client'];
-$id_user = $_POST['id_user'];
-$id_appoint = $_POST['id_appoint'];
+$summary = htmlspecialchars($_POST['summary']);
+$interest = htmlspecialchars($_POST['interest']);
+$id_client = htmlspecialchars($_POST['id_client']);
+$id_user = htmlspecialchars($_POST['id_user']);
+$id_appoint = htmlspecialchars($_POST['id_appoint']);
 echo $id_user;
 
 // Register report in database
