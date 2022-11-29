@@ -1,5 +1,4 @@
 <?php
-require('../ConnectionBdd.php');
 
 $summary = $_POST['summary'];
 $interest = $_POST['interest'];
@@ -40,6 +39,7 @@ if ($sample_req->execute()) {
             <input type='number' name='" . $ligne[1] . "' id='" . $ligne[1] . "'><br/>";
     }
 }
-if ($_SESSION == null) {
-    header("location: index.php");
-}
+//redirection 
+echo "<script>alert('Compte rendu ajouter!');
+        document.location.href='homePageCom.php';
+        </script>";

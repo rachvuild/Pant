@@ -12,7 +12,7 @@
 
 <body>
     <div class="container_form">
-        <form action="../Entity/registerReport.php" method="post">
+        <form action="sampleController.php" method="post">
             <legend><strong>Compte rendu de : <?= $_POST['label_client'] ?></strong></legend>
             <div class="container_form2">
                 <h2>Echantillons donnés</h2>
@@ -52,7 +52,7 @@
                 </select>
             </div>
 
-            <input type="submit" value="REPORT_CLIENT" name="REPORT_CLIENT">
+            <input type="submit" value="Valider" name="REPORT_CLIENT">
         </form>
     </div>
 </body>
