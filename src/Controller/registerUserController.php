@@ -1,4 +1,5 @@
 <?php
+session_start();
 require('../ConnectionBdd.php');
 require('../Entity/User_entity.php');
 // echo "pol";
