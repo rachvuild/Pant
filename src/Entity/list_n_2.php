@@ -6,7 +6,7 @@ $n1->execute();
 
 //print id_region of user
 
-$user = "SELECT * FROM `user` WHERE id_user ='t.letoublon'";
+$user = "SELECT * FROM `user` WHERE id_user ='$id_user'";
 $user = $pdo->prepare($user);
 $user->execute();
 $user = $user->fetchAll();
