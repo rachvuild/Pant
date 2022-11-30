@@ -18,7 +18,11 @@
     </form>
 </body> -->
 <script>
-    alert("<form action='updateUserPassword.php' method='post'><input type = 'text' name = 'newpassorwd' placeholder = 'entrez votre nouveau password' ><input type = 'submit' name = 'updatepwd' ></form>");
+    alert(
+</script>
+<form action='updateUserPassword.php' method='post'><input type='text' name='newpassorwd' placeholder='entrez votre nouveau password'><input type='submit' name='updatepwd'></form>
+<script>
+    );
 </script>
 
 </html><?php if ($_SESSION == null) {
