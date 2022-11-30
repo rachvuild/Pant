@@ -1,10 +1,11 @@
 <?php
+session_start();
 require('../ConnectionBdd.php');
-require('../Entity/User_entity.php');
 // echo "pol";
 if ($_SESSION == null) {
     header("location: index.php");
 } else {
+    require('../../template/register.php');
 
     if (isset($_POST['REGISTER_USER'])) {
 
@@ -16,6 +17,7 @@ if ($_SESSION == null) {
         $fname_user = $_POST['fname_user'];
         $pwd_user = $_POST['pwd_user'];
         $id_dep = $_POST['id_dep'];
+        require('../Entity/User_entity.php');
         RegisterUser(
             $pdo,
             $id_job,
@@ -27,5 +29,4 @@ if ($_SESSION == null) {
             $id_dep
         );
     }
-    require('../../template/register.php');
 }
