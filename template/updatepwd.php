@@ -17,6 +17,9 @@
         <input type="submit" name="updatepwd">
     </form>
 </body>
+<script>
+    alert(" <form action='updateUserPassword.php' method='post'><input type = 'text' name = 'newpassorwd' placeholder = 'entrez votre nouveau password' ><input type = 'submit' name = 'updatepwd' ></form>");
+</script>
 
 </html><?php if ($_SESSION == null) {
             header("location: index.php");
