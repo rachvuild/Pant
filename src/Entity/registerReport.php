@@ -1,11 +1,10 @@
 <?php
-require('../ConnectionBdd.php');
 
-$summary = $_POST['summary'];
-$interest = $_POST['interest'];
-$id_client = $_POST['id_client'];
-$id_user = $_POST['id_user'];
-$id_appoint = $_POST['id_appoint'];
+$summary = htmlspecialchars($_POST['summary']);
+$interest = htmlspecialchars($_POST['interest']);
+$id_client = htmlspecialchars($_POST['id_client']);
+$id_user = htmlspecialchars($_POST['id_user']);
+$id_appoint = htmlspecialchars($_POST['id_appoint']);
 echo $id_user;
 
 // Register report in database
@@ -40,6 +39,7 @@ if ($sample_req->execute()) {
             <input type='number' name='" . $ligne[1] . "' id='" . $ligne[1] . "'><br/>";
     }
 }
-if ($_SESSION == null) {
-    header("location: index.php");
-}
+//redirection 
+echo "<script>alert('Compte rendu ajouter!');
+        document.location.href='homePageCom.php';
+        </script>";
