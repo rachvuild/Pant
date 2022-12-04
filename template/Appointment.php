@@ -21,7 +21,7 @@
                             $req = $pdo->prepare("SELECT id_client, nom_client FROM client");
                             $req->execute();
                             while ($donnees = $req->fetch()) {
-                                var_dump($donnees);
+
                                 echo "<option value=" . $donnees['id_client'] . ">" . $donnees['nom_client'] . "</option>";
                             }
                             $req->closecursor();
@@ -29,7 +29,7 @@
                             $req = $pdo->prepare("SELECT * FROM `appointment` AS a INNER JOIN client AS c ON c.id_client = a.id_client WHERE a.id_user='$id_user' GROUP BY a.id_client ");
                             $req->execute();
                             while ($donnees = $req->fetch()) {
-                                var_dump($donnees);
+
                                 echo "<option value=" . $donnees['id_client'] . ">" . $donnees['label_client'] . "</option>";
                             }
                             $req->closecursor();

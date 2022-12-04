@@ -10,7 +10,7 @@ $user = "SELECT * FROM `user` WHERE id_user ='$id_user'";
 $user = $pdo->prepare($user);
 $user->execute();
 $user = $user->fetchAll();
-// echo "pol";
+
 $departement = $user[0]["id_dep"];
 $departement = "SELECT * FROM `department` WHERE `id_dep` = '$departement'";
 $departement = $pdo->prepare($departement);

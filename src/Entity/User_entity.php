@@ -71,7 +71,7 @@ function Getuser($pdo)
     // $connection_user = $pdo->prepare($connection_user);
     // $connection_user->execute();
     // $recipes = $connection_user->fetchAll();
-    // var_dump($recipes);
+
 }
 function updatepwd($pdo, $id_user, $newpwd)
 {

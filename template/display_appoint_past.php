@@ -17,7 +17,7 @@
             $pastd = Dayspast($ligne[0], $id_user, $pdo);
 
             foreach ($pastd as $ligne) {
-                // var_dump($ligne);
+
                 echo "
                 <tbody class='card_futur'><tr>
                    <tr> <td>heure : " . $ligne[1] . "</td></tr>

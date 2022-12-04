@@ -1,7 +1,7 @@
 <?php
 session_start();
 require('../ConnectionBdd.php');
-// echo "pol";
+
 if ($_SESSION == null) {
     header("location: index.php");
 } else {
