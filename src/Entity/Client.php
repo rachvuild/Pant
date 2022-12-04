@@ -29,7 +29,6 @@ function registerClient($pc, $city, $address, $phone, $label, $nom, $prenom, $em
 
             $timestamp = date('H:i:s', mktime($timestamp, 0, 0));
             $test = $pdo->prepare("SELECT `hour_appoint`, `date_appoint` FROM `appointment` WHERE `id_user` = '$id_user' AND `hour_appoint` = '$timestamp' AND `date_appoint`='$date'");
-
             $test->execute();
             $testAppoint = $test->fetch();
 
