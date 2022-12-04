@@ -6,7 +6,6 @@ if ($_SESSION == null) {
     $id_job = $_SESSION["roles_user"];
     $id_user = $_SESSION["id_user"];
     require('../ConnectionBdd.php');
-    echo "oui";
     if (isset($_POST['cr'])) {
         require "../../template/header.php";
         require('../Entity/sample.php');
