@@ -11,19 +11,12 @@
     <title>GSB</title>
 </head>
 
-<!-- <body>
+<body>
     <form action="updateUserPassword.php" method="post">
         <input type="text" name="newpassorwd" placeholder="entrez votre nouveau password">
         <input type="submit" name="updatepwd">
     </form>
-</body> -->
-<script>
-    alert(
-</script>
-<form action='updateUserPassword.php' method='post'><input type='text' name='newpassorwd' placeholder='entrez votre nouveau password'><input type='submit' name='updatepwd'></form>
-<script>
-    );
-</script>
+</body>
 
 </html><?php if ($_SESSION == null) {
             header("location: index.php");
