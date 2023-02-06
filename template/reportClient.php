@@ -52,7 +52,7 @@
                 </select>
             </div>
 
-            <input type="submit" value="Valider" name="REPORT_CLIENT">
+            <input type="submit" value="Envoyé" name="REPORT_CLIENT">
         </form>
     </div>
 </body>
