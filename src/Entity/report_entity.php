@@ -22,5 +22,5 @@ if (isset($_POST['compte_rendu'])) {
     AND report.id_user='$id_user'");
 }
 if ($_SESSION == null) {
-    header("location: index.php");
+    header("location: ../../template/connexion.php");
 }

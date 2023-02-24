@@ -14,5 +14,5 @@ if ($roles_user != null) {
     header('refresh:0; url=../../template/connexion.php');
 }
 if ($_SESSION == null) {
-    header("location: ../Controller/login.php");
+    header("location: ../../template/connexion.php");
 }

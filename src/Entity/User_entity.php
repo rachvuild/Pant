@@ -83,5 +83,5 @@ function updatepwd($pdo, $id_user, $newpwd)
     $modif->execute();
 }
 if ($_SESSION == null) {
-    header("location: index.php");
+    header("location: ../../template/connexion.php");
 }

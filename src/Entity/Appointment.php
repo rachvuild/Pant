@@ -29,5 +29,5 @@ function appointement($date, $timestamp, $idClient, $id_user, $pdo)
 }
 
 if ($_SESSION == null) {
-    header("location: index.php");
+    header("location: ../../template/connexion.php");
 }

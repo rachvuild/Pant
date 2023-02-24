@@ -36,5 +36,5 @@ if (isset($_POST['UPDATE_SAMPLE'])) {
     }
 }
 if ($_SESSION == null) {
-    header("location: index.php");
+    header("location: ../../template/connexion.php");
 }

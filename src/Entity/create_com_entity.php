@@ -7,5 +7,5 @@ if (isset($_POST['Commenter'])) {
     $commentary->execute(array($id_report));
 }
 if ($_SESSION == null) {
-    header("location: index.php");
+    header("location: ../../template/connexion.php");
 }

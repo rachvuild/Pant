@@ -32,5 +32,5 @@ var_dump($sampleAllvue);
 die;
 
 if ($_SESSION == null) {
-    header("location: index.php");
+    header("location: ../../template/connexion.php");
 }

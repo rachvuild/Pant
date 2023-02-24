@@ -31,5 +31,5 @@ foreach ($AllDepartement as $ligne) {
     $alluser[$id] = $user->fetchAll();
 }
 if ($_SESSION == null) {
-    header("location: index.php");
+    header("location: ../../template/connexion.php");
 }

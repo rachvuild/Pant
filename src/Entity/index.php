@@ -1,2 +1,2 @@
 <?php
-header('Location: redirection.php');
+header('Location: ../../template/connexion.php');

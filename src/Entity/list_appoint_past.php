@@ -16,5 +16,5 @@ function Dayspast($dates, $id_user, $pdo)
     return $pastd;
 }
 if ($_SESSION == null) {
-    header("location: index.php");
+    header("location: ../../template/connexion.php");
 }
