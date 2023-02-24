@@ -5,9 +5,7 @@ if ($_SESSION == null) {
 } else {
     $id_job = $_SESSION["roles_user"];
     $id_user = $_SESSION["id_user"];
-    require('../ConnectionBdd.php');
     if (isset($_POST['cr'])) {
-        $id_client = htmlspecialchars($_POST['id_client']);
         require "../../template/header.php";
         require('../Entity/sample.php');
         require('../../template/reportClient.php');
