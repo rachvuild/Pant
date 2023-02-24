@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ($_SESSION == null) {
-    header("location: index.php");
+    header("location: ../../template/connexion.php");
 } else {
     require('../ConnectionBdd.php');
     require('../../template/updatepwd.php');

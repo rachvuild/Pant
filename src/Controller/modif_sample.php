@@ -2,7 +2,7 @@
 <?php
 session_start();
 if ($_SESSION == null) {
-    header("location: index.php");
+    header("location: ../../template/connexion.php");
 } else {
     $id_user = $_SESSION["id_user"];
     $id_job = $_SESSION["roles_user"];

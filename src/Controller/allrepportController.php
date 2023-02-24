@@ -11,4 +11,5 @@ if ($_SESSION != null) {
     $allrepport = repportDepartement($pdo, $id_user);
     require('../../template/repportDerpartement.php');
 } else {
+    header("Location: ../../template/connexion.php");
 }
