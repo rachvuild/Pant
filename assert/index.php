@@ -1,2 +1,2 @@
 <?php
-header('refresh:0; url=../src/Entity/redirection.php');
+header('refresh:0; url=../template/connexion.php');

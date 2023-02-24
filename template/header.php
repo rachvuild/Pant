@@ -8,7 +8,7 @@
         require('../Entity/User_entity.php');
         $user = Getuser($pdo, $id_user);
         if ($_SESSION == null) {
-            header("location: index.php");
+            header("location: connexion.php");
         }
         if ($id_job == 1 or $id_job == 2) {
             echo "<a  href='homePageCom.php'><img class='img-logo-btn' src='../../img/logo-trans.png' alt=''></a>  <div class='header'>";

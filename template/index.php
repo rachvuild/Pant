@@ -1,2 +1,2 @@
 <?php
-header('Location: ../src/Entity/redirection.php');
+header('Location: connexion.php');

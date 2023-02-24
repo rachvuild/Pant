@@ -59,6 +59,7 @@
                     ";
                 }
             } else {
+                header("location: connexion.php");
             }
 
             ?>
