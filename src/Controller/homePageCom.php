@@ -9,9 +9,9 @@ if ($_SESSION == null) {
 $id_user = $_SESSION["id_user"];
 $id_job = $_SESSION["roles_user"];
 include_once('../ConnectionBdd.php');
+
 require "../../template/header.php";
 require('../Entity/entity_homepage.php');
-
 if (!empty($_POST['appoint'])) {
     $date = htmlspecialchars($_POST['date']);
     $timestamp = htmlspecialchars($_POST['horaire']);
@@ -38,8 +38,13 @@ if (!empty($_POST['REGISTER_CLIENT'])) {
     $email = htmlspecialchars($_POST['email']);
     $timestamp = htmlspecialchars($_POST['horaire']);
     $date = htmlspecialchars($_POST['date']);
-    require "../Entity/client.php";
-    registerClient($pc, $city, $address, $phone, $label, $nom, $prenom, $email, $timestamp, $date, $id_user, $pdo);
+    // if (stristr($email, '@') == true) {
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        require "../Entity/client.php";
+        registerClient($pc, $city, $address, $phone, $label, $nom, $prenom, $email, $timestamp, $date, $id_user, $pdo);
+    } else {
+        echo "<script>alert('le champs email à été mal rediger') </script>";
+    }
 }
 require('../../template/home_page_template.php');
 

@@ -18,16 +18,15 @@
                 <h2>Echantillons donnés</h2>
                 <p> Indiquez la référence et le nombre d'échantillon donnés : <br />
                     <?php
-                    if ($sample_req->execute()) {
-                        foreach ($pdo->query($sample) as $ligne) {
-                            echo
-                            "<input type='checkbox' name='" . $ligne[0] . "' id='" . $ligne[0] . "'> 
+                    foreach ($sampleAllvue as $ligne) {
+                        echo
+                        "<input type='checkbox' name='" . $ligne[0] . "' id='" . $ligne[0] . "'> 
                             <label for='" . $ligne[0] . "'>" . $ligne[1] . "</label>
 
                             <label for='" . $ligne[1] . "'>nombre donné :</label>
                             <input type='number' name='" . $ligne[1] . "' id='" . $ligne[1] . "'><br/>";
-                        }
                     }
+                    // }
                     if ($_SESSION == null) {
                         header("location: index.php");
                     }
@@ -50,6 +49,8 @@
                     <option value="Intéressé à revoir">Intéressé à revoir</option>
                     <option value="Très intéréssé">Très intéressé</option>
                 </select>
+                <label for="date">entrez la date du compt rendu:</label>
+                <input type='datetime-local' name='date' /><br />
             </div>
 
             <input type="submit" value="Valider" name="REPORT_CLIENT">

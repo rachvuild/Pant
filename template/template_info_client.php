@@ -55,6 +55,7 @@
                     <th>Interet</th>
                     <th>L'emetteur</th>
                     <th>Date</th>
+                    <th>voir plus</th>
                 </tr>
             </thead>
             <?php
@@ -65,7 +66,15 @@
                         <td>" . $ligne[1] . "</td>
                         <td>" . $ligne[2] . "</td>
                         <td>" . $ligne[3] . "</td>
-                    </tbody>";
+                        <td>
+                        <form action='' method='POST'>
+                        <input type='text' name='.$ligne[4].' hidden>
+                        <input type='text' name='.$ligne[5].' hidden>
+                        <input type='submit'  value='Info repport'>
+                        </form>
+                        </td>
+                    </tbody>
+                    ";
             }
             if ($_SESSION == null) {
                 header("location: index.php");

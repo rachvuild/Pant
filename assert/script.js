@@ -8,7 +8,7 @@ const RDVP = document.getElementById('RDVP');
 window.addEventListener('load', ()=>{
 
     RdvEnCour.classList.add('onBlock');
-
+    
 });
 PRDV.addEventListener('click', () => {
     RdvEnCour.classList.remove('onBlock');

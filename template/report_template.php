@@ -11,7 +11,7 @@
 
 <body>
     <div class="container_cr">
-        <h1>Compte rendu Modifiable</h1>
+        <h1>Compte rendu Modifiable de : <?= $id_userbis ?></h1>
         <table class='table_cr'>
             <thead>
                 <tr>

@@ -56,47 +56,57 @@
             <form class=" register_client" action="homePageCom.php" method="post">
                 <fieldset class=" client">
                     <legend>Création d'un nouveau client</legend>
+                    <div class="labal-new-client">
+                        <label for="nom">Nom :</label>
+                        <input class="input-crea" type="text" maxlength="255" name="nom"><br>
+                    </div>
+                    <div class="labal-new-client">
+                        <label for="prenom">Prenom :</label>
+                        <input class="input-crea" type="text" maxlength="255" name="prenom"><br>
+                    </div>
+                    <div class="labal-new-client">
+                        <label for="email">E-mail :</label>
+                        <input class="input-crea" type="text" maxlength="255" name="email"><br>
+                    </div>
+                    <div class="labal-new-client">
+                        <label for="phone">Téléphone :</label>
+                        <input class="input-crea" type="text" maxlength="10" name="phone"><br>
+                    </div>
+                    <div class="labal-new-client">
+                        <label for="city">Ville :</label>
+                        <input class="input-crea" type="text" maxlength="255" name="city"><br>
+                    </div>
+                    <div class="labal-new-client">
+                        <label for="address">Adresse :</label>
+                        <input class="input-crea" type="text" maxlength="255" name="address"><br>
+                    </div>
+                    <div class="labal-new-client">
+                        <label for="pc"> Code postal :</label>
+                        <input class="input-crea" type="text" minlength="5" maxlength="5" name="pc"><br>
+                    </div>
+                    <div class="labal-new-client">
+                        <label for="label">Label :</label>
+                        <input class="input-crea" type="text" maxlength="255" name="label"><br>
+                    </div>
+                    <div class="labal-new-client">
+                        <label for="">Choissisez une Date : </label>
+                        <input class="input-crea" type="date" name="date"><br />
+                    </div>
+                    <div class="labal-new-client">
+                        <label for="">Choissisez une Plage Horaire : </label>
+                        <select class="input-crea" name=" horaire" id="PlageHoraire">
 
-                    <label for="nom">Nom :</label>
-                    <input type="text" maxlength="255" name="nom"><br>
+                            <option value="8">8h</option>
+                            <option value="9">9h</option>
+                            <option value="10"> 10h</option>
+                            <option value="11"> 11h</option>
+                            <option value="14">14h</option>
+                            <option value="15">15h</option>
+                            <option value="16"> 16h</option>
+                            <option value="17"> 17h</option>
 
-                    <label for="prenom">Prenom :</label>
-                    <input type="text" maxlength="255" name="prenom"><br>
-
-                    <label for="email">E-mail :</label>
-                    <input type="text" maxlength="255" name="email"><br>
-
-                    <label for="phone">Téléphone :</label>
-                    <input type="text" maxlength="10" name="phone"><br>
-
-                    <label for="city">Ville :</label>
-                    <input type="text" maxlength="255" name="city"><br>
-
-                    <label for="address">Adresse :</label>
-                    <input type="text" maxlength="255" name="address"><br>
-
-                    <label for="pc"> Code postal :</label>
-                    <input type="text" minlength="5" maxlength="5" name="pc"><br>
-
-                    <label for="label">Label :</label>
-                    <input type="text" maxlength="255" name="label"><br>
-
-                    <label for="">Choissisez une Date : </label>
-                    <input type="date" name="date"><br />
-
-                    <label for="">Choissisez une Plage Horaire : </label>
-                    <select name="horaire" id="PlageHoraire">
-
-                        <option value="8">8h</option>
-                        <option value="9">9h</option>
-                        <option value="10"> 10h</option>
-                        <option value="11"> 11h</option>
-                        <option value="14">14h</option>
-                        <option value="15">15h</option>
-                        <option value="16"> 16h</option>
-                        <option value="17"> 17h</option>
-
-                    </select> <br />
+                        </select> <br />
+                    </div>
                     <input type="submit" value="Ajouter votre client" name="REGISTER_CLIENT">
                 </fieldset>
             </form>

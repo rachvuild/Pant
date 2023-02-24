@@ -35,7 +35,7 @@
                     </form>
                 </div>
                 <div class="connexion">
-                    <img src="../img/logo.jpg" alt="">
+                    <img src="../img/logo-trans.png" alt="">
                 </div>';
     } else {
         echo "vous etes deja connécté";

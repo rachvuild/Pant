@@ -5,12 +5,17 @@ $interest = htmlspecialchars($_POST['interest']);
 $id_client = htmlspecialchars($_POST['id_client']);
 $id_user = htmlspecialchars($_POST['id_user']);
 $id_appoint = htmlspecialchars($_POST['id_appoint']);
-echo $id_user;
+$date = htmlspecialchars($_POST['date']);
+// echo $id_user;
+echo  $date;
 
+if ($date == null) {
+    $date = date("Y-m-d H:i:s");
+}
 // Register report in database
 $registerReport =
-    "INSERT INTO `report`(`summary_report`, `interest_report`, `id_client`, `id_user`, `id_appoint`) 
-VALUES ('$summary','$interest',$id_client,'$id_user',$id_appoint)";
+    "INSERT INTO `report`(`summary_report`, `interest_report`, `id_client`, `id_user`, `id_appoint`,`date`) 
+VALUES ('$summary','$interest',$id_client,'$id_user',$id_appoint,$date)";
 $registerReport = $pdo->prepare($registerReport);
 if ($registerReport->execute()) {
     $reponse = $pdo->query('SELECT `id_report` FROM `report` ORDER BY `id_report` DESC');

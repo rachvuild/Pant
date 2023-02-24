@@ -65,13 +65,15 @@ function RegisterUser(
     // $register_user->fetchAll();
     // echo $register_user;
 }
-function Getuser($pdo)
+function Getuser($pdo, $id_user)
 {
-    // $connection_user = "SELECT * FROM `user` WHERE 1";
-    // $connection_user = $pdo->prepare($connection_user);
-    // $connection_user->execute();
-    // $recipes = $connection_user->fetchAll();
-
+    $connection_user = "SELECT u.id_user,u.mail_user,u.name_user,u.fname_user,j.label_job FROM user u 
+    INNER JOIN job j ON u.id_job=j.id_job
+    WHERE u.id_user= '$id_user'";
+    $connection_user = $pdo->prepare($connection_user);
+    $connection_user->execute();
+    $user = $connection_user->fetchAll();
+    return $user;
 }
 function updatepwd($pdo, $id_user, $newpwd)
 {

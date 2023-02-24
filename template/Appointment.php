@@ -13,12 +13,13 @@
         <div class="clientn1">
             <form class="register_client" method="post" action="homePageCom.php">
                 <fieldset class="client">
-                    <legend class="n1rdv">Prise de Rendez-Vous</legend>
-                    <label for="">Entrez le nom du client: </label><select name="client" id="client" class="n1rdv">
+                    <legend class="n1rdv">Prise de Rendez-Vous pour : <?= $id_user ?></legend>
+                    <label for="">Entrez le nom du client: </label>
+                    <select name="client" id="client" class="n1rdv">
                         <?php
                         if (isset($_POST['rdv'])) {
                             $id_user = $_POST['id_user'];
-                            $req = $pdo->prepare("SELECT id_client, nom_client FROM client");
+                            $req = $pdo->prepare("SELECT * FROM `appointment` AS a INNER JOIN client AS c ON c.id_client = a.id_client WHERE a.id_user='$id_user' GROUP BY a.id_client");
                             $req->execute();
                             while ($donnees = $req->fetch()) {
 
