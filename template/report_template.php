@@ -11,7 +11,12 @@
 
 <body>
     <div class="container_cr">
-        <h1>Compte rendu Modifiable de : <?= $id_userbis ?></h1>
+        <h1>Compte rendu Modifiable de : <?php if (empty($id_userbis)) {
+                                                echo $id_user;
+                                            } else {
+                                                echo $id_userbis;
+                                            }
+                                            ?></h1>
         <table class='table_cr'>
             <thead>
                 <tr>

@@ -75,6 +75,7 @@
                         </td>
                     </tbody>
                     ";
+                var_dump($ligne[4], $ligne[5]);
             }
             if ($_SESSION == null) {
                 header("location: index.php");

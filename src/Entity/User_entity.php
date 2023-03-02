@@ -16,7 +16,7 @@ function ConnectionUser(
         $connection_user = "SELECT * FROM `user` WHERE id_user ='$id_user' ";
         $connection_user = $pdo->prepare($connection_user);
         $connection_user->execute();
-        $recipes = $connection_user->fetchAll();;
+        $recipes = $connection_user->fetchAll();
 
         //check if there is a return from the database to know if there is a connection
         if (password_verify($pwd_user, $recipes[0]['pwd_user'])) {
