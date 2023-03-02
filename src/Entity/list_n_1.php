@@ -10,5 +10,5 @@ while ($department = $reponse->fetch()) {
 $request = "SELECT mail_user, name_user, fname_user, id_user FROM `user` WHERE id_dep=$d AND id_job=1;";
 $req = $pdo->prepare($request);
 if ($_SESSION == null) {
-    header("location: index.php");
+    header("location: ../../template/connexion.php");
 }

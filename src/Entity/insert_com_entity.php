@@ -16,5 +16,5 @@ if (isset($_POST['valider'])) {
     }
 }
 if ($_SESSION == null) {
-    header("location: index.php");
+    header("location: ../../template/connexion.php");
 }

@@ -18,5 +18,5 @@ function Days($dates, $id_user, $pdo)
     return $futurd;
 }
 if ($_SESSION == null) {
-    header("location: index.php");
+    header("location: ../../template/connexion.php");
 }

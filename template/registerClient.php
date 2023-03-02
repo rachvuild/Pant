@@ -55,6 +55,6 @@
 </html>
 <?php
 if ($_SESSION == null) {
-    header("location: index.php");
+    header("location: connexion.php");
 }
 ?>

@@ -27,5 +27,5 @@ if (isset($_POST['modif'])) {
     $label->execute(array($id_report));
 }
 if ($_SESSION == null) {
-    header("location: index.php");
+    header("location: ../../template/connexion.php");
 }

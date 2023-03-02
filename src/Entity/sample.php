@@ -37,5 +37,5 @@ $sampleAllvue = array_unique($sampleAllvue);
 // die;
 
 if ($_SESSION == null) {
-    header("location: index.php");
+    header("location: ../../template/connexion.php");
 }

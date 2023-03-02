@@ -111,5 +111,5 @@ function infoclient($pdo, $id_client)
     return $array;
 }
 if ($_SESSION == null) {
-    header("location: index.php");
+    header("location: ../../template/connexion.php");
 }

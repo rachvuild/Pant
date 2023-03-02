@@ -3,7 +3,7 @@ session_start();
 require('../ConnectionBdd.php');
 
 if ($_SESSION == null) {
-    header("location: index.php");
+    header("location: ../../template/connexion.php");
 } else {
     require('../../template/register.php');
 
