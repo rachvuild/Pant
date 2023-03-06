@@ -14,8 +14,9 @@ if ($date == null) {
 }
 // Register report in database
 $registerReport =
-    "INSERT INTO `report`(`summary_report`, `interest_report`, `id_client`, `id_user`, `id_appoint`,`date`) 
-VALUES ('$summary','$interest',$id_client,'$id_user',$id_appoint,$date)";
+    "INSERT INTO `report`(`summary_report`, `interest_report`, `id_client`, `id_user`, `id_appoint`,`date_repport`) 
+VALUES ('$summary','$interest',$id_client,'$id_user',$id_appoint, '$date' )";
+var_dump($registerReport);
 $registerReport = $pdo->prepare($registerReport);
 if ($registerReport->execute()) {
     $reponse = $pdo->query('SELECT `id_report` FROM `report` ORDER BY `id_report` DESC');

@@ -18,7 +18,8 @@
                 <h2>Echantillons donnés</h2>
                 <p> Indiquez la référence et le nombre d'échantillon donnés : <br />
                     <?php
-                    foreach ($sampleAllvue as $ligne) {
+                    foreach ($sampleAll as $ligne) {
+                        // var_dump($ligne);
                         echo
                         "<input type='checkbox' name='" . $ligne[0] . "' id='" . $ligne[0] . "'> 
                             <label for='" . $ligne[0] . "'>" . $ligne[1] . "</label>

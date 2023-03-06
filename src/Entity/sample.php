@@ -19,7 +19,7 @@ $sampleClient = $sample_req->fetchAll();
 $sampleAll_req = $pdo->prepare($sampleall);
 $sampleAll_req->execute();
 $sampleAll = $sampleAll_req->fetchAll();
-var_dump($sampleAll);
+// var_dump($sampleAll);
 $sampleAllvue = [];
 // var_dump($sampleAll);
 // var_dump($sampleClient);
