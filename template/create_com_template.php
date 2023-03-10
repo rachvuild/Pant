@@ -21,26 +21,27 @@
         </form>
 
         <h1>Compte-rendu sélectionné</h1>
-        <?php
-        foreach ($commentary as $ligne) {
+        <table class='table_cr'>
+            <thead>
+            <tr>
+                <th>Rapport</th>
+                <th>Interet</th>
+                <th>Utilisateur</th>
+            </tr>
+            </thead>
+            <tbody>
+                <?php
+                foreach($commentary as $ligne){
             echo "
-                <table class='table_cr'>
-                    <thead>
-                    <tr>
-                    <th>Rapport</th>
-                    <th>Interet</th>
-                    <th>Utilisateur</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <td>" . $ligne[0] . "</td>
-                    <td>" . $ligne[1] . "</td>
-                    <td>" . $ligne[2] . "</td></tbody>";
-        }
+                    <td>" . $ligne['summary_report'] . "</td>
+                    <td>" . $ligne['interest_report'] . "</td>
+                    <td>" . $ligne['id_user'] . "</td></tbody>";}
         if ($_SESSION == null) {
             header("location: connexion.php");
         }
         ?>
+            </tbody>
+        </table>
     </div>
 </body>
 
