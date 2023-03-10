@@ -17,9 +17,9 @@
 
                 <th>label client</th>
                 <th>nom client</th>
-                <th>id commercial</th>
+                <th>commercial</th>
                 <th>compt rendu</th>
-                <th>apressiation du prospect</th>
+                <th>appréciation</th>
                 <th>date deposer</th>
                 <th>info client</th>
                 <th>commenter</th>

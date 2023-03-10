@@ -19,7 +19,7 @@
             echo "<a class='btn-header' href='modif_sample.php'><span class='hover-underline-animation'>Modifier les échantillons</span></a>";
         }
         if ($id_job == 2) {
-            echo "<a class='btn-header' href='allrepportController.php'> <span class='hover-underline-animation'>Repport des equipe</span></a>";
+            echo "<a class='btn-header' href='allrepportController.php'> <span class='hover-underline-animation'>Rapport des équipes</span></a>";
             echo "<a class='btn-header' href='list.php'> <span class='hover-underline-animation'>Mon équipe</span></a>";
         }
         ?>
