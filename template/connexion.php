@@ -17,7 +17,7 @@
         echo '<div class="connexion">
 
 
-                    <form class="form-connexion" action="../src/Controller/Login.php" method="post">
+                    <form class="form-connexion" action="../src/Controller/login.php" method="post">
                         <h1>Connexion</h1>
             
                         <fieldset class="input-connexion">
