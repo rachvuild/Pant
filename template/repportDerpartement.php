@@ -17,9 +17,9 @@
 
                 <th>label client</th>
                 <th>nom client</th>
-                <th>id commercial</th>
+                <th>commercial</th>
                 <th>compt rendu</th>
-                <th>apressiation du prospect</th>
+                <th>appréciation</th>
                 <th>date deposer</th>
                 <th>info client</th>
                 <th>commenter</th>
@@ -49,7 +49,7 @@
                         </form></td>
                         <td><form method='post' action='create_com_controller.php'>
                         <p> 
-                            <input type='number' name='id_report' id='id_report' value='$ligne[4]' hidden /><br/>              
+                            <input type='number' name='id_report' id='id_report' value='$ligne[6]' hidden /><br/>              
                             <input type='submit' name='Commenter' value='Commenter' />                           
                         </p>
                         </form>

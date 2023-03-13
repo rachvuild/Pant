@@ -12,7 +12,7 @@ function repportDepartement($pdo, $id_user)
     $departement = $request->fetchAll();
     // var_dump($departement[0]['id_dep']);
     // die;
-    $req = "SELECT cl.label_client,cl.nom_client,u.id_user,r.summary_report,r.interest_report,r.date_repport FROM report r
+    $req = "SELECT cl.label_client,cl.nom_client,u.id_user,r.summary_report,r.interest_report,r.date_repport, r.id_report FROM report r
 INNER JOIN client cl ON cl.id_client=r.id_client
 LEFT JOIN comments c ON  c.id_report=r.id_report
 LEFT JOIN user u ON u.id_user=r.id_user
