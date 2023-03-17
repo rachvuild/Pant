@@ -61,18 +61,18 @@ if ($count > 0) {
                 $req->execute();
                 $_SESSION['token'] = $secure_token;
                 $_SESSION['date'] = $date;
-                $secure_token = ['dateTime' => $date, 'token' => "$secure_token"];
+                $secure_tokens = ['dateTime' => $date, 'token' => "$secure_token"];
             } elseif (!empty($data)) {
                 $req = "SELECT * FROM `token` WHERE id_user = '$login'";
                 $req = $pdo->prepare($req);
                 $req->execute();
                 $data = $req->fetchAll();
-                $secure_token = json_encode(['dateTime' => $data[0]['date_token'], 'token' => $data[0]['token']]);
+                $secure_tokens = ['dateTime' => $data[0]['date_token'], 'token' => $data[0]['token']];
             }
             if (empty($login) and empty($mdp) and empty($_SESSION['date'])) {
                 echo json_encode(['erreur' => 'eurreur log or session']);
             }
-            $json = array("status" => 200, "message" => "Success", "data" => $secure_token);
+            $json = array("status" => 200, "message" => "Success", "data" => $secure_tokens);
         } else {
 
             $json = array("status" => 400, "message" => "Error");
