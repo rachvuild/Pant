@@ -1,14 +1,7 @@
 <?php
 function appointement($date, $timestamp, $idClient, $id_user, $pdo)
 {
-
-
-
-
-
     if ($date != NULL && $timestamp != NULL && $idClient != NULL) {
-
-
 
         $timestamp = date('H:i:s', mktime($timestamp, 0, 0));
 
