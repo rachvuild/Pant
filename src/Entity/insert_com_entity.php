@@ -3,7 +3,7 @@ require('../ConnectionBdd.php');
 session_start();
 $id_job = $_SESSION["roles_user"];
 $id_user = $_SESSION["id_user"];
-// rentrer le commentaire dans la bdd
+// rentre le commentaire dans la bdd
 if (isset($_POST['valider'])) {
     $com = $_POST['com'];
     $id_report = $_POST['id_report'];

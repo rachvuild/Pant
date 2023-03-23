@@ -16,8 +16,8 @@
             <thead>
                 <tr>
                     <th>Numéro département</th>
-                    <th>nom département</th>
-                    <th>mail</th>
+                    <th>Nom département</th>
+                    <th>Mail</th>
                     <th>Nom</th>
                     <th>Prénom</th>
                     <th>Comptes rendus</th>
@@ -56,11 +56,11 @@
                     <thead>
                     <tr>
                     <th>Numéro département</th>
-                    <th>nom département</th>
-                    <th>mail</th>
+                    <th>Nom département</th>
+                    <th>Mail</th>
                     <th>Nom</th>
                     <th>Prénom</th>
-                    <th>Compte rendu</th>
+                    <th>Comptes rendus</th>
                     </tr>
                     </thead>
                     <tbody>";

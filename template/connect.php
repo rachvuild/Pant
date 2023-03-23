@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h1>vous etes connecter
+    <h1>Vous êtes connecté
         <?php
         session_start();
         echo $_SESSION['id_user'];

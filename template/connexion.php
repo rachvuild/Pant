@@ -21,15 +21,15 @@
                         <h1>Connexion</h1>
             
                         <fieldset class="input-connexion">
-                            <legend>Nom d utilisateur </legend>
+                            <legend>Nom d\'utilisateur </legend>
             
-                            <input class="input-none" type="text" placeholder="Entrer votre ID" name="id_user" required>
+                            <input class="input-none" type="text" placeholder="Entrez votre ID" name="id_user" required>
             
                         </fieldset>
                         <fieldset class="input-connexion">
                             <legend>Mot de passe</legend>
             
-                            <input class="input-none" type="password" placeholder="Entrer le mot de passe" name="pwd_user" required>
+                            <input class="input-none" type="password" placeholder="Entrez le mot de passe" name="pwd_user" required>
                         </fieldset>
                         <input class="submit-connexion" type="submit" id="submit" value="LOGIN" name="LOGIN">
                     </form>
@@ -38,7 +38,7 @@
                     <img src="../img/logo-trans.png" alt="">
                 </div>';
     } else {
-        echo "vous etes deja connécté";
+        echo "Vous êtes déjà connecté";
         header('refresh:1; url=connect.php');
     }
 

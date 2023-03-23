@@ -11,7 +11,7 @@
 
 <body>
     <div class="container_form2">
-        <h1>Rédiger votre commentaire</h1>
+        <h1>Rédigez votre commentaire</h1>
         <form method='post' action='../Entity/insert_com_entity.php'>
             <p>
                 <label for="com">Votre commentaire</label>: <input type='text' name='com' id='com' />
@@ -25,7 +25,7 @@
             <thead>
             <tr>
                 <th>Rapport</th>
-                <th>Interet</th>
+                <th>Interêt</th>
                 <th>Utilisateur</th>
             </tr>
             </thead>

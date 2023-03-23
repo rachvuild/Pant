@@ -3,7 +3,7 @@
 
 
 <body>
-    <h1>Rendez-vous passez</h1>
+    <h1>Rendez-vous réalisés</h1>
     <?php
     if ($past->execute()) {
         foreach ($pdo->query($pastdate) as $ligne) {
@@ -31,7 +31,7 @@
                         <input type='number' name='id_client' id='id_client' value='" . $ligne[4] . "' hidden />
                         <input type='text' name='label_client' id='label_client' value='" . $ligne[5] . "' hidden />                
 
-                        <input type='submit' value='rédiger compte rendu' name='cr' />
+                        <input type='submit' value='Rédiger compte rendu' name='cr' />
                     
                     </p>
                     </form></td> 

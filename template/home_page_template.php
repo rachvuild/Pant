@@ -14,9 +14,9 @@
 
     <div class="homePageMenu">
 
-        <h1 id="PRDV" class="h1menu">Prise de Rendez vous</h1>
-        <h1 id="RDVV" class="h1menu">rendez-vous a venir</h1>
-        <h1 id="RDVP" class="h1menu">rendez-vous passer</h1>
+        <h1 id="PRDV" class="h1menu">Prise de Rendez-vous</h1>
+        <h1 id="RDVV" class="h1menu">Rendez-vous à venir</h1>
+        <h1 id="RDVP" class="h1menu">Rendez-vous réalisé</h1>
 
     </div>
     <div class="parent">
@@ -61,7 +61,7 @@
                         <input class="input-crea" type="text" maxlength="255" name="nom"><br>
                     </div>
                     <div class="labal-new-client">
-                        <label for="prenom">Prenom :</label>
+                        <label for="prenom">Prénom :</label>
                         <input class="input-crea" type="text" maxlength="255" name="prenom"><br>
                     </div>
                     <div class="labal-new-client">
@@ -112,7 +112,7 @@
             </form>
         </div>
         <div class="conterondu srollbar">
-            <h1>Rendez-vous passez</h1>
+            <h1>Rendez-vous réalisés</h1>
             <?php
             if ($past->execute()) {
                 foreach ($pdo->query($pastdate) as $ligne) {
@@ -129,10 +129,10 @@
 
                         echo "
                 <tbody class='card_futur'><tr>
-                   <tr> <td>heure : " . $ligne[1] . "</td></tr>
-                   <tr> <td>label : " . $ligne[5] . "</td></tr>
+                   <tr> <td>Heure : " . $ligne[1] . "</td></tr>
+                   <tr> <td>Label : " . $ligne[5] . "</td></tr>
                    <tr> <td>Nom : " . $ligne["nom_client"] . "</td></tr>
-                   <tr> <td>Prenom : " . $ligne["prenom_client"] . "</td></tr>
+                   <tr> <td>Prénom : " . $ligne["prenom_client"] . "</td></tr>
                     <td><form method='post' action='sampleController.php'>
                     <p>
                         <input type='number' name='id_appoint' id='id_appoint' value='" . $ligne[2] . "' hidden />
@@ -140,7 +140,7 @@
                         <input type='number' name='id_client' id='id_client' value='" . $ligne[4] . "' hidden />
                         <input type='text' name='label_client' id='label_client' value='" . $ligne[5] . "' hidden />                
 
-                        <input type='submit' value='rédiger compte rendu' name='cr'/>
+                        <input type='submit' value='Rédiger compte rendu' name='cr'/>
                     
                     </p>
                     </form></td> 
@@ -174,10 +174,10 @@
 
                             echo "
             <tbody  class='card_futur'>
-        <tr > <td>heure : " . $ligne[0] . "</td>
-       <tr > <td>label : " . $ligne[2] . "</td>
+        <tr > <td>Heure : " . $ligne[0] . "</td>
+       <tr > <td>Label : " . $ligne[2] . "</td>
        <tr > <td>Nom : " . $ligne["nom_client"] . "</td></tr>
-       <tr ><td>Prenom : " . $ligne["prenom_client"] . "</td></tr>
+       <tr ><td>Prénom : " . $ligne["prenom_client"] . "</td></tr>
         
         
         <td>

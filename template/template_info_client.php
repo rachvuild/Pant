@@ -15,16 +15,16 @@
         <table class='table_cr'>
             <thead>
                 <tr>
-                    <th>identifiant</th>
+                    <th>Identifiant</th>
                     <th>Nom</th>
                     <th>Prénom</th>
                     <th>Mail</th>
-                    <th>code postal</th>
-                    <th>ville</th>
-                    <th>adresse</th>
-                    <th>téléphone</th>
-                    <th>label</th>
-                    <th>commentaire</th>
+                    <th>Code postal</th>
+                    <th>Ville</th>
+                    <th>Adresse</th>
+                    <th>Téléphone</th>
+                    <th>Label</th>
+                    <th>Commentaire</th>
                 </tr>
             </thead>
             <?php
@@ -52,8 +52,8 @@
             <thead>
                 <tr>
                     <th>Rapport</th>
-                    <th>Interet</th>
-                    <th>L'emetteur</th>
+                    <th>Interêt</th>
+                    <th>L'émetteur</th>
                     <th>Date</th>
                     <!-- <th>voir plus</th> -->
                 </tr>

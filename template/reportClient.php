@@ -24,7 +24,7 @@
                         "<input type='checkbox' name='" . $ligne[0] . "' id='" . $ligne[0] . "'> 
                             <label for='" . $ligne[0] . "'>" . $ligne[1] . "</label>
 
-                            <label for='" . $ligne[1] . "'>nombre donné :</label>
+                            <label for='" . $ligne[1] . "'>Nombre donné :</label>
                             <input type='number' name='" . $ligne[1] . "' id='" . $ligne[1] . "'><br/>";
                     }
                     // }
@@ -44,13 +44,13 @@
                 <label for="summary">Compte rendu :</label>
                 <textarea name="summary" cols="30" rows="10"></textarea>
 
-                <label for="interest">Clients toujours intéressé ?</label>
+                <label for="interest">Client toujours intéressé ?</label>
                 <select name="interest" id="">
                     <option value="Pas intéréssé">Pas intéressé</option>
                     <option value="Intéressé à revoir">Intéressé à revoir</option>
                     <option value="Très intéréssé">Très intéressé</option>
                 </select>
-                <label for="date">entrez la date du compt rendu:</label>
+                <label for="date">Entrez la date du compte rendu:</label>
                 <input type='datetime-local' name='date' /><br />
             </div>
 
