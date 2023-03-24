@@ -117,7 +117,7 @@
             if ($past->execute()) {
                 foreach ($pdo->query($pastdate) as $ligne) {
                     echo "
-            <table class='appoint_past'>
+            <table class='appoint_futur'>
             <thead>
             <tr>
             <th>" . $ligne[0] . "</th>
