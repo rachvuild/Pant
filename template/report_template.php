@@ -13,8 +13,11 @@
     <div class="container_cr">
         <h1>Compte rendu Modifiable de : <?php if (empty($id_userbis)) {
                                                 echo $id_user;
+                                                $user=1;
                                             } else {
                                                 echo $id_userbis;
+                                                //si on affiche les cr pour les commenter
+                                                $user=0;
                                             }
                                             ?></h1>
         <table class='table_cr'>
@@ -41,7 +44,8 @@
                             
                         </p>
                         </form></td>";
-                if ($id_job == 1) {
+                        //si on est visiteur commercial ou on regarde ses propres compte rendu
+                if ($id_job == 1 || $user==1) {
                     echo "<td><form method='post' action='update_report_controller.php'>
                         <p> 
                             <input type='number' name='id_report' id='id_report' value='$ligne[4]' hidden /><br/>              
