@@ -11,7 +11,7 @@ if ($_SESSION == null) {
     if (isset($_POST['updatepwd'])) {
         $id_user = $_SESSION['id_user'];
         $newpwd = htmlspecialchars($_POST['newpassorwd']);
-        require('../Entity/User_entity.php');
+        require('../Entity/newPassword.php');
         updatepwd($pdo, $id_user, $newpwd);
     }
 }
