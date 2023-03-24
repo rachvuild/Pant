@@ -12,17 +12,17 @@
 <body>
     <div class="container_n">
         <table class="table_cr">
-            <h1>Tout les compte rendu remplis :</h1>
+            <h1>Tous les comptes rendus remplis :</h1>
             <thead>
 
-                <th>label client</th>
-                <th>nom client</th>
-                <th>commercial</th>
-                <th>compt rendu</th>
-                <th>appréciation</th>
-                <th>date deposer</th>
-                <th>info client</th>
-                <th>commenter</th>
+                <th>Label client</th>
+                <th>Nom client</th>
+                <th>Commercial</th>
+                <th>Compte rendu</th>
+                <th>Appréciation</th>
+                <th>Date déposeé</th>
+                <th>Info client</th>
+                <th>Commenter</th>
             </thead>
 
             <?php

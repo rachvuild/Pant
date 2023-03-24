@@ -5,11 +5,7 @@ $sample = "SELECT s.id_sample,  s.label_sample FROM donner d
  LEFT JOIN sample s ON s.id_sample = d.id_sample
  WHERE r.id_client = $id_client
  GROUP BY s.id_sample";
-// $sample = "SELECT s.id_sample,  s.label_sample FROM donner d
-// INNER JOIN report r ON r.id_report = d.id_report
-// LEFT JOIN sample s ON s.id_sample = d.id_sample
-// WHERE r.id_client = $id_client
-// GROUP BY s.id_sample";
+
 $sampleall = "SELECT s.id_sample,  s.label_sample FROM sample s";
 
 $sample_req = $pdo->prepare($sample);

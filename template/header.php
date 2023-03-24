@@ -12,7 +12,7 @@
         }
         if ($id_job == 1 or $id_job == 2) {
             echo "<a  href='homePageCom.php'><img class='img-logo-btn' src='../../img/logo-trans.png' alt=''></a>  <div class='header'>";
-            echo "<a class='btn-header' href='report_controller.php'><span class='hover-underline-animation'>Mes comptes rendu</span></a>";
+            echo "<a class='btn-header' href='report_controller.php'><span class='hover-underline-animation'>Mes comptes rendus</span></a>";
         }
         if ($id_job == 3) {
             echo "<a class='btn-header' href='homepage_n2.php'><img class='img-logo-btn' src='../../img/logo-trans.png' alt=''></a><div class='header'>";
@@ -23,11 +23,11 @@
             echo "<a class='btn-header' href='list.php'> <span class='hover-underline-animation'>Mon équipe</span></a>";
         }
         ?>
-        <a class='btn-header' href="updateUserPassword.php"> <span class="hover-underline-animation"> Modifier votre password</span>
+        <a class='btn-header' href="updateUserPassword.php"> <span class="hover-underline-animation"> Modifier votre mot de passe</span>
 
         </a>
         <p class='btn-header' id="infoUser"><span class="hover-underline-animation"><?= $id_user ?></span></p>
-        <a class='btn-header' href="../../template/destroy.php"><span class="hover-underline-animation">se deconnecter</span></a>
+        <a class='btn-header' href="../../template/destroy.php"><span class="hover-underline-animation">Se déconnecter</span></a>
     </div>
     </div>
     <div class="info-user">

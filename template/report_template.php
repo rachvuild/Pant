@@ -21,7 +21,7 @@
             <thead>
                 <tr>
                     <th>Rapport</th>
-                    <th>Interet</th>
+                    <th>Interêt</th>
                     <th>Date</th>
                     <th>Info client</th>
                     <th>Commenter</th>
@@ -70,9 +70,9 @@
             <thead>
                 <tr>
                     <th>Rapport</th>
-                    <th>Interet</th>
+                    <th>Interêt</th>
                     <th>Commentaire</th>
-                    <th>L'emetteur</th>
+                    <th>L'émetteur</th>
                     <th>Date</th>
                     <th>Info client</th>
                 </tr>

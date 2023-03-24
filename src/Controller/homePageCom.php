@@ -43,7 +43,7 @@ if (!empty($_POST['REGISTER_CLIENT'])) {
         require "../Entity/client.php";
         registerClient($pc, $city, $address, $phone, $label, $nom, $prenom, $email, $timestamp, $date, $id_user, $pdo);
     } else {
-        echo "<script>alert('le champs email à été mal rediger') </script>";
+        echo "<script>alert('le champs email à été mal redigé') </script>";
     }
 }
 require('../../template/home_page_template.php');

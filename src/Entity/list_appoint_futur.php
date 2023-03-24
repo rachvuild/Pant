@@ -7,7 +7,7 @@ $month = date('m');
 $day = date('d');
 $date = $years . "-" . $month . "-" . $day;
 
-//print all futur appointment of the user
+//print all future appointments of the user
 $futurdate = "SELECT DISTINCT date_appoint FROM `appointment` WHERE id_user='$id_user' AND date_appoint>'$date'";
 $futur = $pdo->prepare($futurdate);
 

@@ -29,7 +29,7 @@
             <br />
             <input type='number' name='id_report' id='id_report' value='<?= $id_report ?>' hidden /><br />
 
-            <label for="interest">Clients toujours intéressé ?</label>
+            <label for="interest">Client toujours intéressé ?</label>
             <select name="interest" id="">
                 <option value="Pas intéréssé">Pas intéressé</option>
                 <option value="Intéressé à revoir">Intéressé à revoir</option>

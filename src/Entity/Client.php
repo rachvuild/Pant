@@ -100,7 +100,7 @@ function infoclient($pdo, $id_client)
 {
 
 
-    //select information about cliennt
+    //select information about client
     $infoclient = "SELECT * FROM client WHERE id_client=$id_client";
     $infoc = $pdo->prepare($infoclient);
 

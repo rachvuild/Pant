@@ -9,7 +9,7 @@ $dater = $years . "-" . $month . "-" . $day;
 if (isset($_POST['rdv'])) {
     $id_user = $_POST['id_user'];
 }
-//print all futur appointment of the user
+//print all future appointments of the user
 $futurdate = "SELECT DISTINCT date_appoint FROM `appointment` WHERE id_user='$id_user' AND date_appoint>'$dater' ORDER BY date_appoint";
 $futur = $pdo->prepare($futurdate);
 
@@ -35,7 +35,7 @@ function Dayspast($dates, $id_user, $pdo)
     return $pastd;
 }
 
-// verifie if a report was effected
+// verify if a report has been written
 
 function Verif($id, $pdo)
 {
