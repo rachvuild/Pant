@@ -14,13 +14,7 @@
         <?php
         session_start();
         echo $_SESSION['id_user'];
-        if($_SESSION['id_job']==1 || $_SESSION['id_job']==2){
-            header("location:../src/Controller/homePageCom.php");
-        }
-        if($_SESSION['id_job']==3){
-            header("location:../src/Controller/homepage_n2.php");
-        }
-        else {
+        if ($_SESSION == null) {
             header("location: connexion.php");
         }
         ?></h1>
