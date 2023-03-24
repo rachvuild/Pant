@@ -13,7 +13,6 @@
     <?php
     session_start();
 
-    if ($_SESSION == null) {
         echo '<div class="connexion">
 
 
@@ -37,10 +36,6 @@
                 <div class="connexion">
                     <img src="../img/logo-trans.png" alt="">
                 </div>';
-    } else {
-        echo "Vous êtes déjà connecté";
-        header('refresh:1; url=connect.php');
-    }
 
     ?>
 </body>
