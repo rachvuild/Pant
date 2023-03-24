@@ -442,6 +442,12 @@ input {
     margin-bottom: 5ex;
 }
 
+.table_info_cl {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 @media screen and (max-width: 1228px) {
 
 
@@ -527,6 +533,8 @@ input {
     .register_client {
         width: 80%;
     }
+
+
 }
 
 @media screen and (max-width: 474px) {

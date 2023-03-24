@@ -12,41 +12,126 @@
 <body>
     <div class="container_cr">
         <h1>Votre Client</h1>
-        <table class='table_cr'>
-            <thead>
-                <tr>
-                    <th>Identifiant</th>
-                    <th>Nom</th>
-                    <th>Prénom</th>
-                    <th>Mail</th>
-                    <th>Code postal</th>
-                    <th>Ville</th>
-                    <th>Adresse</th>
-                    <th>Téléphone</th>
-                    <th>Label</th>
-                    <th>Commentaire</th>
-                </tr>
-            </thead>
-            <?php
-            if ($infoc->execute()) {
-                foreach ($pdo->query($infoclient) as $ligne) {
+        <div class="table_info_cl">
+            <table class='table_cr'>
+                <thead>
+                    <tr>
+                        <th>Identifiant</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
                     echo "
-                    <tbody>
-                        <td>" . $ligne[0] . "</td>
-                        <td>" . $ligne[7] . "</td>
-                        <td>" . $ligne[8] . "</td>
-                        <td>" . $ligne[9] . "</td>
-                        <td>" . $ligne[1] . "</td>
-                        <td>" . $ligne[2] . "</td>
-                        <td>" . $ligne[3] . "</td>
-                        <td>" . $ligne[4] . "</td>
-                        <td>" . $ligne[5] . "</td>
-                        <td>" . $ligne[6] . "</td>
-                    </tbody>";
-                }
-            }
-            ?>
-        </table>
+                        <td>" . $client_info['id_client'] . "</td>";
+                    ?>
+                </tbody>
+            </table>
+            <table class='table_cr'>
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    echo "
+                        <td>" . $client_info['nom_client'] . "</td>";
+                    ?>
+                </tbody>
+            </table>
+            <table class='table_cr'>
+                <thead>
+                    <tr>
+                        <th>Prénom</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    echo "
+                        <td>" . $client_info['prenom_client'] . "</td>";
+                    ?>
+                </tbody>
+            </table>
+            <table class='table_cr'>
+                <thead>
+                    <tr>
+                        <th>E-mail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    echo "
+                        <td>" . $client_info['email_client'] . "</td>";
+                    ?>
+                </tbody>
+            </table>
+            <table class='table_cr'>
+                <thead>
+                    <tr>
+                        <th>Code postal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    echo "
+                        <td>" . $client_info['pc_client'] . "</td>";
+                    ?>
+                </tbody>
+            </table>
+            <table class='table_cr'>
+                <thead>
+                    <tr>
+                        <th>Ville</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    echo "
+                        <td>" . $client_info['city_client'] . "</td>";
+                    ?>
+                </tbody>
+            </table>
+            <table class='table_cr'>
+                <thead>
+                    <tr>
+                        <th>Adresse</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    echo "
+                        <td>" . $client_info['address_client'] . "</td>";
+                    ?>
+                </tbody>
+            </table>
+            <table class='table_cr'>
+                <thead>
+                    <tr>
+                        <th>Téléphone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    echo "
+                        <td>" . $client_info['phone_client'] . "</td>";
+                    ?>
+                </tbody>
+            </table>
+            <table class='table_cr'>
+                <thead>
+                    <tr>
+                        <th>Label</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    echo "
+                        <td>" . $client_info['label_client'] . "</td>";
+                    ?>
+                </tbody>
+            </table>
+        </div>
+
         <h1>Compte rendu existant sur votre client</h1>
         <table class='table_cr'>
             <thead>
