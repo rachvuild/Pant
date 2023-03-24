@@ -1,6 +1,7 @@
 <?php
 // Connection to database
 include_once('../ConnectionBdd.php');
+include_once('Appointment.php');
 
 
 // ==================================================================================================================================================
@@ -24,42 +25,8 @@ function registerClient($pc, $city, $address, $phone, $label, $nom, $prenom, $em
         $client->execute();
         $client = $client->fetchAll();
         $idClient = $client[0]['id_client'];
-        if ($date != NULL && $timestamp != NULL && $idClient != NULL) {
-
-
-            $timestamp = date('H:i:s', mktime($timestamp, 0, 0));
-            $test = $pdo->prepare("SELECT `hour_appoint`, `date_appoint` FROM `appointment` WHERE `id_user` = '$id_user' AND `hour_appoint` = '$timestamp' AND `date_appoint`='$date'");
-
-            $test->execute();
-            $testAppoint = $test->fetch();
-
-            if (empty($testAppoint)) {
-
-                $rdv = "INSERT INTO `appointment` (`id_appoint`, `date_appoint`, `hour_appoint`, `id_user`, `id_client`) VALUES (NULL, '$date', '$timestamp', '$id_user', '$idClient'); ";
-                $newAppoint = $pdo->prepare($rdv);
-                $newAppoint->execute();
-                echo "<script > 
-                
-                alert('rdv ajouté'); 
-                document.location.href='../Controller/HomePageCom.php';
-                </script>";
-            } else {
-
-                echo "
-                <script > 
-                
-                alert('Plage déjà utilisé'); 
-                document.location.href='../Controller/HomePageCom.php';
-                </script>
-                ";
-            }
-        } else echo "
-        <script> 
-        
-        alert('Veuillez remplir tous les champs'); 
-        document.location.href='../Controller/HomePageCom.php';
-        </script>
-        ";
+        appointement($date,$timestamp,$idClient,$id_user,$pdo);
+      
     } else echo "
     <script> 
     
