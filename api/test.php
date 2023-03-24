@@ -9,8 +9,9 @@
 </head>
 
 <body>
-    <form action="login.php" method="get">
-        <input type="text" name="login" id="">
+    <form action="client/userClient.php" method="post">
+        <textarea type="text" name="token" id=""></textarea>
+        <input type="text" name="id_user" id="">
         <input type="submit" value="">
     </form>
 </body>

@@ -4,9 +4,10 @@ include('../../src/ConnectionBdd.php');
 
 
 // Récupération des valeurs envoyées par l'application externe
-$email = htmlspecialchars($_POST["id_user"]);
-$password = htmlspecialchars($_POST["pwd_user"]);
-if (!empty($email) or !empty($password)) {
+
+if (isset($_POST["id_user"]) and isset($_POST["pwd_user"])) {
+    $email = htmlspecialchars($_POST["id_user"]);
+    $password = htmlspecialchars($_POST["pwd_user"]);
 
 
     // Requête pour vérifier si les valeurs correspondent à celles de la base de données
@@ -104,13 +105,15 @@ function diffDate($date)
 function verifTok($token, $pdo)
 {
 
-    $req = "SELECT `date_token`, `id_user` FROM `token` WHERE token = '?'";
+    $req = "SELECT `date_token`, `id_user` FROM `token` WHERE token = '$token'";
+
     $req = $pdo->prepare($req);
-    $req->execute([$token]);
+    $req->execute();
     $data = $req->fetchAll();
     if (!empty($data)) {
         $interval = diffDate($data[0]['date_token']);
-        if ($interval->days > 0) {
+
+        if ($interval->d >= 0) {
             return 1;
         } else {
             return 0;
