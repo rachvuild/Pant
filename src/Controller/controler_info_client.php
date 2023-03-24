@@ -14,4 +14,6 @@ $array = infoclient($pdo, $id_client);
 $infoc = $array[0];
 $reportclient = $array[1];
 $infoclient = $array[2];
+$infoc->execute();
+$client_info = $infoc->fetchAll(PDO::FETCH_ASSOC)[0];
 require('../../template/template_info_client.php');
