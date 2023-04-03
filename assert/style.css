@@ -441,7 +441,8 @@ input {
 .n1rdv {
     margin-bottom: 5ex;
 }
-.pwd{
+
+.pwd {
     margin-top: 15%;
     height: 25%;
     display: flex;
@@ -450,18 +451,21 @@ input {
     border: 1px solid #2c809e;
     background-color: #83a4cf;
 }
-.pwd1{
+
+.pwd1 {
     height: 50%;
     display: flex;
     align-self: center;
     background-color: #f0f0f0;
 }
-.pwd2{
+
+.pwd2 {
     width: 33%;
     text-align: center;
     margin-right: 5%;
 }
-.pwd3{
+
+.pwd3 {
     height: 30%;
 }
 
