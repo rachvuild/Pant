@@ -1,5 +1,5 @@
 <?php
-
+ 
 include('../src/ConnectionBdd.php');
 $login = $_POST['login'];
 $req = "SELECT u.pwd_user FROM `user` as u WHERE u.id_user = ?";
@@ -12,3 +12,4 @@ $json = json_encode($passowrd);
 echo $json;
 $dejson = json_decode($json);
 // var_dump($dejson->password);
+ 
