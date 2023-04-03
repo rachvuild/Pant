@@ -6,19 +6,20 @@ include('../../src/ConnectionBdd.php');
 // Récupération des valeurs envoyées par l'application externe
 
 if (isset($_POST["id_user"]) and isset($_POST["pwd_user"])) {
-    $email = htmlspecialchars($_POST["id_user"]);
+    $login = htmlspecialchars($_POST["id_user"]);
     $password = htmlspecialchars($_POST["pwd_user"]);
 
 
     // Requête pour vérifier si les valeurs correspondent à celles de la base de données
     $stmt = $pdo->prepare("SELECT * FROM user WHERE id_user=?");
-    $stmt->execute(array("$email"));
+    $stmt->execute(array("$login"));
+
     $count = $stmt->rowCount();
 
     if ($count > 0) {
         foreach ($stmt as $data) {
             if (password_verify($password, $data['pwd_user'])) {
-                $req = "SELECT * FROM `token` WHERE id_user = '$email'";
+                $req = "SELECT * FROM `token` WHERE id_user = '$login'";
                 $req = $pdo->prepare($req);
                 $req->execute();
                 $data = $req->fetchAll();
@@ -56,12 +57,13 @@ if (isset($_POST["id_user"]) and isset($_POST["pwd_user"])) {
                 }
                 $json = array("status" => 200, "message" => "Success", "data" => $secure_tokens);
             } else {
-                $json = array("status" => 400, "message" => "Error");
+                $json = array("status" => 400, "message" => "password or login fail");
             }
         }
     }
-
     echo json_encode($json);
+} else {
+    $json = array("status" => 400, "message" => "not entry data");
 }
 // Fermeture de la connexion à la base de données
 
