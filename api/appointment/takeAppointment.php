@@ -15,4 +15,6 @@ if (!empty($token) or !empty($idUser)) {
     } else {
         echo json_encode(["status" => 400, "message" => "Error"]);
     }
+} else {
+    echo json_encode(["status" => 400, "message" => "Error"]);
 }

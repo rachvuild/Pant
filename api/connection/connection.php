@@ -42,6 +42,7 @@ if (!empty($_POST["id_user"]) and !empty($_POST["pwd_user"])) {
                         $secure_token = createToken();
                         $date = date("Y-m-d H:i:s");
                         $req = "INSERT INTO `token`( `token`, `date_token`, `id_user`) VALUES ('$secure_token','$date','$login')";
+
                         $req = $pdo->prepare($req);
                         $req->execute();
                         $_SESSION['token'] = $secure_token;
@@ -53,9 +54,6 @@ if (!empty($_POST["id_user"]) and !empty($_POST["pwd_user"])) {
                         $req->execute();
                         $data = $req->fetchAll();
                         $secure_tokens = ['dateTime' => $data[0]['date_token'], 'token' => $data[0]['token']];
-                    }
-                    if (empty($login) and empty($mdp) and empty($_SESSION['date'])) {
-                        echo json_encode(['erreur' => 'eurreur log or session']);
                     }
                     $json = array("status" => 200, "message" => "Success", "data" => $secure_tokens);
                 } else {
@@ -111,24 +109,4 @@ function diffDate($date)
     $target = date_create($date);
     $interval = date_diff($origin, $target);
     return $interval;
-}
-function verifTok($token, $pdo)
-{
-
-    $req = "SELECT `date_token`, `id_user` FROM `token` WHERE token = '$token'";
-
-    $req = $pdo->prepare($req);
-    $req->execute();
-    $data = $req->fetchAll();
-    if (!empty($data)) {
-        $interval = diffDate($data[0]['date_token']);
-
-        if ($interval->d >= 0) {
-            return 1;
-        } else {
-            return 0;
-        }
-    } else {
-        return 0;
-    }
 }
