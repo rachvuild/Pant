@@ -1,5 +1,5 @@
 <?php
-function appointement($date, $timestamp, $idClient, $id_user, $pdo)
+function appointement($date, $timestamp, $idClient, $id_user,  $pdo)
 {
     if ($date != NULL && $timestamp != NULL && $idClient != NULL) {
 

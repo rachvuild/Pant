@@ -5,7 +5,7 @@ include('../../src/ConnectionBdd.php');
 
 // Récupération des valeurs envoyées par l'application externe
 
-if (isset($_POST["id_user"]) and isset($_POST["pwd_user"])) {
+if (!empty($_POST["id_user"]) and !empty($_POST["pwd_user"])) {
     $login = htmlspecialchars($_POST["id_user"]);
     $password = htmlspecialchars($_POST["pwd_user"]);
 
@@ -19,51 +19,59 @@ if (isset($_POST["id_user"]) and isset($_POST["pwd_user"])) {
     if ($count > 0) {
         foreach ($stmt as $data) {
             if (password_verify($password, $data['pwd_user'])) {
-                $req = "SELECT * FROM `token` WHERE id_user = '$login'";
-                $req = $pdo->prepare($req);
-                $req->execute();
-                $data = $req->fetchAll();
-                if (!empty($data)) {
-                    $date = $data[0]['date_token'];
-                    $interval = diffDate($date);
-                } else {
-                    $date = date("Y-m-1-d H:i:s");
-                    $interval = diffDate($date);
-                }
-                if ($interval->days > 0) {
-                    if (!empty($data) or !empty($_SESSION['date'])) {
-                        session_destroy();
-                        $req = "DELETE FROM `token` WHERE id_user = '$login'";
-                        $req = $pdo->prepare($req);
-                        $req->execute();
-                    }
-                    $secure_token = createToken();
-                    $date = date("Y-m-d H:i:s");
-                    $req = "INSERT INTO `token`( `token`, `date_token`, `id_user`) VALUES ('$secure_token','$date','$login')";
-                    $req = $pdo->prepare($req);
-                    $req->execute();
-                    $_SESSION['token'] = $secure_token;
-                    $_SESSION['date'] = $date;
-                    $secure_tokens = ['dateTime' => $date, 'token' => "$secure_token"];
-                } elseif (!empty($data)) {
+
+                if ($data['id_job'] == 1 or $data['id_job'] == 2) {
                     $req = "SELECT * FROM `token` WHERE id_user = '$login'";
                     $req = $pdo->prepare($req);
                     $req->execute();
                     $data = $req->fetchAll();
-                    $secure_tokens = ['dateTime' => $data[0]['date_token'], 'token' => $data[0]['token']];
+                    if (!empty($data)) {
+                        $date = $data[0]['date_token'];
+                        $interval = diffDate($date);
+                    } else {
+                        $date = date("Y-m-1-d H:i:s");
+                        $interval = diffDate($date);
+                    }
+                    if ($interval->days > 0) {
+                        if (!empty($data) or !empty($_SESSION['date'])) {
+                            session_destroy();
+                            $req = "DELETE FROM `token` WHERE id_user = '$login'";
+                            $req = $pdo->prepare($req);
+                            $req->execute();
+                        }
+                        $secure_token = createToken();
+                        $date = date("Y-m-d H:i:s");
+                        $req = "INSERT INTO `token`( `token`, `date_token`, `id_user`) VALUES ('$secure_token','$date','$login')";
+                        $req = $pdo->prepare($req);
+                        $req->execute();
+                        $_SESSION['token'] = $secure_token;
+                        $_SESSION['date'] = $date;
+                        $secure_tokens = ['dateTime' => $date, 'token' => "$secure_token"];
+                    } elseif (!empty($data)) {
+                        $req = "SELECT * FROM `token` WHERE id_user = '$login'";
+                        $req = $pdo->prepare($req);
+                        $req->execute();
+                        $data = $req->fetchAll();
+                        $secure_tokens = ['dateTime' => $data[0]['date_token'], 'token' => $data[0]['token']];
+                    }
+                    if (empty($login) and empty($mdp) and empty($_SESSION['date'])) {
+                        echo json_encode(['erreur' => 'eurreur log or session']);
+                    }
+                    $json = array("status" => 200, "message" => "Success", "data" => $secure_tokens);
+                } else {
+                    $json = array("status" => 400, "message" => "vous n'etes pas autorisé");
                 }
-                if (empty($login) and empty($mdp) and empty($_SESSION['date'])) {
-                    echo json_encode(['erreur' => 'eurreur log or session']);
-                }
-                $json = array("status" => 200, "message" => "Success", "data" => $secure_tokens);
             } else {
                 $json = array("status" => 400, "message" => "password or login fail");
             }
         }
+    } else {
+        $json = array("status" => 400, "message" => "not entry data");
     }
     echo json_encode($json);
 } else {
     $json = array("status" => 400, "message" => "not entry data");
+    echo json_encode($json);
 }
 // Fermeture de la connexion à la base de données
 
