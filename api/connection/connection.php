@@ -21,6 +21,7 @@ if (!empty($_POST["id_user"]) and !empty($_POST["pwd_user"])) {
             if (password_verify($password, $data['pwd_user'])) {
 
                 if ($data['id_job'] == 1 or $data['id_job'] == 2) {
+                    $job = $data['id_job'];
                     $req = "SELECT * FROM `token` WHERE id_user = '$login'";
                     $req = $pdo->prepare($req);
                     $req->execute();
@@ -53,7 +54,7 @@ if (!empty($_POST["id_user"]) and !empty($_POST["pwd_user"])) {
                         $req = $pdo->prepare($req);
                         $req->execute();
                         $data = $req->fetchAll();
-                        $secure_tokens = ['dateTime' => $data[0]['date_token'], 'token' => $data[0]['token']];
+                        $secure_tokens = ['dateTime' => $data[0]['date_token'], 'token' => $data[0]['token'], 'id_job' => $job];
                     }
                     $json = array("status" => 200, "message" => "Success", "data" => $secure_tokens);
                 } else {

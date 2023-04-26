@@ -1,5 +1,5 @@
 <?php
-include('../connection/verif.php');
+include('../connection/vertif.php');
 $token = $_POST["token"];
 $idUser = htmlspecialchars($_POST["id_user"]);
 if (!empty($token) or !empty($idUser)) {

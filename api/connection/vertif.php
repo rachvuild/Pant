@@ -19,3 +19,10 @@ function verifTok($token, $pdo)
         return 0;
     }
 }
+function diffDate($date)
+{
+    $origin = date_create(date('Y-m-d H:i:s'));
+    $target = date_create($date);
+    $interval = date_diff($origin, $target);
+    return $interval;
+}
