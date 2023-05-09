@@ -53,7 +53,6 @@
                 <label for="date">Entrez la date du compte rendu:</label>
                 <input type='datetime-local' name='date' /><br />
             </div>
-
             <input type="submit" value="Envoyé" name="REPORT_CLIENT">
         </form>
     </div>

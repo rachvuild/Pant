@@ -16,7 +16,8 @@ if (!empty($_POST['appoint'])) {
     $date = htmlspecialchars($_POST['date']);
     $timestamp = htmlspecialchars($_POST['horaire']);
     $idClient = htmlspecialchars($_POST['client']);
-    require "../Entity/Appointment.php";
+
+
     appointement($date, $timestamp, $idClient, $id_user, $pdo);
 }
 if (!empty($_POST['appointbis'])) {
@@ -40,7 +41,7 @@ if (!empty($_POST['REGISTER_CLIENT'])) {
     $date = htmlspecialchars($_POST['date']);
     // if (stristr($email, '@') == true) {
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        require "../Entity/client.php";
+        require "../Entity/Client.php";
         registerClient($pc, $city, $address, $phone, $label, $nom, $prenom, $email, $timestamp, $date, $id_user, $pdo);
     } else {
         echo "<script>alert('le champs email à été mal redigé') </script>";

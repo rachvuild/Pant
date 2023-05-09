@@ -6,6 +6,7 @@ $id_client = htmlspecialchars($_POST['id_client']);
 $id_user = htmlspecialchars($_POST['id_user']);
 $id_appoint = htmlspecialchars($_POST['id_appoint']);
 $date = htmlspecialchars($_POST['date']);
+$compteRInt = htmlspecialchars($_POST['compteRInt']);
 
 if ($date == null) {
     $date = date("Y-m-d H:i:s");
@@ -25,7 +26,6 @@ if ($registerReport->execute()) {
 }
 
 
-
 //Fetch all sample
 $sample = "SELECT * FROM `sample`";
 $sample_req = $pdo->prepare($sample);
@@ -42,8 +42,8 @@ if ($sample_req->execute()) {
             }
         }
         //si il n'y a pas d'échantillon
-        else{
-            $samplereport=1;
+        else {
+            $samplereport = 1;
         }
     }
 }

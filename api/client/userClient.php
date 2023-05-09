@@ -1,5 +1,5 @@
 <?php
-include('../connection/connection.php');
+include('../connection/vertif.php');
 $token = $_POST["token"];
 $idUser = htmlspecialchars($_POST["id_user"]);
 if (!empty($token) or !empty($idUser)) {
@@ -23,4 +23,6 @@ if (!empty($token) or !empty($idUser)) {
     } else {
         echo json_encode(["status" => 400, "message" => "Error"]);
     }
+} else {
+    echo json_encode(["status" => 400, "message" => "pol"]);
 }

@@ -21,38 +21,41 @@
     </div>
     <div class="parent">
         <div class="PriseRDV srollbar">
-            <form class="register_client" method="post" action="homePageCom.php">
+            <div class="register_client  ">
                 <fieldset class="client">
                     <legend>Prise de Rendez-Vous</legend>
-                    <label for="">Entrez le nom du client: </label><select name="client" id="client">
-                        <?php
-                        session_start();
-                        $id_user  = $_SESSION["id_user"];
-                        $req = $pdo->prepare("SELECT * FROM `appointment` AS a INNER JOIN client AS c ON c.id_client = a.id_client WHERE a.id_user='$id_user' GROUP BY a.id_client ");
-                        $req->execute();
-                        while ($donnees = $req->fetch()) {
 
-                            echo "<option value=" . $donnees['id_client'] . ">" . $donnees['nom_client'] . "</option>";
-                        }
-                        $req->closecursor();
-                        ?>
-                    </select><br>
-                    <label for="">Choissisez une Date : </label><input type="date" name="date"><br />
-                    <label for="">Choissisez une Plage Horaire : </label> <select name="horaire" id="horaire">
-                        <option value="8">8h</option>
-                        <option value="9">9h</option>
-                        <option value="10"> 10h</option>
-                        <option value="11"> 11h</option>
-                        <option value="14">14h</option>
-                        <option value="15">15h</option>
-                        <option value="16"> 16h</option>
-                        <option value="17"> 17h</option>
-                    </select> <br />
-                    <input type='text' name='id_user' id='id_user' value=<?php echo $id_user; ?> hidden />
-                    <input type="submit" name="appoint" value="OK" />
+                    <form method="post" action="homePageCom.php">
+                        <label for="">Entrez le nom du client: </label><select name="client" id="client">
+                            <?php
+                            session_start();
+                            $id_user  = $_SESSION["id_user"];
+                            $req = $pdo->prepare("SELECT * FROM `appointment` AS a INNER JOIN client AS c ON c.id_client = a.id_client WHERE a.id_user='$id_user' GROUP BY a.id_client ");
+                            $req->execute();
+                            while ($donnees = $req->fetch()) {
+
+                                echo "<option value=" . $donnees['id_client'] . ">" . $donnees['nom_client'] . "</option>";
+                            }
+                            $req->closecursor();
+                            ?>
+                        </select><br>
+                        <label for="">Choissisez une Date : </label><input type="date" name="date"><br />
+                        <label for="">Choissisez une Plage Horaire : </label> <select name="horaire" id="horaire">
+                            <option value="8">8h</option>
+                            <option value="9">9h</option>
+                            <option value="10"> 10h</option>
+                            <option value="11"> 11h</option>
+                            <option value="14">14h</option>
+                            <option value="15">15h</option>
+                            <option value="16"> 16h</option>
+                            <option value="17"> 17h</option>
+                        </select> <br />
+                        <input type='text' name='id_user' id='id_user' value=<?php echo $id_user; ?> hidden />
+                        <input type="submit" name="appoint" value="OK" />
 
                 </fieldset>
-            </form>
+
+            </div>
             <form class=" register_client" action="homePageCom.php" method="post">
                 <fieldset class=" client">
                     <legend>Création d'un nouveau client</legend>
